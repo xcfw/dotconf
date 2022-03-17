@@ -38,8 +38,6 @@ Plug 'machakann/vim-sandwich'                           " make sandwiches
 Plug 'christoomey/vim-tmux-navigator'                   " seamless vim and tmux navigation
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'ap/vim-css-color'
-" Plug 'memgraph/cypher.vim'
-
 call plug#end()
 
 "}}}
@@ -177,7 +175,7 @@ let g:startify_lists = [
 
 " bookmark examples
 let  g:startify_bookmarks =  [
-    \ {'v': '~/.config/nvim/init.vim'},
+    \ {'v': '~/.config/nvim'},
     \ {'d': '~/.dotfiles' }
     \ ]
 
@@ -193,14 +191,14 @@ let g:startify_commands = [
 " custom banner
 let g:startify_custom_header = [
  \ '',
- \ '  ☪☪☪☪                                            ▟▙            ',
- \ '  ☪☪☪☪                                            ▝▘            ',
- \ '  ☪☪☪☪    ██▃▅▇█▆▖  ▗▟████▙▖   ▄████▄   ██▄  ▄██  ██  ▗▟█▆▄▄▆█▙▖',
- \ '  ☪☪☪☪    ██▛▔ ▝██  ██▄▄▄▄██  ██▛▔▔▜██  ▝██  ██▘  ██  ██▛▜██▛▜██',
- \ '  ☪☪☪☪    ██    ██  ██▀▀▀▀▀▘  ██▖  ▗██   ▜█▙▟█▛   ██  ██  ██  ██',
- \ '  ☪☪☪☪    ██    ██  ▜█▙▄▄▄▟▊  ▀██▙▟██▀   ▝████▘   ██  ██  ██  ██',
- \ '  ☪☪☪☪    ▀▀    ▀▀   ▝▀▀▀▀▀     ▀▀▀▀       ▀▀     ▀▀  ▀▀  ▀▀  ▀▀',
- \ '  ☪☪☪☪                                       ~ chilik edition ~ ',
+ \ '                                               ▟▙                ',
+ \ '                                               ▝▘                ',
+ \ '       ██▃▅▇█▆▖  ▗▟████▙▖   ▄████▄   ██▄  ▄██  ██  ▗▟█▆▄▄▆█▙▖    ',
+ \ '       ██▛▔ ▝██  ██▄▄▄▄██  ██▛▔▔▜██  ▝██  ██▘  ██  ██▛▜██▛▜██    ',
+ \ '       ██    ██  ██▀▀▀▀▀▘  ██▖  ▗██   ▜█▙▟█▛   ██  ██  ██  ██    ',
+ \ '       ██    ██  ▜█▙▄▄▄▟▊  ▀██▙▟██▀   ▝████▘   ██  ██  ██  ██    ',
+ \ '       ▀▀    ▀▀   ▝▀▀▀▀▀     ▀▀▀▀       ▀▀     ▀▀  ▀▀  ▀▀  ▀▀    ',
+ \ '                                           ~~~chilik edition~    ',
  \ '',
  \ '',
  \ '',
@@ -218,8 +216,8 @@ let g:semshi#error_sign	= v:false                       " let ms python lsp hand
 "" FZF
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
-  \ 'ctrl-s': 'split',
-  \ 'ctrl-h': 'vslit' }
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
 
 let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'border': 'sharp' } }
 let g:fzf_tags_command = 'ctags -R'
@@ -233,7 +231,7 @@ let $FZF_DEFAULT_COMMAND = "rg --files --hidden --glob '!.git/**' --glob '!build
 
 au BufEnter * set fo-=c fo-=r fo-=o                     " stop annoying auto commenting on new lines
 au FileType help wincmd L                               " open help in vertical split
-" au BufWritePre * :%s/\s\+$//e                           " remove trailing whitespaces before saving
+au BufWritePre * :%s/\s\+$//e                           " remove trailing whitespaces before saving
 au CursorHold * silent call CocActionAsync('highlight') " highlight match on cursor hold
 
 " enable spell only if file type is normal text
@@ -332,6 +330,7 @@ endfunction
 "" the essentials
 let mapleader=" "
 nnoremap ; :
+nnoremap q; q:
 nmap \ <leader>q
 map <F6> :Startify <CR>
 nmap <leader>r :so ~/.config/nvim/init.vim<CR>
@@ -342,13 +341,7 @@ nmap <Tab> :bnext<CR>
 nmap <S-Tab> :bprevious<CR>
 noremap <leader>e :PlugInstall<CR>
 noremap <C-q> :q<CR>
-" nmap <leader>m <Plug>CommentaryLine
-" vmap <leader>m <Plug>CommentaryLine
-nmap <leader>m gcc
-vmap <leader>m gcc
-nmap <leader>k :CocList<CR>
-noremap <M-j>   :m .+1<CR>==
-noremap <M-k>   :m .-2<CR>==
+noremap <leader>gg :Git<CR>
 
 " new line in normal mode and back
 map <Enter> o<ESC>
@@ -359,7 +352,23 @@ nnoremap d "_d
 vnoremap d "_d
 vnoremap p "_dP
 nnoremap x "_x
-nnoremap <S-x> Vx
+noremap  X Vx
+
+" Paste non-linewise text above or below current cursor,
+" see https://stackoverflow.com/a/1346777/6064933
+nnoremap <leader>p m`o<ESC>p``
+nnoremap <leader>P m`O<ESC>p``
+
+" Move current visual-line selection up and down
+xnoremap <silent> <A-k> :<C-U>call utils#MoveSelection('up')<CR>
+xnoremap <silent> <A-j> :<C-U>call utils#MoveSelection('down')<CR>
+
+" Insert a blank line below or above current line (do not move the cursor),
+" see https://stackoverflow.com/a/16136133/6064933
+nnoremap oo :echo 'Please use <lt>space>o instead'<CR>
+nnoremap OO :echo 'Please use <lt>space>O instead'<CR>
+nnoremap <expr> <Space>o printf('m`%so<ESC>``', v:count1)
+nnoremap <expr> <Space>O printf('m`%sO<ESC>``', v:count1)
 
 " emulate windows copy, cut behavior
 vnoremap <LeftRelease> "+y<LeftRelease>
@@ -382,12 +391,8 @@ noremap <silent><esc> <esc>:noh<CR><esc>
 " trim white spaces
 nnoremap <F2> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
-" dockerfile filetype
-au BufRead,BufNewFile * if expand('<afile>:e') == '' | set ft=dockerfile | end
-" set docker.enable = true
-
 " markdown preview
-au FileType markdown nmap <leader>md :MarkdownPreview<CR>
+au FileType markdown nmap <leader>m :MarkdownPreview<CR>
 
 "" FZF
 nnoremap <silent> <leader>f :Files<CR>
@@ -403,6 +408,8 @@ nmap <leader>sh :History/<CR>
 nmap <F1> <plug>(fzf-maps-n)
 imap <F1> <plug>(fzf-maps-i)
 vmap <F1> <plug>(fzf-maps-x)
+
+"" coc
 
 " use tab to navigate snippet placeholders
 inoremap <silent><expr> <TAB>
@@ -424,7 +431,7 @@ nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 " other stuff
 nmap <leader>rn <Plug>(coc-rename)
-nmap <leader>o :OR <CR>
+nmap <leader>or :OR <CR>
 
 " jump stuff
 nmap <leader>jd <Plug>(coc-definition)
@@ -436,15 +443,12 @@ nmap <leader>jr <Plug>(coc-references)
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 nmap <leader>a <Plug>(coc-codeaction-line)
 xmap <leader>a <Plug>(coc-codeaction-selected)
+noremap <leader>k :CocCommand<CR>
 
 " fugitive mappings
 nmap <leader>gd :Gdiffsplit<CR>
 nmap <leader>gb :Git blame<CR>
-nmap <leader>gg :Git<CR>
-nmap <leader>gp :Git push
-
-" searches
-nmap <leader>sf :%s/
+nmap <leader>gp :Git pu
 
 " tmux navigator
 nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
