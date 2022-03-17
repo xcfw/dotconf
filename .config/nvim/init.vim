@@ -34,10 +34,13 @@ Plug 'tpope/vim-fugitive'                               " git support
 Plug 'psliwka/vim-smoothie'                             " some very smooth ass scrolling
 Plug 'wellle/tmux-complete.vim'                         " complete words from a tmux panes
 Plug 'tpope/vim-eunuch'                                 " run common Unix commands inside Vim
-Plug 'machakann/vim-sandwich'                           " make sandwiches
 Plug 'christoomey/vim-tmux-navigator'                   " seamless vim and tmux navigation
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'ap/vim-css-color'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-rhubarb'
 call plug#end()
 
 "}}}
@@ -191,14 +194,14 @@ let g:startify_commands = [
 " custom banner
 let g:startify_custom_header = [
  \ '',
- \ '                                               ▟▙                ',
- \ '                                               ▝▘                ',
- \ '       ██▃▅▇█▆▖  ▗▟████▙▖   ▄████▄   ██▄  ▄██  ██  ▗▟█▆▄▄▆█▙▖    ',
- \ '       ██▛▔ ▝██  ██▄▄▄▄██  ██▛▔▔▜██  ▝██  ██▘  ██  ██▛▜██▛▜██    ',
- \ '       ██    ██  ██▀▀▀▀▀▘  ██▖  ▗██   ▜█▙▟█▛   ██  ██  ██  ██    ',
- \ '       ██    ██  ▜█▙▄▄▄▟▊  ▀██▙▟██▀   ▝████▘   ██  ██  ██  ██    ',
- \ '       ▀▀    ▀▀   ▝▀▀▀▀▀     ▀▀▀▀       ▀▀     ▀▀  ▀▀  ▀▀  ▀▀    ',
- \ '                                           ~~~chilik edition~    ',
+ \ '                                                    ▟▙            ',
+ \ '                                                    ▝▘            ',
+ \ '            ██▃▅▇█▆▖  ▗▟████▙▖   ▄████▄   ██▄  ▄██  ██  ▗▟█▆▄▄▆█▙▖',
+ \ '            ██▛▔ ▝██  ██▄▄▄▄██  ██▛▔▔▜██  ▝██  ██▘  ██  ██▛▜██▛▜██',
+ \ '            ██    ██  ██▀▀▀▀▀▘  ██▖  ▗██   ▜█▙▟█▛   ██  ██  ██  ██',
+ \ '            ██    ██  ▜█▙▄▄▄▟▊  ▀██▙▟██▀   ▝████▘   ██  ██  ██  ██',
+ \ '            ▀▀    ▀▀   ▝▀▀▀▀▀     ▀▀▀▀       ▀▀     ▀▀  ▀▀  ▀▀  ▀▀',
+ \ '                                             ~~~chillik edition~~~',
  \ '',
  \ '',
  \ '',
@@ -335,7 +338,7 @@ nmap \ <leader>q
 map <F6> :Startify <CR>
 nmap <leader>r :so ~/.config/nvim/init.vim<CR>
 nmap <leader>q :bd<CR>
-nmap <leader>w :w<CR>
+nmap <leader>w :up<CR>
 map <leader>s :Format<CR>
 nmap <Tab> :bnext<CR>
 nmap <S-Tab> :bprevious<CR>
@@ -401,7 +404,6 @@ nmap <leader>c :Commands<CR>
 nmap <leader>t :BTags<CR>
 nmap <leader>/ :Rg<CR>
 nmap <leader>gc :Commits<CR>
-nmap <leader>gs :GFiles?<CR>
 nmap <leader>sh :History/<CR>
 
 " show mapping on all modes with F1
@@ -431,16 +433,18 @@ nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 " other stuff
 nmap <leader>rn <Plug>(coc-rename)
-nmap <leader>or :OR <CR>
+nmap <leader>o :OR <CR>
 
 " jump stuff
 nmap <leader>jd <Plug>(coc-definition)
 nmap <leader>jy <Plug>(coc-type-definition)
 nmap <leader>ji <Plug>(coc-implementation)
 nmap <leader>jr <Plug>(coc-references)
+nmap <silent> J <Plug>(SmoothieForwards)
+nmap <silent> K <Plug>(SmoothieBackwards)
 
 " other coc actions
-nnoremap <silent> K :call <SID>show_documentation()<CR>
+" nnoremap <silent> K :call <SID>show_documentation()<CR>
 nmap <leader>a <Plug>(coc-codeaction-line)
 xmap <leader>a <Plug>(coc-codeaction-selected)
 noremap <leader>k :CocCommand<CR>
@@ -449,6 +453,10 @@ noremap <leader>k :CocCommand<CR>
 nmap <leader>gd :Gdiffsplit<CR>
 nmap <leader>gb :Git blame<CR>
 nmap <leader>gp :Git pu
+
+" diffsplit commands h - source, l - remote
+nmap <leader>gh :diffget //2<CR>
+nmap <leader>gl :diffget //3<CR>
 
 " tmux navigator
 nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
