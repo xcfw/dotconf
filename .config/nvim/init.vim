@@ -173,7 +173,7 @@ let g:startify_lists = [
     \ { 'type': 'files'     },
     \ { 'type': 'sessions'  },
     \ { 'type': 'bookmarks' },
-    \ { 'type': 'commands' },
+    \ { 'type': 'commands'  },
     \ ]
 
 " bookmark examples
@@ -184,7 +184,7 @@ let  g:startify_bookmarks =  [
 
 " custom commands
 let g:startify_commands = [
-    \ {'ch':  ['Health Check', ':checkhealth']},
+    \ {'ch': ['Health Check', ':checkhealth']},
     \ {'ps': ['Plugins status', ':PlugStatus']},
     \ {'pu': ['Update vim plugins',':PlugUpdate | PlugUpgrade']},
     \ {'uc': ['Update coc Plugins', ':CocUpdate']},
@@ -444,10 +444,10 @@ nmap <silent> J <Plug>(SmoothieForwards)
 nmap <silent> K <Plug>(SmoothieBackwards)
 
 " other coc actions
-" nnoremap <silent> K :call <SID>show_documentation()<CR>
+nnoremap <silent> ? :call <SID>show_documentation()<CR>
 nmap <leader>a <Plug>(coc-codeaction-line)
 xmap <leader>a <Plug>(coc-codeaction-selected)
-noremap <leader>k :CocCommand<CR>
+nnoremap <leader>k :CocCommand<CR>
 
 " fugitive mappings
 nmap <leader>gd :Gdiffsplit<CR>
