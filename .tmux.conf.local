@@ -4,8 +4,7 @@
 #         without any warranty.
 #         Copyright 2012— Gregory Pakosz (@gpakosz).
 
-unbind Z
-bind -n C-w kill-pane
+
 # -- navigation ----------------------------------------------------------------
 
 # if you're running tmux within iTerm2
@@ -14,6 +13,11 @@ bind -n C-w kill-pane
 #   - and iTerm2 is configured to send [1;9A -> [1;9D for option + arrow keys
 # then uncomment the following line to make Meta + arrow keys mapping work
 #set -ga terminal-overrides "*:kUP3=\e[1;9A,*:kDN3=\e[1;9B,*:kRIT3=\e[1;9C,*:kLFT3=\e[1;9D"
+#set-option -sa terminal-overrides ',XXX:RGB'
+#set -g default-terminal "tmux-256color"
+#set -ag terminal-overrides "xterm-256color:RGB"
+set -g default-terminal "screen-256color"
+set-option -sa terminal-overrides ",xterm-kitty:RGB"
 
 
 # -- windows & pane creation ---------------------------------------------------
@@ -228,10 +232,7 @@ tmux_conf_theme_right_separator_sub='\uE0B3'  #   PowerlineSymbols.otf font, see
 #     - #{username}
 #     - #{username_ssh}
 tmux_conf_theme_status_left=" ❐ #S | ↑#{?uptime_y, #{uptime_y}y,}#{?uptime_d, #{uptime_d}d,}#{?uptime_h, #{uptime_h}h,}#{?uptime_m, #{uptime_m}m,} "
-tmux_conf_theme_status_right=" #{prefix}#{mouse}#{pairing}#{synchronized}#{?battery_status,#{battery_status},}#{?battery_bar, #{battery_bar},}#{?battery_percentage, #{battery_percentage},} %d %b | #{weather} | #{online}"
-
-# tmux_conf_theme_status_left=" ❐ #S | ↑#{?uptime_y, #{uptime_y}y,}#{?uptime_d, #{uptime_d}d,}#{?uptime_h, #{uptime_h}h,}#{?uptime_m, #{uptime_m}m,} "
-# tmux_conf_theme_status_right=" #{prefix}#{mouse}#{pairing}#{synchronized}#{?battery_status,#{battery_status},}#{?battery_bar, #{battery_bar},}#{?battery_percentage, #{battery_percentage},} | %R | %d %b | #{weather}| #{username}#{root} | #{uptime_h} | #{online}"
+tmux_conf_theme_status_right=" #{prefix}#{mouse}#{pairing}#{synchronized}#{?battery_status,#{battery_status},}#{?battery_bar, #{battery_bar},}#{?battery_percentage, #{battery_percentage},} , #{weather} , %R , %d %b | #{username}#{root} | #{hostname} "
 
 # status left style
 tmux_conf_theme_status_left_fg="$tmux_conf_theme_colour_6,$tmux_conf_theme_colour_7,$tmux_conf_theme_colour_8"
@@ -274,10 +275,10 @@ tmux_conf_theme_synchronized_bg="none"
 tmux_conf_theme_synchronized_attr="none"
 
 # battery bar symbols
-# tmux_conf_battery_bar_symbol_full="◼"
-# tmux_conf_battery_bar_symbol_empty="◻"
-tmux_conf_battery_bar_symbol_full="♥"
-tmux_conf_battery_bar_symbol_empty="·"
+tmux_conf_battery_bar_symbol_full="◼"
+tmux_conf_battery_bar_symbol_empty="◻"
+#tmux_conf_battery_bar_symbol_full="♥"
+#tmux_conf_battery_bar_symbol_empty="·"
 
 # battery bar length (in number of symbols), possible values are:
 #   - auto
@@ -324,14 +325,14 @@ tmux_conf_theme_clock_style="24"
 #   - false (default)
 # on macOS, this requires installing reattach-to-user-namespace, see README.md
 # on Linux, this requires xsel or xclip
-tmux_conf_copy_to_os_clipboard=true
+tmux_conf_copy_to_os_clipboard=false
 
 
 # -- user customizations -------------------------------------------------------
 # this is the place to override or undo settings
 
 # increase history size
-set -g history-limit 100000
+set -g history-limit 999999
 
 # start with mouse mode enabled
 set -g mouse on
@@ -342,12 +343,11 @@ set -g status-keys vi
 set -g mode-keys vi
 
 # replace C-b by C-a instead of using both prefixes
-# set -gu prefix2
-# unbind C-a
-unbind C-b
+set -gu prefix2
 unbind C-a
-set -g prefix PgDn
-bind PgDn send-prefix
+unbind C-b
+set -g prefix F12
+bind F12 send-prefix
 
 # move status line to top
 set -g status-position top
@@ -401,7 +401,7 @@ set -g @continuum-restore 'on'
 # '# EOF' and the '# "$@"' lines. Please note that the opening brace { character
 # must be on the same line as the function name otherwise the parse won't detect
 # it.
-#
+# wttr.in?format=3
 # then, use #{foo} in e.g. the 'tmux_conf_theme_status_left' or the
 # 'tmux_conf_theme_status_right' variables.
 
@@ -411,12 +411,12 @@ set -g @continuum-restore 'on'
 # # /!\ do not "uncomment" the functions: the leading "# " characters are needed
 #
 # weather() {
-#   curl -m 1 http://wttr.in/ALA\?format="%l:+%t+%C+%m+%p\n" 2>/dev/null
-#   sleep 20 # sleep for 15 minutes, throttle network requests whatever the value of status-interval
+#   curl -m 1 v2d.wttr.in/ALA?format='%l:+%m+%x+%t+%P\n' 2>/dev/null
+#   sleep 900 # sleep for 15 minutes, throttle network requests whatever the value of status-interval
 # }
 #
 # online() {
-#   ping -c 1 1.1.1.1 >/dev/null 2>&1 && printf '✔ ' || printf '✘ '
+#   ping -c 1 1.1.1.1 >/dev/null 2>&1 && printf '✔' || printf '✘'
 # }
 #
 # "$@"
