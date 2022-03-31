@@ -40,6 +40,7 @@ Plug 'ap/vim-css-color'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
+Plug 'beardedfoo/vim-colemak'
 Plug 'tpope/vim-rhubarb'
 call plug#end()
 
@@ -427,8 +428,10 @@ nmap <leader>jd <Plug>(coc-definition)
 nmap <leader>jy <Plug>(coc-type-definition)
 nmap <leader>ji <Plug>(coc-implementation)
 nmap <leader>jr <Plug>(coc-references)
-nmap <silent> J <Plug>(SmoothieForwards)
-nmap <silent> K <Plug>(SmoothieBackwards)
+
+" turbonavigation
+nmap <silent> N <Plug>(SmoothieForwards)
+nmap <silent> E <Plug>(SmoothieBackwards)
 
 " other coc actions
 " nnoremap <silent> K :call <SID>show_documentation()<CR>
