@@ -23,15 +23,12 @@ Plug 'Jorengarenar/vim-MvVis'                           " move visual selection
 
 " ================= Functionalities ================= "{{{
 
-Plug 'neoclide/coc.nvim', {'branch': 'release'}         " LSP and more
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }     " fzf itself
 Plug 'junegunn/fzf.vim'                                 " fuzzy search integration
 Plug 'honza/vim-snippets'                               " actual snippets
 Plug 'Yggdroot/indentLine'                              " show indentation lines
-Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}  " better python
-Plug 'tpope/vim-commentary'                             " better commenting
-" Plug 'mhinz/vim-startify'                               " cool start up screen
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " syntax highlight
+Plug 'nvim-treesitter/nvim-treesitter'                  " syntax highlight
 Plug 'tpope/vim-fugitive'                               " git support
 Plug 'psliwka/vim-smoothie'                             " some very smooth ass scrolling
 Plug 'wellle/tmux-complete.vim'                         " complete words from a tmux panes
@@ -39,6 +36,7 @@ Plug 'tpope/vim-eunuch'                                 " run common Unix comman
 Plug 'christoomey/vim-tmux-navigator'                   " seamless vim and tmux navigation
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'ap/vim-css-color'
+Plug 'tpope/vim-commentary'                             " better commenting
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
@@ -87,15 +85,6 @@ set redrawtime=10000
 set synmaxcol=180
 set re=1
 
-" required by coc
-set hidden
-set nobackup
-set nowritebackup
-set cmdheight=1
-set updatetime=300
-set shortmess+=c
-set signcolumn=yes
-
 " Themeing
 " let g:material_style = 'oceanic'
 " colorscheme material
@@ -107,15 +96,11 @@ hi NonText guifg=bg                                     " mask ~ on empty lines
 hi clear CursorLineNr                                   " use the theme color for relative number
 hi CursorLineNr gui=bold                                " make relative number bold
 hi SpellBad guifg=NONE gui=bold,undercurl               " misspelled words
-hi CocCursorRange guibg=#b16286 guifg=#ebdbb2
 
 " colors for git (especially the gutter)
 hi DiffAdd  guibg=#0f111a guifg=#43a047
 hi DiffChange guibg=#0f111a guifg=#fdd835
 hi DiffRemoved guibg=#0f111a guifg=#e53935
-
-" coc multi cursor highlight color
-hi CocCursorRange guibg=#b16286 guifg=#ebdbb2
 
 "}}}
 
@@ -133,96 +118,16 @@ else
   let g:python3_host_prog = systemlist('which python3')[0]
 endif
 
-"" coc
-
-" Navigate snippet placeholders using tab
-let g:coc_snippet_next = '<Tab>'
-let g:coc_snippet_prev = '<S-Tab>'
-
-" list of the extensions to make sure are always installed
-let g:coc_global_extensions = [
-            \'coc-yank',
-            \'coc-pairs',
-            \'coc-json',
-            \'coc-css',
-            \'coc-html',
-            \'coc-tsserver',
-            \'coc-yaml',
-            \'coc-lists',
-            \'coc-snippets',
-            \'coc-pyright',
-            \'coc-clangd',
-            \'coc-prettier',
-            \'coc-xml',
-            \'coc-git',
-            \'coc-marketplace',
-            \'coc-sh',
-            \'coc-emoji',
-            \'coc-ultisnips',
-            \'coc-word',
-            \'coc-browser',
-            \'coc-docker',
-            \'@yaegassy/coc-nginx',
-            \]
-
 " indentLine
 let g:indentLine_char_list = ['▏', '¦', '┆', '┊']
 let g:indentLine_setColors = 1
 let g:indentLine_setConceal = 0                         " actually fix the annoying markdown links conversion
-                " let g:indentLine_fileTypeExclude = ['startify']
-"
-" "" startify
-" let g:startify_padding_left = 10
-" let g:startify_session_persistence = 1
-" let g:startify_enable_special = 0
-" let g:startify_change_to_vcs_root = 1
-" let g:startify_lists = [
-"     \ { 'type': 'dir'       },
-"     \ { 'type': 'files'     },
-"     \ { 'type': 'sessions'  },
-"     \ { 'type': 'bookmarks' },
-"     \ { 'type': 'commands'  },
-"     \ ]
-"
-" " bookmark examples
-" let  g:startify_bookmarks =  [
-"     \ {'v': '~/.config/nvim'},
-"     \ {'d': '~/.dotfiles' }
-"     \ ]
-"
-" " custom commands
-" let g:startify_commands = [
-"     \ {'ch': ['Health Check', ':checkhealth']},
-"     \ {'ps': ['Plugins status', ':PlugStatus']},
-"     \ {'pu': ['Update vim plugins',':PlugUpdate | PlugUpgrade']},
-"     \ {'uc': ['Update coc Plugins', ':CocUpdate']},
-"     \ {'h':  ['Help', ':help']},
-"     \ ]
-"
-" " custom banner
-" let g:startify_custom_header = [
-"  \ '',
-"  \ '                                                 ▟▙                 ',
-"  \ '                                                 ▝▘                 ',
-"  \ '         ██▃▅▇█▆▖  ▗▟████▙▖   ▄████▄   ██▄  ▄██  ██  ▗▟█▆▄▄▆█▙▖     ',
-"  \ '         ██▛▔ ▝██  ██▄▄▄▄██  ██▛▔▔▜██  ▝██  ██▘  ██  ██▛▜██▛▜██     ',
-"  \ '         ██    ██  ██▀▀▀▀▀▘  ██▖  ▗██   ▜█▙▟█▛   ██  ██  ██  ██     ',
-"  \ '         ██    ██  ▜█▙▄▄▄▟▊  ▀██▙▟██▀   ▝████▘   ██  ██  ██  ██     ',
-"  \ '         ▀▀    ▀▀   ▝▀▀▀▀▀     ▀▀▀▀       ▀▀     ▀▀  ▀▀  ▀▀  ▀▀     ',
-"  \ '                                          ~~~chillik edition~~~     ',
-"  \ '',
-"  \ '',
-"  \ '',
-"  \]
 
 " rainbow brackets
 let g:rainbow_active = 1
 
 " tmux navigator
 let g:tmux_navigator_no_mappings = 1
-
-" semshi settings
-let g:semshi#error_sign	= v:false                       " let ms python lsp handle this
 
 "" FZF
 let g:fzf_action = {
@@ -243,25 +148,11 @@ let $FZF_DEFAULT_COMMAND = "rg --files --follow --hidden --glob '!.git/**' --glo
 au BufEnter * set fo-=c fo-=r fo-=o                     " stop annoying auto commenting on new lines
 au FileType help wincmd L                               " open help in vertical split
 au BufWritePre * :%s/\s\+$//e                           " remove trailing whitespaces before saving
-au CursorHold * silent call CocActionAsync('highlight') " highlight match on cursor hold
 au BufEnter,BufNewFile,BufRead Dockerfile.*,Dockerfile      setf dockerfile " set filetype for dockerfile to have syntax highlight
 
 " enable spell only if file type is normal text
 let spellable = ['markdown', 'gitcommit', 'txt', 'text', 'liquid', 'rst']
 autocmd BufEnter * if index(spellable, &ft) < 0 | set nospell | else | set spell | endif
-
-
-" coc completion popup
-autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
-
-" startify if no passed argument or all buffers are closed
-" augroup noargs
-"     " startify when there is no open buffer left
-"     autocmd BufDelete * if empty(filter(tabpagebuflist(), '!buflisted(v:val)')) | Startify | endif
-
-"     " open startify on start if no argument was passed
-"     autocmd VimEnter * if argc() == 0 | Startify | endif
-" augroup END
 
 " fzf if passed argument is a folder
 augroup folderarg
@@ -283,20 +174,6 @@ autocmd BufReadPost *
      \   exe "normal! g`\"" |
      \ endif
 
-" python renaming and folding
-augroup python
-    autocmd FileType python nnoremap <leader>rn :Semshi rename <CR>
-    autocmd FileType python set foldmethod=syntax
-    autocmd FileType python syn sync fromstart
-    autocmd FileType python syn region foldImports start='"""' end='"""' fold keepend
-augroup end
-
-" format with available file format formatter
-command! -nargs=0 Format :call CocAction('format')
-
-" organize imports
-command! -nargs=0 OR :call CocAction('runCommand', 'editor.action.organizeImport')
-
 " files in fzf
 command! -bang -nargs=? -complete=dir Files
     \ call fzf#vim#files(<q-args>, fzf#vim#with_preview({'options': ['--layout=reverse', '--inline-info']}), <bang>0)
@@ -317,26 +194,6 @@ function! RipgrepFzf(query, fullscreen)
     call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
 endfunction
 
-" startify file icons
-" function! StartifyEntryFormat()
-"     return 'WebDevIconsGetFileTypeSymbol(absolute_path) ." ". entry_path'
-" endfunction
-
-" check if last inserted char is a backspace (used by coc pmenu)
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-" show docs on things with K
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
-endfunction
-
 "}}}
 
 " ======================== Custom Mappings ====================== "{{{
@@ -346,7 +203,6 @@ let mapleader=" "
 nnoremap ; :
 nnoremap q; q:
 nmap \ <leader>q
-" map <F6> :Startify <CR>
 nmap <leader>r :so ~/.config/nvim/init.vim<CR>
 nmap <leader>q :bd<CR>
 nmap <leader>w :up<CR>
@@ -422,43 +278,9 @@ nmap <F1> <plug>(fzf-maps-n)
 imap <F1> <plug>(fzf-maps-i)
 vmap <F1> <plug>(fzf-maps-x)
 
-"" coc
-
-" use tab to navigate snippet placeholders
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-" Use enter to accept snippet expansion
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<CR>"
-
-" multi cursor shortcuts
-nmap <silent> <C-a> <Plug>(coc-cursors-word)
-xmap <silent> <C-a> <Plug>(coc-cursors-range)
-
-" Use `[g` and `]g` to navigate diagnostics
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
-
-" other stuff
-nmap <leader>rn <Plug>(coc-rename)
-nmap <leader>o :OR <CR>
-
-" jump stuff
-nmap <leader>jd <Plug>(coc-definition)
-nmap <leader>jy <Plug>(coc-type-definition)
-nmap <leader>ji <Plug>(coc-implementation)
-nmap <leader>jr <Plug>(coc-references)
+" Smooooooth scrolling
 nmap <silent> J <Plug>(SmoothieForwards)
 nmap <silent> K <Plug>(SmoothieBackwards)
-
-" other coc actions
-nnoremap <silent> ? :call <SID>show_documentation()<CR>
-nmap <leader>a <Plug>(coc-codeaction-line)
-xmap <leader>a <Plug>(coc-codeaction-selected)
-nnoremap <leader>k :CocCommand<CR>
 
 " fugitive mappings
 nmap <leader>gd :Gdiffsplit<CR>
