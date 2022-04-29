@@ -14,9 +14,9 @@ call plug#begin(expand('~/.config/nvim/plugged'))
 " ================= looks and GUI stuff ================== "{{{
 
 Plug 'ryanoasis/vim-devicons'                           " pretty icons everywhere
-Plug 'luochen1990/rainbow'                              " rainbow parenthesis
+" Plug 'luochen1990/rainbow'                              " rainbow parenthesis
 Plug 'ray-x/aurora'                                     " Aurora color theme
-Plug 'hzchirs/vim-material'                             " material color themes
+" Plug 'hzchirs/vim-material'                             " material color themes
 Plug 'gregsexton/MatchTag'                              " highlight matching html tags
 Plug 'Jorengarenar/vim-MvVis'                           " move visual selection
 "}}}
@@ -36,11 +36,13 @@ Plug 'tpope/vim-eunuch'                                 " run common Unix comman
 Plug 'christoomey/vim-tmux-navigator'                   " seamless vim and tmux navigation
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'ap/vim-css-color'
+Plug 'airblade/vim-gitgutter'                           " git signs when something changed
 Plug 'tpope/vim-commentary'                             " better commenting
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rhubarb'
+Plug 'neovim/nvim-lspconfig'                            " nvim lsp configuration for language servers
 call plug#end()
 
 "}}}
@@ -80,8 +82,8 @@ set grepprg=rg\ --vimgrep                               " use rg as default grep
 set nocursorline
 set nocursorcolumn
 set scrolljump=5
-set lazyredraw
-set redrawtime=10000
+" set lazyredraw
+" set redrawtime=10000
 set synmaxcol=180
 set re=1
 
