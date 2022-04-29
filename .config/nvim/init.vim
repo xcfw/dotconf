@@ -15,6 +15,7 @@ call plug#begin(expand('~/.config/nvim/plugged'))
 
 Plug 'ryanoasis/vim-devicons'                           " pretty icons everywhere
 Plug 'luochen1990/rainbow'                              " rainbow parenthesis
+Plug 'ray-x/aurora'                                     " Aurora color theme
 Plug 'hzchirs/vim-material'                             " material color themes
 Plug 'gregsexton/MatchTag'                              " highlight matching html tags
 Plug 'Jorengarenar/vim-MvVis'                           " move visual selection
@@ -29,7 +30,8 @@ Plug 'honza/vim-snippets'                               " actual snippets
 Plug 'Yggdroot/indentLine'                              " show indentation lines
 Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}  " better python
 Plug 'tpope/vim-commentary'                             " better commenting
-Plug 'mhinz/vim-startify'                               " cool start up screen
+" Plug 'mhinz/vim-startify'                               " cool start up screen
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " syntax highlight
 Plug 'tpope/vim-fugitive'                               " git support
 Plug 'psliwka/vim-smoothie'                             " some very smooth ass scrolling
 Plug 'wellle/tmux-complete.vim'                         " complete words from a tmux panes
@@ -95,8 +97,9 @@ set shortmess+=c
 set signcolumn=yes
 
 " Themeing
-let g:material_style = 'oceanic'
-colorscheme vim-material
+" let g:material_style = 'oceanic'
+" colorscheme material
+colorscheme aurora
 hi Pmenu guibg='#00010a' guifg=white                    " popup menu colors
 hi Comment gui=italic cterm=italic                      " italic comments
 hi Search guibg=#b16286 guifg=#ebdbb2 gui=NONE          " search string highlight color
@@ -104,6 +107,7 @@ hi NonText guifg=bg                                     " mask ~ on empty lines
 hi clear CursorLineNr                                   " use the theme color for relative number
 hi CursorLineNr gui=bold                                " make relative number bold
 hi SpellBad guifg=NONE gui=bold,undercurl               " misspelled words
+hi CocCursorRange guibg=#b16286 guifg=#ebdbb2
 
 " colors for git (especially the gutter)
 hi DiffAdd  guibg=#0f111a guifg=#43a047
@@ -118,7 +122,7 @@ hi CocCursorRange guibg=#b16286 guifg=#ebdbb2
 " ======================== Plugin Configurations ======================== "{{{
 
 "" built in plugins
-let loaded_netrwPlugin = 1                              " disable netrw
+let loaded_netrwPlugin = 0                              " disable netrw
 let g:omni_sql_no_default_maps = 1                      " disable sql omni completion
 let g:loaded_python_provider = 0
 let g:loaded_perl_provider = 0
@@ -150,62 +154,66 @@ let g:coc_global_extensions = [
             \'coc-clangd',
             \'coc-prettier',
             \'coc-xml',
-            \'coc-syntax',
             \'coc-git',
             \'coc-marketplace',
-            \'coc-highlight',
             \'coc-sh',
+            \'coc-emoji',
+            \'coc-ultisnips',
+            \'coc-word',
+            \'coc-browser',
+            \'coc-docker',
+            \'@yaegassy/coc-nginx',
             \]
 
 " indentLine
 let g:indentLine_char_list = ['▏', '¦', '┆', '┊']
-let g:indentLine_setColors = 0
+let g:indentLine_setColors = 1
 let g:indentLine_setConceal = 0                         " actually fix the annoying markdown links conversion
-let g:indentLine_fileTypeExclude = ['startify']
-
-"" startify
-let g:startify_padding_left = 10
-let g:startify_session_persistence = 1
-let g:startify_enable_special = 0
-let g:startify_change_to_vcs_root = 1
-let g:startify_lists = [
-    \ { 'type': 'dir'       },
-    \ { 'type': 'files'     },
-    \ { 'type': 'sessions'  },
-    \ { 'type': 'bookmarks' },
-    \ { 'type': 'commands'  },
-    \ ]
-
-" bookmark examples
-let  g:startify_bookmarks =  [
-    \ {'v': '~/.config/nvim'},
-    \ {'d': '~/.dotfiles' }
-    \ ]
-
-" custom commands
-let g:startify_commands = [
-    \ {'ch': ['Health Check', ':checkhealth']},
-    \ {'ps': ['Plugins status', ':PlugStatus']},
-    \ {'pu': ['Update vim plugins',':PlugUpdate | PlugUpgrade']},
-    \ {'uc': ['Update coc Plugins', ':CocUpdate']},
-    \ {'h':  ['Help', ':help']},
-    \ ]
-
-" custom banner
-let g:startify_custom_header = [
- \ '',
- \ '                                                    ▟▙            ',
- \ '                                                    ▝▘            ',
- \ '            ██▃▅▇█▆▖  ▗▟████▙▖   ▄████▄   ██▄  ▄██  ██  ▗▟█▆▄▄▆█▙▖',
- \ '            ██▛▔ ▝██  ██▄▄▄▄██  ██▛▔▔▜██  ▝██  ██▘  ██  ██▛▜██▛▜██',
- \ '            ██    ██  ██▀▀▀▀▀▘  ██▖  ▗██   ▜█▙▟█▛   ██  ██  ██  ██',
- \ '            ██    ██  ▜█▙▄▄▄▟▊  ▀██▙▟██▀   ▝████▘   ██  ██  ██  ██',
- \ '            ▀▀    ▀▀   ▝▀▀▀▀▀     ▀▀▀▀       ▀▀     ▀▀  ▀▀  ▀▀  ▀▀',
- \ '                                             ~~~chillik edition~~~',
- \ '',
- \ '',
- \ '',
- \]
+                " let g:indentLine_fileTypeExclude = ['startify']
+"
+" "" startify
+" let g:startify_padding_left = 10
+" let g:startify_session_persistence = 1
+" let g:startify_enable_special = 0
+" let g:startify_change_to_vcs_root = 1
+" let g:startify_lists = [
+"     \ { 'type': 'dir'       },
+"     \ { 'type': 'files'     },
+"     \ { 'type': 'sessions'  },
+"     \ { 'type': 'bookmarks' },
+"     \ { 'type': 'commands'  },
+"     \ ]
+"
+" " bookmark examples
+" let  g:startify_bookmarks =  [
+"     \ {'v': '~/.config/nvim'},
+"     \ {'d': '~/.dotfiles' }
+"     \ ]
+"
+" " custom commands
+" let g:startify_commands = [
+"     \ {'ch': ['Health Check', ':checkhealth']},
+"     \ {'ps': ['Plugins status', ':PlugStatus']},
+"     \ {'pu': ['Update vim plugins',':PlugUpdate | PlugUpgrade']},
+"     \ {'uc': ['Update coc Plugins', ':CocUpdate']},
+"     \ {'h':  ['Help', ':help']},
+"     \ ]
+"
+" " custom banner
+" let g:startify_custom_header = [
+"  \ '',
+"  \ '                                                 ▟▙                 ',
+"  \ '                                                 ▝▘                 ',
+"  \ '         ██▃▅▇█▆▖  ▗▟████▙▖   ▄████▄   ██▄  ▄██  ██  ▗▟█▆▄▄▆█▙▖     ',
+"  \ '         ██▛▔ ▝██  ██▄▄▄▄██  ██▛▔▔▜██  ▝██  ██▘  ██  ██▛▜██▛▜██     ',
+"  \ '         ██    ██  ██▀▀▀▀▀▘  ██▖  ▗██   ▜█▙▟█▛   ██  ██  ██  ██     ',
+"  \ '         ██    ██  ▜█▙▄▄▄▟▊  ▀██▙▟██▀   ▝████▘   ██  ██  ██  ██     ',
+"  \ '         ▀▀    ▀▀   ▝▀▀▀▀▀     ▀▀▀▀       ▀▀     ▀▀  ▀▀  ▀▀  ▀▀     ',
+"  \ '                                          ~~~chillik edition~~~     ',
+"  \ '',
+"  \ '',
+"  \ '',
+"  \]
 
 " rainbow brackets
 let g:rainbow_active = 1
@@ -220,13 +228,13 @@ let g:semshi#error_sign	= v:false                       " let ms python lsp hand
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-x': 'split',
-  \ 'ctrl-v': 'vsplit' }
+  \ 'ctrl-o': 'vsplit' }
 
 let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'border': 'sharp' } }
 let g:fzf_tags_command = 'ctags -R'
 
 let $FZF_DEFAULT_OPTS = '--layout=reverse --inline-info'
-let $FZF_DEFAULT_COMMAND = "rg --files --hidden --glob '!.git/**' --glob '!build/**' --glob '!.dart_tool/**' --glob '!.idea' --glob '!node_modules'"
+let $FZF_DEFAULT_COMMAND = "rg --files --follow --hidden --glob '!.git/**' --glob '!build/**' --glob '!.dart_tool/**' --glob '!.idea' --glob '!node_modules'"
 
 "}}}
 
@@ -236,6 +244,7 @@ au BufEnter * set fo-=c fo-=r fo-=o                     " stop annoying auto com
 au FileType help wincmd L                               " open help in vertical split
 au BufWritePre * :%s/\s\+$//e                           " remove trailing whitespaces before saving
 au CursorHold * silent call CocActionAsync('highlight') " highlight match on cursor hold
+au BufEnter,BufNewFile,BufRead Dockerfile.*,Dockerfile      setf dockerfile " set filetype for dockerfile to have syntax highlight
 
 " enable spell only if file type is normal text
 let spellable = ['markdown', 'gitcommit', 'txt', 'text', 'liquid', 'rst']
@@ -246,13 +255,13 @@ autocmd BufEnter * if index(spellable, &ft) < 0 | set nospell | else | set spell
 autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 
 " startify if no passed argument or all buffers are closed
-augroup noargs
-    " startify when there is no open buffer left
-    autocmd BufDelete * if empty(filter(tabpagebuflist(), '!buflisted(v:val)')) | Startify | endif
+" augroup noargs
+"     " startify when there is no open buffer left
+"     autocmd BufDelete * if empty(filter(tabpagebuflist(), '!buflisted(v:val)')) | Startify | endif
 
-    " open startify on start if no argument was passed
-    autocmd VimEnter * if argc() == 0 | Startify | endif
-augroup END
+"     " open startify on start if no argument was passed
+"     autocmd VimEnter * if argc() == 0 | Startify | endif
+" augroup END
 
 " fzf if passed argument is a folder
 augroup folderarg
@@ -260,11 +269,13 @@ augroup folderarg
     autocmd VimEnter * if argc() != 0 && isdirectory(argv()[0]) | execute 'cd' fnameescape(argv()[0])  | endif
 
     " start startify (fallback if fzf is closed)
-    autocmd VimEnter * if argc() != 0 && isdirectory(argv()[0]) | Startify  | endif
+    autocmd VimEnter * if argc() != 0 && isdirectory(argv()[0]) | History | endif
 
     " start fzf on passed directory
     autocmd VimEnter * if argc() != 0 && isdirectory(argv()[0]) | execute 'Files ' fnameescape(argv()[0]) | endif
 augroup END
+
+" autocmd VimEnter * if argc() != 0 && isdirectory(argv()[0]) | execute 'History' fnameescape(argv()[0]) | endif
 
 " Return to last edit position when opening files
 autocmd BufReadPost *
@@ -307,9 +318,9 @@ function! RipgrepFzf(query, fullscreen)
 endfunction
 
 " startify file icons
-function! StartifyEntryFormat()
-    return 'WebDevIconsGetFileTypeSymbol(absolute_path) ." ". entry_path'
-endfunction
+" function! StartifyEntryFormat()
+"     return 'WebDevIconsGetFileTypeSymbol(absolute_path) ." ". entry_path'
+" endfunction
 
 " check if last inserted char is a backspace (used by coc pmenu)
 function! s:check_back_space() abort
@@ -335,7 +346,7 @@ let mapleader=" "
 nnoremap ; :
 nnoremap q; q:
 nmap \ <leader>q
-map <F6> :Startify <CR>
+" map <F6> :Startify <CR>
 nmap <leader>r :so ~/.config/nvim/init.vim<CR>
 nmap <leader>q :bd<CR>
 nmap <leader>w :up<CR>
@@ -404,7 +415,7 @@ nmap <leader>c :Commands<CR>
 nmap <leader>t :BTags<CR>
 nmap <leader>/ :Rg<CR>
 nmap <leader>gc :Commits<CR>
-nmap <leader>sh :History/<CR>
+nmap <leader>h  :History<CR>
 
 " show mapping on all modes with F1
 nmap <F1> <plug>(fzf-maps-n)
