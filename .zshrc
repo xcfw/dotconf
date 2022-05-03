@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -9,7 +16,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 #nanotech,
-ZSH_THEME="peepcode"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 # ZSH_THEME="nanotech"
 
 # Set list of themes to pick from when loading at random
@@ -77,6 +84,11 @@ plugins=(
   tmux
   kubectl
   docker
+  zsh-fzf-history-search
+  nvm
+  npm
+  yarn
+  zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -90,15 +102,14 @@ source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='nvim'
+  export EDITOR='vim'
 else
-  export EDITOR='nvim'
+  export EDITOR='vim'
 fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-export PATH="$HOME/tools/nodejs/bin:$PATH"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -110,13 +121,15 @@ export PATH="$HOME/tools/nodejs/bin:$PATH"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # source <(kubectl completion zsh)
 
+# universal aliases
+alias tu='tmux -2'
 alias op=~/dev/powr
 alias sz='source ~/.zshrc'
 alias l='ls -lahtr'
-alias v=nvim
+alias vim='nvim'
+alias v='nvim'
 alias vz="nvim ~/.zshrc && source ~/.zshrc"
-alias vd="v Dockerfile"
-alias vvs="v ~/.config/nvim/init.vim"
+alias vvs="v ~/.config/nvim/init.lua"
 alias dc="docker-compose"
 alias dcb="dc build"
 alias dcup="dc up --remove-orphans"
@@ -124,9 +137,11 @@ alias gs="git status"
 alias ga="git add"
 alias gc="git commit"
 alias gp="git push"
-alias gr="git pull"
-alias c="clear"
+alias gl="git pull"
+alias cl="clear"
 alias fgif="ffmpeg -y -filter_complex 'fps=12,scale=512:-1:flags=lanczos,split[s0][s1];[s0]palettegen=max_colors=32[p];[s1][p]paletteuse=dither=bayer' -i"
+alias c="batcat"
+alias tt="bpytop"
 
 # wslpaths
 alias wslshutdown="wsl.exe --terminate $WSL_DISTRO_NAME"
@@ -136,8 +151,15 @@ alias cde="cd /mnt/d/dev/"
 # universal paths
 alias vdd="v ~/dev/docs/docs/new.md"
 alias cdp="cd ~/dev/powr"
+alias cdn="cd ~/dev/next/"
+alias cdt="cd ~/tools"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
-
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
