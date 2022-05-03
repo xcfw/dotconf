@@ -44,7 +44,7 @@ nmap("<C-q>", ":tabclose<CR>", d("Close a tab"))
 nmap(";r", [[<CMD>so %<CR>]])
 
 -- quit buffer
-nmap(";;", [[ZQ]])
+nmap(";;", [[ZZ]])
 
 -- save quickly
 nmap(";w", ":update<CR>", d("Save buffer"))

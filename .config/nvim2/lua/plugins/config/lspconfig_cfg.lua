@@ -11,6 +11,7 @@ local on_attach = function(client, bufnr)
   local function buf_set_keymap(...)
     vim.api.nvim_buf_set_keymap(bufnr, ...)
   end
+
   local function buf_set_option(...)
     vim.api.nvim_buf_set_option(bufnr, ...)
   end
@@ -48,12 +49,6 @@ local on_attach = function(client, bufnr)
   buf_set_keymap("n", "gm", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
   buf_set_keymap("n", "gt", "<cmd>lua vim.lsp.buf.type_definition()<CR>", opts)
   buf_set_keymap("n", "gq", "<cmd>lua vim.diagnostic.set_loclist()<CR>", opts)
-
-  -- add rust specific keymappings
-  if client.name == "rust_analyzer" then
-    buf_set_keymap("n", "<leader>rr", "<cmd>RustRunnables<CR>", opts)
-    buf_set_keymap("n", "<leader>ra", "<cmd>RustHoverAction<CR>", opts)
-  end
 
   -- Set some keybinds conditional on server capabilities
   if client.resolved_capabilities.document_formatting then
@@ -129,11 +124,10 @@ if installer.settings then
 
   local ensure_installed_server = {
     "sumneko_lua",
-    "typescript",
-    "javascript",
+    "tsserver",
     "ruby",
-    "dockerfile",
-    "yaml",
+    "dockerls",
+    "yamlls",
   }
 
   for _, lang in pairs(ensure_installed_server) do
@@ -155,6 +149,18 @@ if installer.settings then
 
     if server.name == "sumneko_lua" then
       opts.settings = lua_setting
+    end
+
+    if server.name == "yamlls" then
+      opts.settings = {
+        redhat = { telemetry = { enabled = false } },
+        yaml = {
+          schemas = {
+            ["https://json.schemastore.org/chart.json"] = "/deployment/helm/*",
+            ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*"
+          },
+        },
+      }
     end
 
     -- This setup() function is exactly the same as lspconfig's setup function (:help lspconfig-quickstart)

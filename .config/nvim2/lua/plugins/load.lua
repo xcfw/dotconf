@@ -27,6 +27,11 @@ local autoload = {
     "tpope/vim-sleuth",
   },
 
+  -- tmux navigation
+  {
+    "christoomey/vim-tmux-navigator",
+  },
+
   -- Fix the CursorHold performance bug
   {
     "antoinemadec/FixCursorHold.nvim",
@@ -501,6 +506,14 @@ local coding_enhance = {
   },
 
   {
+    "nvim-telescope/telescope-frecency.nvim",
+    config = function()
+      require"telescope".load_extension("frecency")
+    end,
+    requires = {"tami5/sqlite.lua"}
+  },
+
+  {
     "nvim-treesitter/nvim-treesitter-textobjects",
     after = "nvim-treesitter",
   },
@@ -693,6 +706,14 @@ local completion = {
   -- completion source for word in current buffer
   {
     "hrsh7th/cmp-buffer",
+    after = {
+      "nvim-cmp",
+    },
+  },
+
+  -- tmux completion
+  {
+    "andersevenrud/cmp-tmux",
     after = {
       "nvim-cmp",
     },
