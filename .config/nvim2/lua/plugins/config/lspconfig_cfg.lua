@@ -166,10 +166,9 @@ if installer.settings then
       -- Wrapping the "default" function like this is important.
       -- this prevents diagnostics when filetype is helm
       opts.on_attach = function(client, bufnr)
-        opts.on_attach(client, bufnr)
-        if vim.bo[bufnr].buftype ~= "" or vim.bo[bufnr].filetype == "helm" then
-          vim.diagnostic.disable()
-        end
+      if vim.bo[bufnr].buftype ~= "" or vim.bo[bufnr].filetype == "helm" then
+        vim.lsp.diagnostic.disable()
+      end
       end
     end
 
