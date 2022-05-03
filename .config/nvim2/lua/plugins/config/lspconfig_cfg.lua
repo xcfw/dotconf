@@ -157,10 +157,20 @@ if installer.settings then
         yaml = {
           schemas = {
             ["https://json.schemastore.org/chart.json"] = "/deployment/helm/*",
-            ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*"
+            ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
+            ["https://raw.githubusercontent.com/instrumenta/kubernetes-json-schema/master/v1.18.0-standalone-strict/all.json"] = "/*.k8s.yaml"
           },
         },
       }
+
+      -- Wrapping the "default" function like this is important.
+      -- this prevents diagnostics when filetype is helm
+      opts.on_attach = function(client, bufnr)
+        opts.on_attach(client, bufnr)
+        if vim.bo[bufnr].buftype ~= "" or vim.bo[bufnr].filetype == "helm" then
+          vim.diagnostic.disable()
+        end
+      end
     end
 
     -- This setup() function is exactly the same as lspconfig's setup function (:help lspconfig-quickstart)
