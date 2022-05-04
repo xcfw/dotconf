@@ -346,8 +346,8 @@ set -g mode-keys vi
 set -gu prefix2
 unbind C-a
 unbind C-b
-set -g prefix F12
-bind F12 send-prefix
+set -g prefix F5
+bind F5 send-prefix
 
 # move status line to top
 set -g status-position top

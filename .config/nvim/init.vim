@@ -40,8 +40,9 @@ Plug 'ap/vim-css-color'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
-Plug 'beardedfoo/vim-colemak'
 Plug 'tpope/vim-rhubarb'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'chr4/nginx.vim'
 call plug#end()
 
 "}}}
@@ -68,7 +69,7 @@ set splitright                                          " open vertical split to
 set splitbelow                                          " open horizontal split to the bottom
 set tw=90                                               " auto wrap lines that are longer than that
 set emoji                                               " enable emojis
-set history=1000                                        " history limit
+set history=9999                                        " history limit
 set backspace=indent,eol,start                          " sensible backspacing
 set undofile                                            " enable persistent undo
 set undodir=/tmp                                        " undo temp file directory
@@ -78,7 +79,7 @@ set showtabline=0                                       " always show tabline
 set grepprg=rg\ --vimgrep                               " use rg as default grepper
 
 " performance tweaks
-set nocursorline
+set cursorline
 set nocursorcolumn
 set scrolljump=5
 set lazyredraw
@@ -151,7 +152,6 @@ let g:coc_global_extensions = [
             \'coc-clangd',
             \'coc-prettier',
             \'coc-xml',
-            \'coc-syntax',
             \'coc-git',
             \'coc-marketplace',
             \'coc-highlight',
@@ -227,7 +227,7 @@ let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffse
 let g:fzf_tags_command = 'ctags -R'
 
 let $FZF_DEFAULT_OPTS = '--layout=reverse --inline-info'
-let $FZF_DEFAULT_COMMAND = "rg --files --hidden --glob '!.git/**' --glob '!build/**' --glob '!.dart_tool/**' --glob '!.idea' --glob '!node_modules'"
+let $FZF_DEFAULT_COMMAND = "rg --files --hidden --follow --glob '!.git/**' --glob '!build/**' --glob '!.dart_tool/**' --glob '!.idea' --glob '!node_modules'"
 
 "}}}
 
@@ -249,10 +249,10 @@ autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 " startify if no passed argument or all buffers are closed
 augroup noargs
     " startify when there is no open buffer left
-    autocmd BufDelete * if empty(filter(tabpagebuflist(), '!buflisted(v:val)')) | Startify | endif
+    " autocmd BufDelete * if empty(filter(tabpagebuflist(), '!buflisted(v:val)')) | Startify | endif
 
     " open startify on start if no argument was passed
-    autocmd VimEnter * if argc() == 0 | Startify | endif
+    " autocmd VimEnter * if argc() == 0 | Startify | endif
 augroup END
 
 " fzf if passed argument is a folder
@@ -261,7 +261,7 @@ augroup folderarg
     autocmd VimEnter * if argc() != 0 && isdirectory(argv()[0]) | execute 'cd' fnameescape(argv()[0])  | endif
 
     " start startify (fallback if fzf is closed)
-    autocmd VimEnter * if argc() != 0 && isdirectory(argv()[0]) | Startify  | endif
+    " autocmd VimEnter * if argc() != 0 && isdirectory(argv()[0]) | Startify  | endif
 
     " start fzf on passed directory
     autocmd VimEnter * if argc() != 0 && isdirectory(argv()[0]) | execute 'Files ' fnameescape(argv()[0]) | endif
@@ -300,7 +300,7 @@ command! -nargs=* -bang Rg call RipgrepFzf(<q-args>, <bang>0)
 
 " advanced grep(faster with preview)
 function! RipgrepFzf(query, fullscreen)
-    let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case %s || true'
+    let command_fmt = 'rg --hidden --follow --column --line-number --no-heading --color=always --smart-case %s || true'
     let initial_command = printf(command_fmt, shellescape(a:query))
     let reload_command = printf(command_fmt, '{q}')
     let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
@@ -328,6 +328,18 @@ function! s:show_documentation()
 endfunction
 
 "}}}
+
+" Treesitter {{{
+lua << EOF
+require'nvim-treesitter.configs'.setup {
+  -- One of "all", "maintained" (parsers with maintainers), or a list of languages
+  ensure_installed = "maintained",
+  highlight = { enable = true },
+  incremental_selection = { enable = true },
+  textobjects = { enable = true },
+}
+EOF
+" }}}
 
 " ======================== Custom Mappings ====================== "{{{
 
@@ -388,11 +400,11 @@ au FileType markdown nmap <leader>m :MarkdownPreview<CR>
 "" FZF
 nnoremap <silent> <leader>f :Files<CR>
 nmap <leader>b :Buffers<CR>
-nmap <leader>c :Commands<CR>
 nmap <leader>t :BTags<CR>
 nmap <leader>/ :Rg<CR>
 nmap <leader>gc :Commits<CR>
-nmap <leader>sh :History/<CR>
+nmap <leader>h :History<CR>
+nmap <leader>c :History/<CR>
 
 " show mapping on all modes with F1
 nmap <F1> <plug>(fzf-maps-n)
@@ -430,11 +442,11 @@ nmap <leader>ji <Plug>(coc-implementation)
 nmap <leader>jr <Plug>(coc-references)
 
 " turbonavigation
-nmap <silent> N <Plug>(SmoothieForwards)
-nmap <silent> E <Plug>(SmoothieBackwards)
+nmap <silent> J <Plug>(SmoothieForwards)
+nmap <silent> K <Plug>(SmoothieBackwards)
 
 " other coc actions
-" nnoremap <silent> K :call <SID>show_documentation()<CR>
+" nnoremap <siKent> ? :call <SID>show_documentation()<CR>
 nmap <leader>a <Plug>(coc-codeaction-line)
 xmap <leader>a <Plug>(coc-codeaction-selected)
 

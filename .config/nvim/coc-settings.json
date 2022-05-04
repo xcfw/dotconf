@@ -15,6 +15,7 @@
       "args": ["--stdio"]
     }
   },
+
   "coc.preferences.extensionUpdateCheck": "weekly",
   "diagnostic.virtualText": true,
   "diagnostic.virtualTextPrefix": "# ",
