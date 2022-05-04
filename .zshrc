@@ -2,19 +2,17 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+export ZSH="/Users/ranger/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-#nanotech,
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="peepcode"
-# ZSH_THEME="nanotech"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in $ZSH/themes/
+# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
 # If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
@@ -25,16 +23,17 @@ ZSH_THEME="peepcode"
 # Case-sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
 
-# Uncomment one of the following lines to change the auto-update behavior
-# zstyle ':omz:update' mode disabled  # disable automatic updates
-# zstyle ':omz:update' mode auto      # update automatically without asking
-# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
+# Uncomment the following line to disable bi-weekly auto-update checks.
+# DISABLE_AUTO_UPDATE="true"
+
+# Uncomment the following line to automatically update without prompting.
+# DISABLE_UPDATE_PROMPT="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
-# zstyle ':omz:update' frequency 13
+# export UPDATE_ZSH_DAYS=13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS="true"
+# DISABLE_MAGIC_FUNCTIONS=true
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -46,9 +45,6 @@ ZSH_THEME="peepcode"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# You can also set it to another string to have that shown instead of the default red dots.
-# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
-# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
 # COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
@@ -68,17 +64,11 @@ ZSH_THEME="peepcode"
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
 # Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
+# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(
-  git
-  tmux
-  kubectl
-  docker
-)
-
+plugins=(git zsh-autosuggestions kubectl kube-ps1 tmux)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -90,15 +80,13 @@ source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='nvim'
+  export EDITOR='vim'
 else
   export EDITOR='nvim'
 fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
-
-export PATH="$HOME/tools/nodejs/bin:$PATH"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -108,36 +96,65 @@ export PATH="$HOME/tools/nodejs/bin:$PATH"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-# source <(kubectl completion zsh)
 
-alias op=~/dev/powr
+# We need this to use rbenv for ruby version manager
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
+# We needs this to use nvm for node version manager
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export JAVA_HOME=$(/usr/libexec/java_home)
+export PATH=$JAVA_HOME/bin:$PATH
+export ANDROID_HOME=/Users/ranger/Library/Android/sdk
+export PATH=$ANDROID_HOME/platform-tools:$PATH
+export PATH=$ANDROID_HOME/tools:$PATH
+export PATH=$ANDROID_HOME/tools/bin:$PATH
+
+export PATH=/usr/local/Cellar/maven/3.6.3/bin:$PATH
+
+#alias start="cd /Users/ranger/Developer/powr; foreman start -f Procfile.local;"
+#alias start-web="cd /Users/ranger/Developer/powr; ./bin/webpack-dev-server;"
+#alias powr="code /Users/ranger/Developer/powr; cd /Users/ranger/Developer/powr; "
+#alias sub="code ~/shq; cd ~/shq; "
+#alias "d-c"="docker-compose"
+#alias "be"="bundle exec"
+#alias "rebase"="git fetch && git rebase origin/master"
+#alias "staging"="git branch -D staging && git fetch && git checkout staging"
+#alias reload='reload() { git branch -D $1 && git fetch origin $1 && git checkout $1 };reload'
+#alias backup='backup() { git branch -D $1 && git checkout -b $1 && echo "run git push -f to save backup" };backup'
+#alias rock='~/Documents/ngrok http 3000'
+alias vvs='v ~/.config/nvim/init.vim'
+alias v='nvim'
+alias vz='v ~/.zshrc'
+alias vdd='v ~/dev/kube/docs/docs/kube/notes.md'
 alias sz='source ~/.zshrc'
-alias l='ls -lahtr'
-alias v=nvim
-alias vz="nvim ~/.zshrc && source ~/.zshrc"
-alias vd="v Dockerfile"
-alias vvs="v ~/.config/nvim/init.vim"
-alias dc="docker-compose"
-alias dcb="dc build"
-alias dcup="dc up --remove-orphans"
-alias gs="git status"
-alias ga="git add"
-alias gc="git commit"
-alias gp="git push"
-alias gr="git pull"
-alias c="clear"
-alias fgif="ffmpeg -y -filter_complex 'fps=12,scale=512:-1:flags=lanczos,split[s0][s1];[s0]palettegen=max_colors=32[p];[s1][p]paletteuse=dither=bayer' -i"
+alias c='bat'
+alias cdp='cd ~/dev/kube/powr/'
 
-# wslpaths
-alias wslshutdown="wsl.exe --terminate $WSL_DISTRO_NAME"
-alias cdd="cd /mnt/c/Users/chill/Downloads"
-alias cde="cd /mnt/d/dev/"
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# universal paths
-alias vdd="v ~/dev/docs/docs/new.md"
-alias cdp="cd ~/dev/powr"
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/ranger/dev/kube/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ranger/dev/kube/google-cloud-sdk/path.zsh.inc'; fi
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/ranger/dev/kube/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ranger/dev/kube/google-cloud-sdk/completion.zsh.inc'; fi
+export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
 
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/ranger/dev/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/ranger/dev/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/ranger/dev/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/ranger/dev/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
