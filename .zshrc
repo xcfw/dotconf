@@ -89,6 +89,7 @@ plugins=(
   npm
   yarn
   zsh-syntax-highlighting
+  gcloud
 )
 
 source $ZSH/oh-my-zsh.sh

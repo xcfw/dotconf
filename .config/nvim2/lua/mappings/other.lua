@@ -42,7 +42,7 @@ nmap("<leader>m", [[ZQ]])
 
 -- fugitive
 nmap(";g", [[<CMD>Git<CR>]])
-nmap("<leader>gl", [[<CMD>GlogS<CR>]])
+nmap(";gc", [[<CMD>GlogS<CR>]])
 
 -- dispatch
 nmap(";d", ":Dispatch ", { noremap = true, silent = false })

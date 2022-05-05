@@ -4,8 +4,8 @@
 #         without any warranty.
 #         Copyright 2012— Gregory Pakosz (@gpakosz).
 
-unbind  C-x
-bind -n C-x-q kill-pane
+unbind  C-i
+#bind -n C-i kill-pane
 # -- navigation ----------------------------------------------------------------
 
 # if you're running tmux within iTerm2

@@ -7,4 +7,4 @@
 [credential]
     helper = /mnt/c/Program\\ Files/Git/mingw64/libexec/git-core/git-credential-manager-core.exe
 [alias]
-    git-wc = "!sh $HOME/tools/git-clone-bare-worktree.sh"
+    wcl = "!sh $HOME/tools/git-clone-bare-worktree.sh"
