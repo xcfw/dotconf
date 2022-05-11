@@ -9,3 +9,6 @@ au({ "BufWritePost" }, { pattern = "load.lua", command = "source <afile> | Packe
 
 -- start insert when enter the terminal
 au({ "TermOpen" }, { pattern = "term://*", command = "startinsert" })
+
+-- Return to last edit position when opening files
+-- au({ "BufReadPost" }, { pattern = { "*" }, command = "if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif" })

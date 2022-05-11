@@ -56,6 +56,12 @@ nmap(";q", require("plugins.bufdel").delete_buffer)
 xmap("<C-y>", [["+y]], d("Copy to system clipboard"))
 nmap("<C-p>", [["+p]], d("Paste from system clipboard"))
 map("i", "<C-p>", [[<ESC>"+pa]], d("Paste from system clipboard"))
+xmap("p", [["_dP]], d("paste as proper chad"))
+nmap("p", [[P]], d("paste as chad"))
+nmap("X", [[Vx]], d("cut whole line as proper chad"))
+xmap("d", [["_d]], d("delete as chad"))
+nmap("d", [["_d]], d("delete as chad"))
+xmap("<LeftRelease>", [["+y<LeftRelease>]], d("chad style mouse copy"))
 
 -- shut down the search high light
 nmap("<ESC>", ":nohlsearch<CR>", d("Close search highlight"))

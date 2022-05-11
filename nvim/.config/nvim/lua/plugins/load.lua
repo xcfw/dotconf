@@ -37,6 +37,14 @@ local autoload = {
     "antoinemadec/FixCursorHold.nvim",
   },
 
+  {
+    "akinsho/toggleterm.nvim",
+    config = function()
+      require("plugins").load_cfg("toggleterm_cfg")
+    end,
+    cmd = "ToggleTerm",
+  },
+
   -- cache everything!
   {
     "lewis6991/impatient.nvim",
@@ -178,14 +186,6 @@ local editor_enhance = {
       "NvimTreeRefresh",
       "NvimTreeToggle",
     },
-  },
-
-  {
-    "akinsho/toggleterm.nvim",
-    config = function()
-      require("plugins").load_cfg("toggleterm_cfg")
-    end,
-    cmd = "ToggleTerm",
   },
 
   -- generate color from hex/rgb code
