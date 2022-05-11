@@ -4,7 +4,7 @@
 #         without any warranty.
 #         Copyright 2012— Gregory Pakosz (@gpakosz).
 
-unbind  C-i
+#unbind  C-i
 #bind -n C-i kill-pane
 # -- navigation ----------------------------------------------------------------
 
@@ -413,7 +413,7 @@ set -g @continuum-restore 'on'
 #
 # weather() {
 #   curl -m 1 http://wttr.in/ALA\?format="%l:+%t+%c+%m+%P\n" 2>/dev/null
-#   sleep 20 # sleep for 15 minutes, throttle network requests whatever the value of status-interval
+#   sleep 100 # sleep for 15 minutes, throttle network requests whatever the value of status-interval
 # }
 #
 # online() {

@@ -158,6 +158,16 @@ local editor_enhance = {
     end,
   },
 
+  -- Highlight unsafe SSL protocols
+  {
+    "chr4/sslsecure.vim"
+  },
+
+  -- nginx syntax highlight 
+  {
+    "chr4/nginx.vim"
+  },
+
   -- tree style file manager
   {
     "kyazdani42/nvim-tree.lua",
@@ -394,7 +404,7 @@ local editor_enhance = {
     end,
     keys = { { "n", "<C-e>" }, { "n", "<C-y>" }, { "n", "<C-f>" }, { "n", "<C-b>" } },
   },
-
+  
   -- search and replace with a panel
   {
     "windwp/nvim-spectre",
@@ -542,15 +552,6 @@ local coding_enhance = {
     after = "nvim-lspconfig",
     config = function()
       require("plugins").load_cfg("lspsaga_cfg")
-    end,
-  },
-
-  -- Pre-set for rust lsp
-  {
-    "simrat39/rust-tools.nvim",
-    ft = "rust",
-    config = function()
-      require("plugins").load_cfg("rust_tools_cfg")
     end,
   },
 

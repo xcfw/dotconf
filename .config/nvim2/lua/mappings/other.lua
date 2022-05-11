@@ -41,7 +41,7 @@ end)
 nmap("<leader>m", [[ZQ]])
 
 -- fugitive
-nmap(";g", [[<CMD>Git<CR>]])
+nmap(";gg", [[<CMD>Git<CR>]])
 nmap(";gc", [[<CMD>GlogS<CR>]])
 
 -- dispatch
@@ -51,5 +51,5 @@ nmap(";d", ":Dispatch ", { noremap = true, silent = false })
 -- keep the same prefix as the git sign
 -- See git-sign keymap in lua/plugins/config/gitsign_cfg.lua
 nmap("<leader>cc", ":Git commit -sS<CR>")
-nmap("<leader>gp", ":Git! push ", { silent = false })
+nmap("<leader>gp", ":Git! pu", { silent = false })
 
