@@ -5,7 +5,7 @@ local nmap = require("mappings.utils").nmap
 map("v", "<leader>e", ":EasyAlign<CR>")
 
 -- nvim-tree
-nmap(";t", ":NvimTreeToggle<CR>")
+nmap(";e", ":NvimTreeToggle<CR>")
 
 -- fterm
 nmap("<C-\\>", [[:ToggleTerm direction=float<CR>]])
@@ -41,15 +41,12 @@ end)
 nmap("<leader>m", [[ZQ]])
 
 -- fugitive
+-- keep the same prefix as the git sign
+-- See git-sign keymap in lua/plugins/config/gitsign_cfg.lua
+nmap("<leader>cc", ":Git commit -sS<CR>")
+nmap("<leader>gp", ":Git! pu", { silent = false })
 nmap(";gg", [[<CMD>Git<CR>]])
 nmap(";gc", [[<CMD>GlogS<CR>]])
 
 -- dispatch
 nmap(";d", ":Dispatch ", { noremap = true, silent = false })
-
--- fugitive
--- keep the same prefix as the git sign
--- See git-sign keymap in lua/plugins/config/gitsign_cfg.lua
-nmap("<leader>cc", ":Git commit -sS<CR>")
-nmap("<leader>gp", ":Git! pu", { silent = false })
-
