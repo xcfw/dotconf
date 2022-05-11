@@ -1,0 +1,962 @@
+# You can edit this file by hand, but it's recommended not to do that.
+
+# Marks:
+<<<<<<< Updated upstream
+'b
+	/home/xurr/bin/
+	..
+1652272395
+'c
+	/home/xurr/.config
+	..
+1652272395
+'d
+	/home/xurr/dev/
+	..
+1652272395
+'h
+	/home/xurr/
+	..
+1652272395
+=======
+'H
+	/home/xurr/
+	..
+1643304536
+'b
+	/home/xurr/bin/
+	..
+1652252588
+'c
+	/home/xurr/.config
+	..
+1652252588
+'d
+	/home/xurr/dev/
+	..
+1652252588
+'h
+	/home/xurr/
+	..
+1652252588
+>>>>>>> Stashed changes
+
+# Bookmarks:
+
+# TUI:
+al
+q0
+v2
+ov
+m-1
+l2
+r2
+
+# Left window history (oldest to newest):
+<<<<<<< Updated upstream
+=======
+d/home/xurr/.dotconf/macos
+	wincmd_settings.json
+11
+d/home/xurr/.dotconf
+	.bare
+1
+d/home/xurr/.dotconf/.bare
+	branches
+1
+d/home/xurr/.dotconf
+	.bare
+1
+d/home/xurr/.dotconf/.bare
+	packed-refs
+11
+d/home/xurr/.dotconf
+	.bare
+1
+d/home/xurr/.dotconf/.bare
+	packed-refs
+11
+d/home/xurr/.dotconf
+	macos
+2
+d/home/xurr/.dotconf/macos
+	.tmux.conf.local
+6
+d/home/xurr/.dotconf
+	wsl
+3
+d/home/xurr/.dotconf/wsl
+	.config
+1
+d/home/xurr/.dotconf/wsl/.config
+	bpytop
+2
+d/home/xurr/.dotconf/wsl
+	.config
+1
+d/home/xurr/.dotconf
+	wsl
+3
+d/home/xurr/.dotconf/wsl
+	alacritty
+2
+d/home/xurr/.dotconf/wsl/alacritty
+	..
+0
+d/home/xurr/.dotconf/wsl
+	alacritty
+2
+d/home/xurr/.dotconf/wsl/alacritty
+	.config
+1
+d/home/xurr/.dotconf/wsl/alacritty/.config
+	alacritty
+1
+d/home/xurr/.dotconf/wsl/alacritty/.config/alacritty
+	alacritty.yml
+1
+d/home/xurr/.dotconf/wsl/alacritty/.config
+	alacritty
+1
+d/home/xurr/.dotconf/wsl/alacritty
+	.config
+1
+d/home/xurr/.dotconf/wsl
+	bpytop
+3
+d/home/xurr/.dotconf/wsl/bpytop
+	.config
+1
+d/home/xurr/.dotconf/wsl/bpytop/.config
+	bpytop
+1
+d/home/xurr/.dotconf/wsl/bpytop/.config/bpytop
+	bpytop.conf
+1
+d/home/xurr/.dotconf/wsl/bpytop/.config
+	bpytop
+1
+d/home/xurr/.dotconf/wsl/bpytop
+	.config
+1
+d/home/xurr/.dotconf/wsl
+	kitty
+5
+d/home/xurr/.dotconf/wsl/kitty
+	..
+0
+d/home/xurr/.dotconf/wsl
+	kitty
+5
+d/home/xurr/.dotconf/wsl/kitty
+	.config
+1
+d/home/xurr/.dotconf/wsl/kitty/.config
+	kitty
+1
+d/home/xurr/.dotconf/wsl/kitty/.config/kitty
+	..
+0
+d/home/xurr/.dotconf/wsl/kitty/.config
+	kitty
+1
+d/home/xurr/.dotconf/wsl/kitty
+	.config
+1
+d/home/xurr/.dotconf/wsl
+	nvim
+6
+d/home/xurr/.dotconf/wsl/nvim
+	.config
+1
+d/home/xurr/.dotconf/wsl/nvim/.config
+	nvim
+1
+d/home/xurr/.dotconf/wsl/nvim/.config/nvim
+	lua
+1
+d/home/xurr/.dotconf/wsl/nvim/.config
+	nvim
+1
+d/home/xurr/.dotconf/wsl/nvim
+	.config
+1
+d/home/xurr/.dotconf/wsl
+	tmux
+7
+d/home/xurr/.dotconf/wsl/tmux
+	..
+0
+d/home/xurr/.dotconf/wsl
+	vifm
+9
+d/home/xurr/.dotconf/wsl/vifm
+	.config
+1
+d/home/xurr/.dotconf/wsl/vifm/.config
+	vifm
+1
+d/home/xurr/.dotconf/wsl/vifm/.config/vifm
+	colors
+1
+d/home/xurr/.dotconf/wsl/vifm/.config
+	vifm
+1
+d/home/xurr/.dotconf/wsl/vifm
+	.config
+1
+d/home/xurr/.dotconf/wsl
+	.config
+1
+d/home/xurr/.dotconf/wsl/.config
+	bpytop
+2
+d/home/xurr/.dotconf/wsl
+	.config
+1
+d/home/xurr/.dotconf/wsl/.config
+	vifm
+5
+>>>>>>> Stashed changes
+d/home/xurr/.dotconf/wsl
+	git
+3
+d/home/xurr/.dotconf/wsl/git
+<<<<<<< Updated upstream
+	git-clone-bare-worktree.sh
+1
+d
+
+# Right window history (oldest to newest):
+D/home/xurr/.dotconf/wsl
+	git
+3
+D/home/xurr/.dotconf
+	wsl
+2
+D/home/xurr
+	..
+0
+=======
+	.git
+1
+d/home/xurr/.dotconf/wsl
+	zsh
+9
+d/home/xurr/.dotconf/wsl/zsh
+	.p10k.zsh
+1
+d/home/xurr/.dotconf/wsl
+	tmux
+6
+d/home/xurr/.dotconf/wsl/tmux
+	.tmux.conf
+1
+d/home/xurr/.dotconf/wsl
+	urtw_win
+7
+d/home/xurr/.dotconf/wsl/urtw_win
+	..
+0
+d/home/xurr/.dotconf/wsl
+	win
+8
+d/home/xurr/.dotconf/wsl/win
+	win_urtw_layout
+1
+d/home/xurr/.dotconf/wsl/win/win_urtw_layout
+	amd64
+1
+d/home/xurr/.dotconf/wsl/win
+	win_urtw_layout
+1
+d/home/xurr/.dotconf/wsl
+	win
+8
+d/home/xurr/.dotconf/wsl/win
+	..
+0
+d/home/xurr/.dotconf/wsl
+	alacritty
+1
+d/home/xurr/.dotconf/wsl/alacritty
+	.config
+1
+d/home/xurr/.dotconf/wsl/alacritty/.config
+	alacritty
+1
+d/home/xurr/.dotconf/wsl/alacritty/.config/alacritty
+	alacritty.yml
+1
+d/home/xurr/.dotconf/wsl/alacritty/.config
+	alacritty
+1
+d/home/xurr/.dotconf/wsl/alacritty
+	.config
+1
+d/home/xurr/.dotconf/wsl
+	bpytop
+2
+d/home/xurr/.dotconf/wsl/bpytop
+	.config
+1
+d/home/xurr/.dotconf/wsl/bpytop/.config
+	bpytop
+1
+d/home/xurr/.dotconf/wsl/bpytop/.config/bpytop
+	bpytop.conf
+1
+d/home/xurr/.dotconf/wsl/bpytop/.config
+	bpytop
+1
+d/home/xurr/.dotconf/wsl/bpytop
+	.config
+1
+d/home/xurr/.dotconf/wsl
+	bpytop
+2
+d/home/xurr/.dotconf
+	wsl
+3
+d/home/xurr/.dotconf/wsl
+	alacritty
+1
+d/home/xurr/.dotconf/wsl/alacritty
+	.config
+1
+d/home/xurr/.dotconf/wsl
+	alacritty
+1
+d/home/xurr/.dotconf/wsl/alacritty
+	.config
+1
+d/home/xurr/.dotconf/wsl/alacritty/.config
+	alacritty
+1
+d/home/xurr/.dotconf/wsl/alacritty/.config/alacritty
+	alacritty.yml
+1
+d/home/xurr/.dotconf/wsl/alacritty/.config
+	alacritty
+1
+d/home/xurr/.dotconf/wsl/alacritty
+	.config
+1
+d/home/xurr/.dotconf/wsl
+	README.md
+11
+d/home/xurr/.dotconf
+	wsl
+5
+d/home/xurr
+	.dotconf
+7
+d/home/xurr/.dotconf
+	.config
+2
+d/home/xurr/.dotconf/.config
+	..
+0
+d/home/xurr/.dotconf
+	wsl
+3
+d/home/xurr/.dotconf/wsl
+	README.md
+11
+d/home/xurr/.dotconf
+	wsl
+3
+d/home/xurr/.dotconf/wsl
+	README.md
+11
+d/home/xurr/.dotconf
+	wsl
+3
+d
+
+# Right window history (oldest to newest):
+D/home/xurr/.kube
+	cache
+1
+D/home/xurr
+	dev
+17
+D/home/xurr/dev
+	docs
+5
+D/home/xurr/dev/docs
+	docs
+6
+D/home/xurr/dev/docs/docs
+	intro.md
+28
+D/home/xurr/dev/docs
+	docs
+6
+D/home/xurr/dev
+	docs
+5
+D/home/xurr
+	tools
+19
+D/home/xurr/tools
+	dotconf
+4
+D/home/xurr/tools/dotconf
+	.config
+1
+D/home/xurr/tools/dotconf/.config
+	nvim
+3
+D/home/xurr/tools/dotconf/.config/nvim
+	coc-settings.json
+1
+D/home/xurr/tools/dotconf/.config
+	nvim
+3
+D/home/xurr/tools/dotconf
+	.config
+1
+D/home/xurr/tools
+	dotconf
+4
+D/home/xurr
+	tools
+19
+>>>>>>> Stashed changes
+D/home
+	xurr
+2
+D/home/xurr
+<<<<<<< Updated upstream
+	tools
+=======
+	dev
+17
+D/home/xurr/dev
+	powr
+10
+D/home/xurr/dev/powr
+	deployment
+11
+D/home/xurr/dev/powr/deployment
+	label_shortcut_story.js
+4
+D/home/xurr/dev/powr
+	legacy
+13
+D/home/xurr/dev/powr/legacy
+	deployment
+1
+D/home/xurr/dev/powr/legacy/deployment
+	heroku_create_app.sh
+5
+D/home/xurr/dev/powr/legacy
+	deployment
+1
+D/home/xurr/dev/powr
+	legacy
+13
+D/home/xurr/dev
+	powr
+11
+D/home/xurr
+	tools
+20
+D/home/xurr/tools
+	dotconf
+5
+D/home/xurr/tools/dotconf
+	.config
+1
+D/home/xurr/tools/dotconf/.config
+	vifm
+4
+D/home/xurr/tools/dotconf/.config/vifm
+	colors
+1
+D/home/xurr/tools/dotconf/.config/vifm/colors
+	..
+0
+D/home/xurr/tools/dotconf/.config/vifm
+	colors
+1
+D/home/xurr/tools/dotconf/.config
+	bpytop
+2
+D/home/xurr/tools/dotconf/.config/bpytop
+	bpytop.conf
+1
+D/home/xurr/tools/dotconf/.config
+	bpytop
+2
+D/home/xurr/tools/dotconf/.config/bpytop
+	bpytop.conf
+1
+D/home/xurr/tools/dotconf/.config
+	alacritty
+1
+D/home/xurr/tools/dotconf/.config/alacritty
+	..
+0
+D/home/xurr/tools/dotconf/.config
+	alacritty
+1
+D/home/xurr/tools/dotconf/.config/alacritty
+	..
+0
+D/home/xurr/tools/dotconf/.config
+	bpytop
+2
+D/home/xurr/tools/dotconf
+	.config
+1
+D/home/xurr/tools/dotconf/.config
+	..
+0
+D/home/xurr/tools/dotconf
+	.gitconfig
+>>>>>>> Stashed changes
+4
+D/home/xurr/tools
+	dotconf
+5
+D/home/xurr/tools/dotconf
+<<<<<<< Updated upstream
+	git
+3
+D/home/xurr/tools/dotconf/git
+	git-clone-bare-worktree.sh
+1
+D/home/xurr/tools/dotconf
+	alacritty
+1
+=======
+	.config
+1
+D/home/xurr/tools/dotconf/.config
+	nvim
+3
+D/home/xurr/tools/dotconf/.config/nvim
+	init.vim
+2
+D/home/xurr/tools/dotconf/.config
+	nvim
+3
+D/home/xurr/tools/dotconf/.config/nvim
+	..
+0
+D/home/xurr/tools/dotconf/.config
+	nvim2
+4
+D/home/xurr/tools/dotconf/.config/nvim2
+	README.md
+9
+D/home/xurr/tools/dotconf/.config
+	nvim2
+4
+D/home/xurr/tools/dotconf
+	.config
+1
+D/home/xurr/tools/dotconf/.config
+	nvim2
+4
+D/home/xurr/tools/dotconf/.config/nvim2
+	lua
+1
+D/home/xurr/tools/dotconf/.config
+	nvim2
+4
+D/home/xurr/tools/dotconf
+	.config
+1
+D/home/xurr/tools/dotconf/.config
+	nvim2
+4
+D/home/xurr/tools/dotconf/.config/nvim2
+	lua
+1
+D/home/xurr/tools/dotconf/.config/nvim2/lua
+	..
+0
+D/home/xurr/tools/dotconf/.config/nvim2
+	lua
+1
+D/home/xurr/tools/dotconf/.config/nvim2/lua
+	core
+1
+D/home/xurr/tools/dotconf/.config/nvim2/lua/core
+	colors.lua
+2
+D/home/xurr/tools/dotconf/.config/nvim2/lua
+	core
+1
+D/home/xurr/tools/dotconf/.config/nvim2
+	lua
+1
+D/home/xurr/tools/dotconf/.config
+	vifm
+5
+D/home/xurr/tools/dotconf/.config/vifm
+	vifmrc
+2
+D/home/xurr/tools/dotconf/.config
+	nvim2
+4
+D/home/xurr/tools/dotconf
+	.config
+1
+D/home/xurr/tools/dotconf/.config
+	nvim2
+4
+D/home/xurr/tools/dotconf/.config/nvim2
+	lua
+1
+D/home/xurr/tools/dotconf/.config
+	nvim
+3
+D/home/xurr/tools/dotconf/.config/nvim
+	..
+0
+D/home/xurr/tools/dotconf/.config
+	nvim
+3
+D/home/xurr/tools/dotconf
+	.git
+2
+D/home/xurr/tools/dotconf/.git
+	..
+0
+D/home/xurr/tools/dotconf
+	urtw_win
+3
+D/home/xurr/tools/dotconf/urtw_win
+	amd64
+1
+D/home/xurr/tools/dotconf
+	urtw_win
+3
+>>>>>>> Stashed changes
+D/home/xurr/tools
+	dotconf
+5
+D/home/xurr
+<<<<<<< Updated upstream
+	packages
+3
+=======
+	tools
+25
+>>>>>>> Stashed changes
+D/home
+	xurr
+2
+D/home/xurr
+<<<<<<< Updated upstream
+	.oh-my-zsh
+8
+D
+
+# Command line history (oldest to newest):
+
+# Search history (oldest to newest):
+
+# Prompt history (oldest to newest):
+=======
+	tools
+25
+D/home/xurr/tools
+	dotconf
+5
+D/home/xurr/tools/dotconf
+	.config
+1
+D/home/xurr/tools/dotconf/.config
+	alacritty
+1
+D/home/xurr/tools/dotconf/.config/alacritty
+	..
+0
+D/home/xurr/tools/dotconf/.config
+	bpytop
+1
+D/home/xurr/tools/dotconf/.config/bpytop
+	..
+0
+D/home/xurr/tools/dotconf/.config
+	bpytop
+1
+D/home/xurr/tools/dotconf/.config/bpytop
+	..
+0
+D/home/xurr/tools/dotconf/.config
+	nvim2
+2
+D/home/xurr/tools/dotconf/.config/nvim2
+	lua
+1
+D/home/xurr/tools/dotconf/.config
+	vifm
+3
+D/home/xurr/tools/dotconf/.config/vifm
+	colors
+1
+D/home/xurr/tools/dotconf/.config
+	vifm
+3
+D/home/xurr/tools/dotconf
+	LICENSE
+11
+D
+
+# Command line history (oldest to newest):
+:!curl https://raw.githubusercontent.com/vifm/vifm-colors/master/palenight.vifm
+:!v palenight.vifm
+:!vim palenight.vifm
+:vgrep
+:!v .
+:help 
+:!v
+:!nvim
+:touch
+:help touch
+:C
+:touch 
+:touch one
+:touch zen.vifm
+:!git remote show
+:!clip.exe -p
+:!v tfidf.gif
+:reg
+:qall
+:VifmCs
+:q
+:mkdir bpytop
+:mkdir vifm
+:mkdir alacritty
+:touch nightfly.yml
+:wq
+:rl
+:mkdir wp
+:help vifm
+:!cat .gitconfig | clip.exe
+:h preview
+:pc
+:Pc
+:rlin
+:mkcd nvim
+:mkcd nvim2
+:rlink
+:h rlink
+:help rlink
+:help
+:highlight
+:ls
+:locate
+:zs
+:mkdir -p {zsh, nvim, alacritty, kitty, 
+:mkdir -p {zsh, nvim, alacritty, kitty, bpytop, vifm, tmux, git}
+:!mkdir -p alacritty/.config/alacritty bpytop/.config/bpytop kitty/.config/kitty nvim/.config/nvim vifm/.config/vifm 
+:mkdir win_urtw_layout
+
+# Search history (oldest to newest):
+/rev
+/csv
+/txt]
+/txt
+/de
+/Dock
+/conf
+/nv
+/us
+/Doc
+/ur
+/user
+/pic
+//
+/next
+/000
+/too
+/config
+/dev
+/wsl
+/ws
+/doom
+
+# Prompt history (oldest to newest):
+pnode-v14.15.4-linux-x64
+pnodejs
+pvifm
+pREADME
+pdwm.vifm
+pone.vifm
+pnvim_ntkl_config
+pnvim
+p.git
+pmat.vifm
+psidekiq
+p121318-weekly-rollup.md
+ptestimonialfilled.js
+pparagraphcontent.js
+pparagraphheader.js
+pwin
+>>>>>>> Stashed changes
+
+# Local filter history (oldest to newest):
+
+# Registers:
+<<<<<<< Updated upstream
+""/home/xurr/.local/share/vifm/Trash/002_.gitconfig
+=======
+""/home/xurr/.local/share/vifm/Trash/001_.config
+>>>>>>> Stashed changes
+
+# Directory stack (oldest to newest):
+
+# Trash content:
+<<<<<<< Updated upstream
+t/home/xurr/.local/share/vifm/Trash/002_.gitconfig
+	/home/xurr/.gitconfig
+=======
+t/home/xurr/.local/share/vifm/Trash/000_dwm(1)
+	/home/xurr/.config/vifm/colors/dwm(1)
+t/home/xurr/.local/share/vifm/Trash/000_amd64(1)
+	/home/xurr/tools/dotconf/urtw_win/amd64(1)
+t/home/xurr/.local/share/vifm/Trash/000_testimonialfilled.js
+	/home/xurr/dev/static/components/tutorial/testimonialfilled.js
+t/home/xurr/.local/share/vifm/Trash/000_000
+	/home/xurr/dev/powr/000
+t/home/xurr/.local/share/vifm/Trash/000_generate_nginx_config.sh
+	/home/xurr/dev/powr/docker_deployment/generate_nginx_config.sh
+t/home/xurr/.local/share/vifm/Trash/000_common-add-headers.conf
+	/home/xurr/dev/powr/legacy/deployment/common-add-headers.conf
+t/home/xurr/.local/share/vifm/Trash/000_vifmrc
+	/home/xurr/.config/vifm/vifmrc
+t/home/xurr/.local/share/vifm/Trash/000_colors
+	/home/xurr/.config/vifm/colors
+t/home/xurr/.local/share/vifm/Trash/000_bpytop.conf
+	/home/xurr/.config/bpytop/bpytop.conf
+t/home/xurr/.local/share/vifm/Trash/000_node-v14.15.4-linux-x64.tar.xz
+	/home/xurr/node-v14.15.4-linux-x64.tar.xz
+t/home/xurr/.local/share/vifm/Trash/000_nvim
+	/home/xurr/.config/nvim
+t/home/xurr/.local/share/vifm/Trash/000_.github
+	/home/xurr/.config/nvim/.github
+t/home/xurr/.local/share/vifm/Trash/000_LICENSE
+	/home/xurr/tools/dotconf/.config/nvim2/LICENSE
+t/home/xurr/.local/share/vifm/Trash/000_.git
+	/home/xurr/.config/nvim/.git
+t/home/xurr/.local/share/vifm/Trash/000_docs
+	/home/xurr/.config/nvim/docs
+t/home/xurr/.local/share/vifm/Trash/000_.gitignore
+	/home/xurr/.config/nvim/.gitignore
+t/home/xurr/.local/share/vifm/Trash/000_CHANGELOG
+	/home/xurr/.config/nvim/CHANGELOG
+t/home/xurr/.local/share/vifm/Trash/001_LICENSE
+	/home/xurr/.config/nvim/LICENSE
+t/home/xurr/.local/share/vifm/Trash/000_lua
+	/home/xurr/tools/dotconf/.config/nvim2/lua
+t/home/xurr/.local/share/vifm/Trash/000_plugin
+	/home/xurr/tools/dotconf/.config/nvim2/plugin
+t/home/xurr/.local/share/vifm/Trash/000_scripts
+	/home/xurr/tools/dotconf/.config/nvim2/scripts
+t/home/xurr/.local/share/vifm/Trash/000_vsnip
+	/home/xurr/tools/dotconf/.config/nvim2/vsnip
+t/home/xurr/.local/share/vifm/Trash/001_.gitignore
+	/home/xurr/tools/dotconf/.config/nvim2/.gitignore
+t/home/xurr/.local/share/vifm/Trash/000_.stylua.toml
+	/home/xurr/tools/dotconf/.config/nvim2/.stylua.toml
+t/home/xurr/.local/share/vifm/Trash/000_.vimrc
+	/home/xurr/tools/dotconf/.config/nvim2/.vimrc
+t/home/xurr/.local/share/vifm/Trash/001_CHANGELOG
+	/home/xurr/tools/dotconf/.config/nvim2/CHANGELOG
+t/home/xurr/.local/share/vifm/Trash/000_README.md
+	/home/xurr/tools/dotconf/.config/nvim2/README.md
+t/home/xurr/.local/share/vifm/Trash/000_ginit.vim
+	/home/xurr/tools/dotconf/.config/nvim2/ginit.vim
+t/home/xurr/.local/share/vifm/Trash/000_init.lua
+	/home/xurr/tools/dotconf/.config/nvim2/init.lua
+t/home/xurr/.local/share/vifm/Trash/001_lua
+	/home/xurr/.config/nvim/lua
+t/home/xurr/.local/share/vifm/Trash/001_plugin
+	/home/xurr/.config/nvim/plugin
+t/home/xurr/.local/share/vifm/Trash/001_scripts
+	/home/xurr/.config/nvim/scripts
+t/home/xurr/.local/share/vifm/Trash/001_vsnip
+	/home/xurr/.config/nvim/vsnip
+t/home/xurr/.local/share/vifm/Trash/001_.stylua.toml
+	/home/xurr/.config/nvim/.stylua.toml
+t/home/xurr/.local/share/vifm/Trash/001_.vimrc
+	/home/xurr/.config/nvim/.vimrc
+t/home/xurr/.local/share/vifm/Trash/001_README.md
+	/home/xurr/.config/nvim/README.md
+t/home/xurr/.local/share/vifm/Trash/001_ginit.vim
+	/home/xurr/.config/nvim/ginit.vim
+t/home/xurr/.local/share/vifm/Trash/001_init.lua
+	/home/xurr/.config/nvim/init.lua
+t/home/xurr/.local/share/vifm/Trash/000_-p
+	/home/xurr/.dotconf/wsl/-p
+t/home/xurr/.local/share/vifm/Trash/000_alacritty
+	/home/xurr/tools/dotconf/.config/alacritty
+t/home/xurr/.local/share/vifm/Trash/001_bpytop.conf
+	/home/xurr/tools/dotconf/.config/bpytop/bpytop.conf
+t/home/xurr/.local/share/vifm/Trash/000_bpytop
+	/home/xurr/tools/dotconf/.config/bpytop
+t/home/xurr/.local/share/vifm/Trash/000_.config
+	/home/xurr/.dotconf/wsl/.config
+t/home/xurr/.local/share/vifm/Trash/000_win_urtw_layout
+	/home/xurr/.dotconf/win_urtw_layout
+t/home/xurr/.local/share/vifm/Trash/000_.gitconfig
+	/home/xurr/.dotconf/.gitconfig
+t/home/xurr/.local/share/vifm/Trash/000_.p10k.zsh
+	/home/xurr/.dotconf/.p10k.zsh
+t/home/xurr/.local/share/vifm/Trash/000_.tmux.conf
+	/home/xurr/.dotconf/.tmux.conf
+t/home/xurr/.local/share/vifm/Trash/000_.tmux.conf.local
+	/home/xurr/.dotconf/.tmux.conf.local
+t/home/xurr/.local/share/vifm/Trash/000_.zshrc
+	/home/xurr/.dotconf/.zshrc
+t/home/xurr/.local/share/vifm/Trash/000_git-clone-bare-worktree.sh
+	/home/xurr/.dotconf/git-clone-bare-worktree.sh
+t/home/xurr/.local/share/vifm/Trash/000_wincmd_settings.json
+	/home/xurr/.dotconf/wincmd_settings.json
+t/home/xurr/.local/share/vifm/Trash/001_.config
+	/home/xurr/.dotconf/.config
+t/home/xurr/.local/share/vifm/Trash/000_urtw_win
+	/home/xurr/tools/dotconf/urtw_win
+t/home/xurr/.local/share/vifm/Trash/002_LICENSE
+	/home/xurr/tools/dotconf/LICENSE
+t/home/xurr/.local/share/vifm/Trash/002_README.md
+	/home/xurr/tools/dotconf/README.md
+t/home/xurr/.local/share/vifm/Trash/001_git-clone-bare-worktree.sh
+	/home/xurr/tools/dotconf/git-clone-bare-worktree.sh
+t/home/xurr/.local/share/vifm/Trash/001_wincmd_settings.json
+	/home/xurr/tools/dotconf/wincmd_settings.json
+t/home/xurr/.local/share/vifm/Trash/002_.config
+	/home/xurr/tools/dotconf/.config
+t/home/xurr/.local/share/vifm/Trash/001_.gitconfig
+	/home/xurr/tools/dotconf/.gitconfig
+t/home/xurr/.local/share/vifm/Trash/001_.p10k.zsh
+	/home/xurr/tools/dotconf/.p10k.zsh
+t/home/xurr/.local/share/vifm/Trash/001_.tmux.conf
+	/home/xurr/tools/dotconf/.tmux.conf
+t/home/xurr/.local/share/vifm/Trash/001_.tmux.conf.local
+	/home/xurr/tools/dotconf/.tmux.conf.local
+t/home/xurr/.local/share/vifm/Trash/001_.zshrc
+	/home/xurr/tools/dotconf/.zshrc
+>>>>>>> Stashed changes
+
+# State:
+f
+i1
+<<<<<<< Updated upstream
+[.1
+=======
+[.0
+>>>>>>> Stashed changes
+[F
+F
+I1
+].0
+]F
+s0

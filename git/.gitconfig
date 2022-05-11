@@ -1,0 +1,10 @@
+[user]
+	email = dr@gorsvet.kz
+	name = yili
+	nickname = xcfw
+[core]
+	autocrlf = false
+[credential]
+    helper = /mnt/c/Program\\ Files/Git/mingw64/libexec/git-core/git-credential-manager-core.exe
+[alias]
+    wcl = "!sh $HOME/tools/git-clone-bare-worktree.sh"
