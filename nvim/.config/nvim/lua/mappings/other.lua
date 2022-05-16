@@ -5,10 +5,10 @@ local nmap = require("mappings.utils").nmap
 map("v", "<leader>e", ":EasyAlign<CR>")
 
 -- nvim-tree
-nmap(";e", ":NvimTreeToggle<CR>")
+nmap(";d", ":NvimTreeToggle<CR>")
 
 -- yank file path
-map("n", "cp", [[vim.api.nvim_buf_get_name(0)]])
+map("n", ";y", [[vim.api.nvim_buf_get_name(0)]])
 
 -- fterm
 nmap("<C-\\>", [[:ToggleTerm direction=float<CR>]])
@@ -52,4 +52,4 @@ nmap(";gg", [[<CMD>Git<CR>]])
 nmap(";gc", [[<CMD>GlogS<CR>]])
 
 -- dispatch
-nmap(";d", ":Dispatch ", { noremap = true, silent = false })
+nmap(";x", ":Dispatch ", { noremap = true, silent = false })
