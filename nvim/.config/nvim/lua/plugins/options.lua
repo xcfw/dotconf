@@ -42,6 +42,9 @@ g.enable_treesitter_ft = {
   "rust",
   "toml",
   "vim",
+  "ruby",
+  "typescript",
+  "yaml",
 }
 
 -- enable lspconfig for what filetype?
@@ -57,6 +60,9 @@ g.enable_lspconfig_ft = {
   "python",
   "sh",
   "toml",
+  "ruby",
+  "typescript",
+  "yaml",
 }
 
 -- visual multi mappings

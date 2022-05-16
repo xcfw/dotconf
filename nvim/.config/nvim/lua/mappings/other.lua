@@ -7,6 +7,9 @@ map("v", "<leader>e", ":EasyAlign<CR>")
 -- nvim-tree
 nmap(";e", ":NvimTreeToggle<CR>")
 
+-- yank file path
+map("n", "cp", [[vim.api.nvim_buf_get_name(0)]])
+
 -- fterm
 nmap("<C-\\>", [[:ToggleTerm direction=float<CR>]])
 nmap("<C-s>", [[:ToggleTerm direction=horizontal<CR>]])

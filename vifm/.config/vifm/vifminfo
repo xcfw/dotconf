@@ -1,24 +1,6 @@
 # You can edit this file by hand, but it's recommended not to do that.
 
 # Marks:
-<<<<<<< Updated upstream
-'b
-	/home/xurr/bin/
-	..
-1652272395
-'c
-	/home/xurr/.config
-	..
-1652272395
-'d
-	/home/xurr/dev/
-	..
-1652272395
-'h
-	/home/xurr/
-	..
-1652272395
-=======
 'H
 	/home/xurr/
 	..
@@ -39,12 +21,11 @@
 	/home/xurr/
 	..
 1652252588
->>>>>>> Stashed changes
 
 # Bookmarks:
 
 # TUI:
-al
+ar
 q0
 v2
 ov
@@ -53,14 +34,6 @@ l2
 r2
 
 # Left window history (oldest to newest):
-<<<<<<< Updated upstream
-=======
-d/home/xurr/.dotconf/macos
-	wincmd_settings.json
-11
-d/home/xurr/.dotconf
-	.bare
-1
 d/home/xurr/.dotconf/.bare
 	branches
 1
@@ -217,29 +190,12 @@ d/home/xurr/.dotconf/wsl
 d/home/xurr/.dotconf/wsl/.config
 	vifm
 5
->>>>>>> Stashed changes
 d/home/xurr/.dotconf/wsl
 	git
 3
 d/home/xurr/.dotconf/wsl/git
-<<<<<<< Updated upstream
-	git-clone-bare-worktree.sh
-1
-d
-
-# Right window history (oldest to newest):
-D/home/xurr/.dotconf/wsl
-	git
-3
-D/home/xurr/.dotconf
-	wsl
-2
-D/home/xurr
-	..
+	<<<<<<< Updated upstream
 0
-=======
-	.git
-1
 d/home/xurr/.dotconf/wsl
 	zsh
 9
@@ -372,45 +328,15 @@ d/home/xurr/.dotconf/wsl
 d/home/xurr/.dotconf
 	wsl
 3
+dev
+	17
+0
+d/home/xurr/.dotconf
+	wsl
+3
 d
 
 # Right window history (oldest to newest):
-D/home/xurr/.kube
-	cache
-1
-D/home/xurr
-	dev
-17
-D/home/xurr/dev
-	docs
-5
-D/home/xurr/dev/docs
-	docs
-6
-D/home/xurr/dev/docs/docs
-	intro.md
-28
-D/home/xurr/dev/docs
-	docs
-6
-D/home/xurr/dev
-	docs
-5
-D/home/xurr
-	tools
-19
-D/home/xurr/tools
-	dotconf
-4
-D/home/xurr/tools/dotconf
-	.config
-1
-D/home/xurr/tools/dotconf/.config
-	nvim
-3
-D/home/xurr/tools/dotconf/.config/nvim
-	coc-settings.json
-1
 D/home/xurr/tools/dotconf/.config
 	nvim
 3
@@ -423,16 +349,12 @@ D/home/xurr/tools
 D/home/xurr
 	tools
 19
->>>>>>> Stashed changes
 D/home
 	xurr
 2
 D/home/xurr
-<<<<<<< Updated upstream
-	tools
-=======
-	dev
-17
+	<<<<<<< Updated upstream
+0
 D/home/xurr/dev
 	powr
 10
@@ -516,23 +438,18 @@ D/home/xurr/tools/dotconf/.config
 0
 D/home/xurr/tools/dotconf
 	.gitconfig
->>>>>>> Stashed changes
-4
+0
 D/home/xurr/tools
 	dotconf
 5
 D/home/xurr/tools/dotconf
-<<<<<<< Updated upstream
-	git
-3
+	<<<<<<< Updated upstream
+0
 D/home/xurr/tools/dotconf/git
 	git-clone-bare-worktree.sh
 1
 D/home/xurr/tools/dotconf
 	alacritty
-1
-=======
-	.config
 1
 D/home/xurr/tools/dotconf/.config
 	nvim
@@ -636,35 +553,18 @@ D/home/xurr/tools/dotconf/urtw_win
 D/home/xurr/tools/dotconf
 	urtw_win
 3
->>>>>>> Stashed changes
 D/home/xurr/tools
 	dotconf
 5
 D/home/xurr
-<<<<<<< Updated upstream
-	packages
-3
-=======
-	tools
-25
->>>>>>> Stashed changes
+	<<<<<<< Updated upstream
+0
 D/home
 	xurr
 2
 D/home/xurr
-<<<<<<< Updated upstream
-	.oh-my-zsh
-8
-D
-
-# Command line history (oldest to newest):
-
-# Search history (oldest to newest):
-
-# Prompt history (oldest to newest):
-=======
-	tools
-25
+	<<<<<<< Updated upstream
+0
 D/home/xurr/tools
 	dotconf
 5
@@ -706,7 +606,37 @@ D/home/xurr/tools/dotconf/.config
 3
 D/home/xurr/tools/dotconf
 	LICENSE
+7
+D/home/xurr/tools
+	dotconf
+5
+D/home/xurr
+	tools
+28
+D/home
+	xurr
+2
+D/home/xurr
+	tools
+28
+D/home/xurr/tools
+	dotconf
+5
+D/home/xurr
+	dev
+25
+D/home/xurr/dev
+	powr
 11
+D/home/xurr/dev/powr
+	db
+9
+D/home/xurr/dev/powr/db
+	temp
+3
+D/home/xurr/dev/powr/db/temp
+	tmpfile.sql.gz
+1
 D
 
 # Command line history (oldest to newest):
@@ -784,6 +714,7 @@ D
 /doom
 
 # Prompt history (oldest to newest):
+packages
 pnode-v14.15.4-linux-x64
 pnodejs
 pvifm
@@ -800,24 +731,22 @@ ptestimonialfilled.js
 pparagraphcontent.js
 pparagraphheader.js
 pwin
->>>>>>> Stashed changes
 
 # Local filter history (oldest to newest):
 
 # Registers:
-<<<<<<< Updated upstream
 ""/home/xurr/.local/share/vifm/Trash/002_.gitconfig
-=======
 ""/home/xurr/.local/share/vifm/Trash/001_.config
->>>>>>> Stashed changes
 
 # Directory stack (oldest to newest):
 
 # Trash content:
-<<<<<<< Updated upstream
+tools
+	=======
+tools
+	25
 t/home/xurr/.local/share/vifm/Trash/002_.gitconfig
 	/home/xurr/.gitconfig
-=======
 t/home/xurr/.local/share/vifm/Trash/000_dwm(1)
 	/home/xurr/.config/vifm/colors/dwm(1)
 t/home/xurr/.local/share/vifm/Trash/000_amd64(1)
@@ -944,16 +873,11 @@ t/home/xurr/.local/share/vifm/Trash/001_.tmux.conf.local
 	/home/xurr/tools/dotconf/.tmux.conf.local
 t/home/xurr/.local/share/vifm/Trash/001_.zshrc
 	/home/xurr/tools/dotconf/.zshrc
->>>>>>> Stashed changes
 
 # State:
 f
 i1
-<<<<<<< Updated upstream
-[.1
-=======
 [.0
->>>>>>> Stashed changes
 [F
 F
 I1

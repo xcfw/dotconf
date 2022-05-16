@@ -10,5 +10,10 @@ au({ "BufWritePost" }, { pattern = "load.lua", command = "source <afile> | Packe
 -- start insert when enter the terminal
 au({ "TermOpen" }, { pattern = "term://*", command = "startinsert" })
 
+-- Remove trailing whitespace on save
+vim.api.nvim_create_autocmd('BufWritePre', {
+    command = '%s/\\s\\+$//e',
+})
+
 -- Return to last edit position when opening files
--- au({ "BufReadPost" }, { pattern = { "*" }, command = "if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif" })
+--au({ "BufReadPost" }, { pattern = { "*" }, command = "preserve" })

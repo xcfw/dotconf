@@ -38,11 +38,14 @@ local autoload = {
   },
 
   {
-    "akinsho/toggleterm.nvim",
-    config = function()
-      require("plugins").load_cfg("toggleterm_cfg")
-    end,
-    cmd = "ToggleTerm",
+    "ethanholz/nvim-lastplace",
+    config = function ()
+      require'nvim-lastplace'.setup{
+        lastplace_ignore_buftype = {"quickfix", "nofile", "help"},
+        lastplace_ignore_filetype = {"gitcommit", "gitrebase", "svn", "hgcommit"},
+        lastplace_open_folds = true
+      }
+    end
   },
 
   -- cache everything!
@@ -148,6 +151,14 @@ local editor_enhance = {
     config = function()
       require("winshift").setup({})
     end,
+  },
+
+  {
+    "akinsho/toggleterm.nvim",
+    config = function()
+      require("plugins").load_cfg("toggleterm_cfg")
+    end,
+    cmd = "ToggleTerm",
   },
 
   -- list of nerdfont icons
