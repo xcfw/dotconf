@@ -8,7 +8,7 @@ map("v", "<leader>e", ":EasyAlign<CR>")
 nmap(";d", ":NvimTreeToggle<CR>")
 
 -- yank file path
-map("n", ";y", [[vim.api.nvim_buf_get_name(0)]])
+map("n", "yu", [[vim.api.nvim_buf_get_name(0)]])
 
 -- fterm
 nmap("<C-\\>", [[:ToggleTerm direction=float<CR>]])
@@ -50,6 +50,7 @@ nmap("<leader>cc", ":Git commit -sS<CR>")
 nmap("<leader>gp", ":Git! pu", { silent = false })
 nmap(";gg", [[<CMD>Git<CR>]])
 nmap(";gc", [[<CMD>GlogS<CR>]])
+nmap(";gb", [[<CMD>Git blame --no-line-porcelain<CR>]])
 
 -- dispatch
 nmap(";x", ":Dispatch ", { noremap = true, silent = false })

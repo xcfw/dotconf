@@ -148,7 +148,6 @@ alias tt="bpytop"
 # wslpaths
 alias wslshutdown="wsl.exe --terminate $WSL_DISTRO_NAME"
 alias cdd="cd /mnt/c/Users/chill/Downloads"
-alias cde="cd /mnt/d/dev/"
 
 # universal paths
 alias vdd="v ~/dev/docs/docs/new.md"
@@ -157,6 +156,7 @@ alias cdn="cd ~/dev/next/"
 alias cdt="cd ~/tools"
 alias cdc="cd ~/dev/docs"
 alias cdv="cd ~/.dotconf/wsl/"
+alias d="cd ~/dev && cd"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
