@@ -4,7 +4,15 @@
 	nickname = xcfw
 [core]
 	autocrlf = false
-[credential]
-    helper = /mnt/c/Program\\ Files/Git/mingw64/libexec/git-core/git-credential-manager-core.exe
+[credential "https://gitlab.com"]
+    email = ilmurat@powr.io
+    provider = generic
+    helper = /usr/local/share/gcm-core/git-credential-manager-core
+[credential "https://github.com"]
+    provider = generic
+    email = dr@gorsvet.kz
+    helper = /usr/local/share/gcm-core/git-credential-manager-core
 [alias]
     wcl = "!sh $HOME/tools/git-clone-bare-worktree.sh"
+[credential]
+    credentialStore = cache

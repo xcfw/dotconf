@@ -65,7 +65,7 @@ local markdown_plugins = {
 
   -- markdown preview
   {
-    "iamcco/markdown-preview.nvim",
+    "Avimitin/markdown-preview.nvim",
     run = function()
       vim.fn["mkdp#util#install"]()
     end,
@@ -182,7 +182,7 @@ local editor_enhance = {
     "chr4/sslsecure.vim"
   },
 
-  -- nginx syntax highlight 
+  -- nginx syntax highlight
   {
     "chr4/nginx.vim"
   },
@@ -415,7 +415,7 @@ local editor_enhance = {
     end,
     keys = { { "n", "<C-e>" }, { "n", "<C-y>" }, { "n", "<C-f>" }, { "n", "<C-b>" } },
   },
-  
+
   -- search and replace with a panel
   {
     "windwp/nvim-spectre",

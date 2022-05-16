@@ -155,6 +155,8 @@ alias vdd="v ~/dev/docs/docs/new.md"
 alias cdp="cd ~/dev/powr"
 alias cdn="cd ~/dev/next/"
 alias cdt="cd ~/tools"
+alias cdc="cd ~/dev/docs"
+alias cdv="cd ~/.dotconf/wsl/"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
