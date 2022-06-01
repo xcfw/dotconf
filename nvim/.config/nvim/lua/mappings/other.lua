@@ -47,7 +47,7 @@ nmap("<leader>m", [[ZQ]])
 -- keep the same prefix as the git sign
 -- See git-sign keymap in lua/plugins/config/gitsign_cfg.lua
 nmap("<leader>cc", ":Git commit -sS<CR>")
-nmap("<leader>gp", ":Git! pu", { silent = false })
+nmap("<leader>gp", ":Git pu", { silent = false })
 nmap(";gg", [[<CMD>Git<CR>]])
 nmap(";gc", [[<CMD>GlogS<CR>]])
 nmap(";gb", [[<CMD>Git blame --no-line-porcelain<CR>]])

@@ -34,33 +34,6 @@ l2
 r2
 
 # Left window history (oldest to newest):
-d/home/xurr/.dotconf/.bare
-	branches
-1
-d/home/xurr/.dotconf
-	.bare
-1
-d/home/xurr/.dotconf/.bare
-	packed-refs
-11
-d/home/xurr/.dotconf
-	.bare
-1
-d/home/xurr/.dotconf/.bare
-	packed-refs
-11
-d/home/xurr/.dotconf
-	macos
-2
-d/home/xurr/.dotconf/macos
-	.tmux.conf.local
-6
-d/home/xurr/.dotconf
-	wsl
-3
-d/home/xurr/.dotconf/wsl
-	.config
-1
 d/home/xurr/.dotconf/wsl/.config
 	bpytop
 2
@@ -334,75 +307,36 @@ dev
 d/home/xurr/.dotconf
 	wsl
 3
+d/home/xurr/.dotconf/wsl
+	git
+4
+d/home/xurr/.dotconf/wsl/git
+	..
+0
+d/home/xurr/.dotconf/wsl
+	git
+4
+d/home/xurr/.dotconf/wsl/git
+	git-clone-bare-worktree.sh~Stashed changes
+3
+d/home/xurr/.dotconf/wsl
+	tmux
+7
+d/home/xurr/.dotconf/wsl/tmux
+	.tmux.conf.local
+2
+d/home/xurr/.dotconf/wsl
+	tmux
+7
+d/home/xurr/.dotconf
+	macos
+2
+d/home/xurr/.dotconf/macos
+	..
+0
 d
 
 # Right window history (oldest to newest):
-D/home/xurr/tools/dotconf/.config
-	nvim
-3
-D/home/xurr/tools/dotconf
-	.config
-1
-D/home/xurr/tools
-	dotconf
-4
-D/home/xurr
-	tools
-19
-D/home
-	xurr
-2
-D/home/xurr
-	<<<<<<< Updated upstream
-0
-D/home/xurr/dev
-	powr
-10
-D/home/xurr/dev/powr
-	deployment
-11
-D/home/xurr/dev/powr/deployment
-	label_shortcut_story.js
-4
-D/home/xurr/dev/powr
-	legacy
-13
-D/home/xurr/dev/powr/legacy
-	deployment
-1
-D/home/xurr/dev/powr/legacy/deployment
-	heroku_create_app.sh
-5
-D/home/xurr/dev/powr/legacy
-	deployment
-1
-D/home/xurr/dev/powr
-	legacy
-13
-D/home/xurr/dev
-	powr
-11
-D/home/xurr
-	tools
-20
-D/home/xurr/tools
-	dotconf
-5
-D/home/xurr/tools/dotconf
-	.config
-1
-D/home/xurr/tools/dotconf/.config
-	vifm
-4
-D/home/xurr/tools/dotconf/.config/vifm
-	colors
-1
-D/home/xurr/tools/dotconf/.config/vifm/colors
-	..
-0
-D/home/xurr/tools/dotconf/.config/vifm
-	colors
-1
 D/home/xurr/tools/dotconf/.config
 	bpytop
 2
@@ -637,6 +571,72 @@ D/home/xurr/dev/powr/db
 D/home/xurr/dev/powr/db/temp
 	tmpfile.sql.gz
 1
+D/home/xurr/dev/powr/db
+	temp
+3
+D/home/xurr/dev/powr
+	db
+9
+D/home/xurr/dev
+	powr
+11
+D/home/xurr
+	dev
+17
+D/home/xurr/dev
+	powr
+11
+D/home/xurr/dev/powr
+	.husky
+4
+D/home/xurr/dev/powr/.husky
+	total_rb_errors
+2
+D/home/xurr/dev/powr/.husky/total_rb_errors
+	errors.json
+1
+D/home/xurr/dev/powr/.husky
+	total_rb_errors
+2
+D/home/xurr/dev/powr
+	.github
+2
+D/home/xurr/dev/powr/.github
+	workflows
+1
+D/home/xurr/dev/powr/.github/workflows
+	.github
+1
+D/home/xurr/dev/powr/.github/workflows/.github
+	workflows
+1
+D/home/xurr/dev/powr/.github/workflows/.github/workflows
+	..
+0
+D/home/xurr/dev/powr/.github/workflows/.github
+	workflows
+1
+D/home/xurr/dev/powr/.github/workflows
+	assets.ghcr.yml
+1
+D/home/xurr/dev/powr/.github
+	workflows
+1
+D/home/xurr/dev/powr
+	.github
+2
+D/home/xurr/dev
+	powr
+12
+D/home/xurr
+	.dotconf
+9
+D/home/xurr/.dotconf
+	wsl
+3
+D/home/xurr/.dotconf/wsl
+	README.md
+14
 D
 
 # Command line history (oldest to newest):
@@ -735,8 +735,7 @@ pwin
 # Local filter history (oldest to newest):
 
 # Registers:
-""/home/xurr/.local/share/vifm/Trash/002_.gitconfig
-""/home/xurr/.local/share/vifm/Trash/001_.config
+""/home/xurr/.local/share/vifm/Trash/001_.github
 
 # Directory stack (oldest to newest):
 
@@ -873,6 +872,8 @@ t/home/xurr/.local/share/vifm/Trash/001_.tmux.conf.local
 	/home/xurr/tools/dotconf/.tmux.conf.local
 t/home/xurr/.local/share/vifm/Trash/001_.zshrc
 	/home/xurr/tools/dotconf/.zshrc
+t/home/xurr/.local/share/vifm/Trash/001_.github
+	/home/xurr/dev/powr/.github/workflows/.github
 
 # State:
 f

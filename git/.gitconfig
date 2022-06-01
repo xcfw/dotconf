@@ -6,9 +6,9 @@
 	autocrlf = false
 [credential "https://gitlab.com"]
 	email = ilmurat@powr.io
+	nickname = iliderya
 [credential "https://github.com"]
 	email = dr@gorsvet.kz
+	helper = /mnt/c/Program\\ Files/Git/mingw64/bin/git-credential-manager-core.exe
 [alias]
 	wcl = "!sh $HOME/tools/git-clone-bare-worktree.sh"
-[credential]
-	helper = /mnt/c/Program\\ Files/Git/mingw64/bin/git-credential-manager-core.exe
