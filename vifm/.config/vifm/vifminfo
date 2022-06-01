@@ -25,7 +25,7 @@
 # Bookmarks:
 
 # TUI:
-ar
+al
 q0
 v2
 ov
@@ -34,81 +34,6 @@ l2
 r2
 
 # Left window history (oldest to newest):
-d/home/xurr/.dotconf/wsl/.config
-	bpytop
-2
-d/home/xurr/.dotconf/wsl
-	.config
-1
-d/home/xurr/.dotconf
-	wsl
-3
-d/home/xurr/.dotconf/wsl
-	alacritty
-2
-d/home/xurr/.dotconf/wsl/alacritty
-	..
-0
-d/home/xurr/.dotconf/wsl
-	alacritty
-2
-d/home/xurr/.dotconf/wsl/alacritty
-	.config
-1
-d/home/xurr/.dotconf/wsl/alacritty/.config
-	alacritty
-1
-d/home/xurr/.dotconf/wsl/alacritty/.config/alacritty
-	alacritty.yml
-1
-d/home/xurr/.dotconf/wsl/alacritty/.config
-	alacritty
-1
-d/home/xurr/.dotconf/wsl/alacritty
-	.config
-1
-d/home/xurr/.dotconf/wsl
-	bpytop
-3
-d/home/xurr/.dotconf/wsl/bpytop
-	.config
-1
-d/home/xurr/.dotconf/wsl/bpytop/.config
-	bpytop
-1
-d/home/xurr/.dotconf/wsl/bpytop/.config/bpytop
-	bpytop.conf
-1
-d/home/xurr/.dotconf/wsl/bpytop/.config
-	bpytop
-1
-d/home/xurr/.dotconf/wsl/bpytop
-	.config
-1
-d/home/xurr/.dotconf/wsl
-	kitty
-5
-d/home/xurr/.dotconf/wsl/kitty
-	..
-0
-d/home/xurr/.dotconf/wsl
-	kitty
-5
-d/home/xurr/.dotconf/wsl/kitty
-	.config
-1
-d/home/xurr/.dotconf/wsl/kitty/.config
-	kitty
-1
-d/home/xurr/.dotconf/wsl/kitty/.config/kitty
-	..
-0
-d/home/xurr/.dotconf/wsl/kitty/.config
-	kitty
-1
-d/home/xurr/.dotconf/wsl/kitty
-	.config
-1
 d/home/xurr/.dotconf/wsl
 	nvim
 6
@@ -334,18 +259,83 @@ d/home/xurr/.dotconf
 d/home/xurr/.dotconf/macos
 	..
 0
-d
+d/bin
+	nvim
+53
+d/
+	home
+6
+d/home
+	xurr
+2
+d/home/xurr
+	tools
+29
+d/home/xurr/tools
+	..
+0
+d/home/xurr
+	.dotconf
+7
+d/home/xurr/.dotconf
+	wsl
+3
+d/home/xurr/.dotconf/wsl
+	tmux
+8
+d/home/xurr/.dotconf
+	wsl
+3
+d/home/xurr/.dotconf/wsl
+	vifm
+9
+d/home/xurr/.dotconf/wsl/vifm
+	.config
+1
+d/home/xurr/.dotconf/wsl/vifm/.config
+	vifm
+1
+d/home/xurr/.dotconf/wsl/vifm/.config/vifm
+	vifm-help.txt
+3
+d/home/xurr/.dotconf/wsl/vifm/.config
+	vifm
+1
+d/home/xurr/.dotconf/wsl/vifm/.config/vifm
+	vifm-help.txt
+3
+d/home/xurr/.dotconf/wsl/vifm/.config
+	vifm
+1
+d/home/xurr/.dotconf/wsl/vifm
+	.config
+1
+d/home/xurr/.dotconf/wsl
+	lf
+6
+d/home/xurr/.dotconf/wsl/lf
+	.config
+1
+d/home/xurr/.dotconf/wsl/lf/.config
+	lf
+1
+d/home/xurr/.dotconf/wsl/lf/.config/lf
+	icons
+2
+d/home/xurr/.dotconf/wsl
+	lf
+6
+d/home/xurr/.dotconf/wsl/lf
+	.config
+1
+d/home/xurr/.dotconf/wsl/lf/.config
+	lf
+1
+d/home/xurr/.dotconf/wsl/lf/.config/lf
+	icons
+2
 
 # Right window history (oldest to newest):
-D/home/xurr/tools/dotconf/.config
-	bpytop
-2
-D/home/xurr/tools/dotconf/.config/bpytop
-	bpytop.conf
-1
-D/home/xurr/tools/dotconf/.config
-	alacritty
-1
 D/home/xurr/tools/dotconf/.config/alacritty
 	..
 0
@@ -637,7 +627,15 @@ D/home/xurr/.dotconf
 D/home/xurr/.dotconf/macos
 	.config
 1
-D
+D/home/xurr/.dotconf
+	macos
+2
+D/home/xurr
+	.dotconf
+9
+D/home/xurr/.dotconf/wsl
+	README.md
+15
 
 # Command line history (oldest to newest):
 :!curl https://raw.githubusercontent.com/vifm/vifm-colors/master/palenight.vifm
@@ -712,6 +710,7 @@ D
 /wsl
 /ws
 /doom
+/nvim
 
 # Prompt history (oldest to newest):
 packages
