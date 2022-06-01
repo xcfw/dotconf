@@ -52,7 +52,7 @@ local on_attach = function(client, bufnr)
 
   -- Set some keybinds conditional on server capabilities
   if client.server_capabilities.document_formatting then
-    buf_set_keymap("n", "gf", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
+    buf_set_keymap("n", "gf", "<cmd>lua vim.lsp.buf.format()<CR>", opts)
   elseif client.server_capabilities.document_range_formatting then
     buf_set_keymap("x", "gf", "<cmd>lua vim.lsp.buf.range_formatting()<CR>", opts)
   end
@@ -128,6 +128,7 @@ if installer.settings then
     "ruby",
     "dockerls",
     "yamlls",
+    "bashls",
   }
 
   for _, lang in pairs(ensure_installed_server) do
@@ -166,9 +167,9 @@ if installer.settings then
       -- Wrapping the "default" function like this is important.
       -- this prevents diagnostics when filetype is helm
       opts.on_attach = function(client, bufnr)
-      if vim.bo[bufnr].buftype ~= "" or vim.bo[bufnr].filetype == "helm" then
-        vim.lsp.diagnostic.disable()
-      end
+        if vim.bo[bufnr].buftype ~= "" or vim.bo[bufnr].filetype == "helm" then
+          vim.lsp.diagnostic.disable()
+        end
       end
     end
 

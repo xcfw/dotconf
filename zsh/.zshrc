@@ -56,6 +56,7 @@ alias tu='tmux -2'
 alias op=~/dev/powr
 alias sz='source ~/.zshrc'
 alias l='ls -lahtr'
+alias lss='ls -lahSr'
 alias v='nvim'
 alias vz="nvim ~/.zshrc && source ~/.zshrc"
 alias vvs="v ~/.config/nvim/init.lua"

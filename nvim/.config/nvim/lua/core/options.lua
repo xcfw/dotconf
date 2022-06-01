@@ -10,6 +10,10 @@ opt.fileencoding = "utf-8"
 opt.number = true
 opt.rnu = true
 
+opt.swapfile = false
+opt.joinspaces = false
+opt.laststatus = 2
+
 -- highlight the current line
 opt.cursorline = true
 
@@ -107,7 +111,7 @@ opt.formatoptions = "qj"
 opt.hidden = true
 
 -- conceal the text
-opt.conceallevel = 2
+opt.conceallevel = 0
 
 -- show hiding character at cursor line
 opt.concealcursor = ""

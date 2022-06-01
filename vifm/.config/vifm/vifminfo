@@ -344,12 +344,6 @@ D/home/xurr/tools/dotconf/.config/bpytop
 	bpytop.conf
 1
 D/home/xurr/tools/dotconf/.config
-	bpytop
-2
-D/home/xurr/tools/dotconf/.config/bpytop
-	bpytop.conf
-1
-D/home/xurr/tools/dotconf/.config
 	alacritty
 1
 D/home/xurr/tools/dotconf/.config/alacritty
@@ -637,6 +631,12 @@ D/home/xurr/.dotconf
 D/home/xurr/.dotconf/wsl
 	README.md
 14
+D/home/xurr/.dotconf
+	macos
+2
+D/home/xurr/.dotconf/macos
+	.config
+1
 D
 
 # Command line history (oldest to newest):
