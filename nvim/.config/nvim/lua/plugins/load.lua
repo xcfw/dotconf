@@ -633,16 +633,10 @@ local coding_enhance = {
 
   -- use `gcc` `gbc` to comment
   {
-    "numToStr/Comment.nvim",
-    config = function()
-      require("Comment").setup()
-    end,
-    keys = {
-      { "n", "gcc" },
-      { "n", "gbc" },
-      { "v", "gc" },
-      { "v", "gb" },
-    },
+    "b3nj5m1n/kommentary",
+      vim.api.nvim_set_keymap("n", "gcc", "<Plug>kommentary_line_default", {}),
+      vim.api.nvim_set_keymap("n", "gc", "<Plug>kommentary_motion_default", {}),
+      vim.api.nvim_set_keymap("v", "gc", "<Plug>kommentary_visual_default<C-c>", {})
   },
 
   -- find definition, reference

@@ -84,7 +84,7 @@ alias cdn="cd ~/dev/next/"
 alias cdt="cd ~/tools"
 alias cdc="cd ~/dev/docs"
 alias cdv="cd ~/.dotconf/wsl/"
-alias d="cd ~/dev && cd"
+d(){ cd ~/dev/"$@"; }
 
 # yarn paths
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
@@ -95,3 +95,9 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 #new gke auth
 USE_GKE_GCLOUD_AUTH_PLUGIN=True
 alias duu='du -h -d 1 .'
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/ranger/dev/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ranger/dev/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/ranger/dev/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ranger/dev/google-cloud-sdk/completion.zsh.inc'; fi
