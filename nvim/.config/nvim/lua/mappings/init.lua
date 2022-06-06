@@ -36,7 +36,7 @@ xmap(">", ">gv", d("Decrease indent"))
 
 -- create tab like window
 nmap("<S-Tab>", ":bprevious<CR>", d("Goto previous tab"))
-nmap("<leader><Tab>", ":bnext<CR>", d("Goto next tab"))
+nmap("<Tab>", ":bnext<CR>", d("Goto next tab"))
 nmap("<C-n>", ":tabnext<CR>", d("Next tab"))
 nmap("<C-q>", ":tabclose<CR>", d("Close a tab"))
 
