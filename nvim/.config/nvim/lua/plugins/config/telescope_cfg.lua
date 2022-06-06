@@ -39,19 +39,7 @@ telescope.setup({
       preview_cutoff = 120,
     },
     file_sorter = require("telescope.sorters").get_fuzzy_file,
-    file_ignore_patterns = {
-        ".git/",
-        ".bare/",
-        ".cache",
-        "%.o",
-        "%.a",
-        "%.out",
-        "%.class",
-        "%.pdf",
-        "%.mkv",
-        "%.mp4",
-        "%.zip"
-    },
+    file_ignore_patterns = {".git/", ".cache", "%.o", "%.a", "%.out", "%.class", "%.pdf", "%.mkv", "%.mp4", "%.zip", ".bare/"},
     generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
     path_display = { "relative" },
     winblend = 0,
@@ -75,4 +63,4 @@ telescope.setup({
       -- the default case_mode is "smart_case"
     },
   },
-k)
+})
