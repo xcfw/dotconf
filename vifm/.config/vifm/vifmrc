@@ -398,6 +398,9 @@ set vifminfo=dhistory,chistory,state,tui,shistory,
 
 " Sample mappings
 
+" quit vifm as nvim
+nnoremap ;; ZZ
+
 " Start shell in current directory
 nnoremap s :shell<cr>
 

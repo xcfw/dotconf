@@ -34,12 +34,6 @@ l2
 r2
 
 # Left window history (oldest to newest):
-d/home/xurr/.dotconf/wsl/vifm/.config
-	vifm
-1
-d/home/xurr/.dotconf/wsl/vifm
-	.config
-1
 d/home/xurr/.dotconf/wsl
 	.config
 1
@@ -334,14 +328,14 @@ d/home/xurr/.dotconf/wsl/vifm
 d/home/xurr/.dotconf/wsl
 	tmux
 8
+d/home/xurr/dev/powr
+	.git
+1
+d/home/xurr/.dotconf/wsl
+	nvim
+7
 
 # Right window history (oldest to newest):
-D/home/xurr/tools/dotconf/.config/alacritty
-	..
-0
-D/home/xurr/tools/dotconf/.config
-	alacritty
-1
 D/home/xurr/tools/dotconf/.config/alacritty
 	..
 0
@@ -633,6 +627,12 @@ D/home/xurr/.dotconf
 D/home/xurr
 	.dotconf
 9
+D/home/xurr/.dotconf/wsl
+	README.md
+15
+D/home/xurr/dev/powr
+	.github
+2
 D/home/xurr/.dotconf/wsl
 	README.md
 15
