@@ -34,42 +34,6 @@ l2
 r2
 
 # Left window history (oldest to newest):
-d/home/xurr/.dotconf/wsl
-	nvim
-6
-d/home/xurr/.dotconf/wsl/nvim
-	.config
-1
-d/home/xurr/.dotconf/wsl/nvim/.config
-	nvim
-1
-d/home/xurr/.dotconf/wsl/nvim/.config/nvim
-	lua
-1
-d/home/xurr/.dotconf/wsl/nvim/.config
-	nvim
-1
-d/home/xurr/.dotconf/wsl/nvim
-	.config
-1
-d/home/xurr/.dotconf/wsl
-	tmux
-7
-d/home/xurr/.dotconf/wsl/tmux
-	..
-0
-d/home/xurr/.dotconf/wsl
-	vifm
-9
-d/home/xurr/.dotconf/wsl/vifm
-	.config
-1
-d/home/xurr/.dotconf/wsl/vifm/.config
-	vifm
-1
-d/home/xurr/.dotconf/wsl/vifm/.config/vifm
-	colors
-1
 d/home/xurr/.dotconf/wsl/vifm/.config
 	vifm
 1
@@ -334,6 +298,42 @@ d/home/xurr/.dotconf/wsl/lf/.config
 d/home/xurr/.dotconf/wsl/lf/.config/lf
 	icons
 2
+d/home/xurr/.dotconf/wsl
+	kitty
+5
+d/home/xurr/.dotconf
+	wsl
+3
+d/home/xurr/.dotconf/wsl
+	vifm
+9
+d/home/xurr/.dotconf/wsl/vifm
+	.config
+1
+d/home/xurr/.dotconf/wsl/vifm/.config
+	vifm
+1
+d/home/xurr/.dotconf/wsl/vifm/.config/vifm
+	colors
+1
+d/home/xurr/.dotconf/wsl/vifm/.config/vifm/colors
+	..
+0
+d/home/xurr/.dotconf/wsl/vifm/.config/vifm
+	colors
+1
+d/home/xurr/.dotconf/wsl/vifm/.config/vifm/colors
+	solarized-dark.vifm
+7
+d/home/xurr/.dotconf/wsl
+	vifm
+9
+d/home/xurr/.dotconf/wsl/vifm
+	.config
+1
+d/home/xurr/.dotconf/wsl
+	tmux
+8
 
 # Right window history (oldest to newest):
 D/home/xurr/tools/dotconf/.config/alacritty
@@ -686,6 +686,7 @@ D/home/xurr/.dotconf/wsl
 :mkdir -p {zsh, nvim, alacritty, kitty, bpytop, vifm, tmux, git}
 :!mkdir -p alacritty/.config/alacritty bpytop/.config/bpytop kitty/.config/kitty nvim/.config/nvim vifm/.config/vifm 
 :mkdir win_urtw_layout
+:!wget -P colors https://raw.githubusercontent.com/vifm/vifm-colors/master/solarized-dark.vifm
 
 # Search history (oldest to newest):
 /rev
