@@ -82,8 +82,8 @@ alias vdd="v ~/dev/docs/docs/new.md"
 alias cdp="cd ~/dev/powr"
 alias cdn="cd ~/dev/next/"
 alias cdt="cd ~/tools"
-alias cdc="cd ~/dev/docs"
-alias cdv="cd ~/.dotconf/wsl/"
+alias cdv="cd ~/dev/docs"
+alias cdc="cd ~/.dotconf/wsl/"
 d(){ cd ~/dev/"$@"; }
 
 # yarn paths
