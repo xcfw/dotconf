@@ -10,6 +10,16 @@
 -- ]]
 
 local autoload = {
+  -- deserialize code to generate text object for highlight and other enhancement
+  {
+    "nvim-treesitter/nvim-treesitter",
+    run = ":TSUpdate",
+    config = function()
+      require("plugins").load_cfg("treesitter_cfg")
+    end,
+    ft = vim.g.enable_treesitter_ft,
+  },
+
   -- speed up neovim!
   {
     "nathom/filetype.nvim",
@@ -516,16 +526,6 @@ local colorscheme = {
 }
 
 local coding_enhance = {
-  -- deserialize code to generate text object for highlight and other enhancement
-  {
-    "nvim-treesitter/nvim-treesitter",
-    run = ":TSUpdate",
-    config = function()
-      require("plugins").load_cfg("treesitter_cfg")
-    end,
-    ft = vim.g.enable_treesitter_ft,
-  },
-
   {
     "nvim-telescope/telescope-frecency.nvim",
     config = function()

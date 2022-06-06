@@ -92,7 +92,7 @@ opt.colorcolumn = "100"
 
 -- screen will not redraw when exec marcro, register and faster in general
 opt.lazyredraw = true
-opt.redrawtime=20000
+opt.redrawtime=5000
 opt.synmaxcol=180
 opt.re=1
 

@@ -25,7 +25,7 @@
 # Bookmarks:
 
 # TUI:
-al
+ar
 q0
 v2
 ov
@@ -34,33 +34,6 @@ l2
 r2
 
 # Left window history (oldest to newest):
-d/home/xurr/.dotconf/wsl
-	.config
-1
-d/home/xurr/.dotconf/wsl/.config
-	bpytop
-2
-d/home/xurr/.dotconf/wsl
-	.config
-1
-d/home/xurr/.dotconf/wsl/.config
-	vifm
-5
-d/home/xurr/.dotconf/wsl
-	git
-3
-d/home/xurr/.dotconf/wsl/git
-	<<<<<<< Updated upstream
-0
-d/home/xurr/.dotconf/wsl
-	zsh
-9
-d/home/xurr/.dotconf/wsl/zsh
-	.p10k.zsh
-1
-d/home/xurr/.dotconf/wsl
-	tmux
-6
 d/home/xurr/.dotconf/wsl/tmux
 	.tmux.conf
 1
@@ -334,50 +307,35 @@ d/home/xurr/dev/powr
 d/home/xurr/.dotconf/wsl
 	nvim
 7
+d/home/xurr/dev/powr
+	config
+9
+d/home/xurr/dev/powr/config
+	credentials
+1
+d/home/xurr/dev/powr/config/credentials
+	test.yml.enc
+4
+d/home/xurr/dev/powr/config
+	environments
+2
+d/home/xurr/dev/powr/config/environments
+	staging.rb
+5
+d/home/xurr/dev/powr/config
+	initializers
+3
+d/home/xurr/dev/powr/config/initializers
+	..
+0
+d/home/xurr/dev/powr/config
+	..
+0
+d/home/xurr/dev/powr
+	..
+0
 
 # Right window history (oldest to newest):
-D/home/xurr/tools/dotconf/.config/alacritty
-	..
-0
-D/home/xurr/tools/dotconf/.config
-	bpytop
-2
-D/home/xurr/tools/dotconf
-	.config
-1
-D/home/xurr/tools/dotconf/.config
-	..
-0
-D/home/xurr/tools/dotconf
-	.gitconfig
-0
-D/home/xurr/tools
-	dotconf
-5
-D/home/xurr/tools/dotconf
-	<<<<<<< Updated upstream
-0
-D/home/xurr/tools/dotconf/git
-	git-clone-bare-worktree.sh
-1
-D/home/xurr/tools/dotconf
-	alacritty
-1
-D/home/xurr/tools/dotconf/.config
-	nvim
-3
-D/home/xurr/tools/dotconf/.config/nvim
-	init.vim
-2
-D/home/xurr/tools/dotconf/.config
-	nvim
-3
-D/home/xurr/tools/dotconf/.config/nvim
-	..
-0
-D/home/xurr/tools/dotconf/.config
-	nvim2
-4
 D/home/xurr/tools/dotconf/.config/nvim2
 	README.md
 9
@@ -636,6 +594,48 @@ D/home/xurr/dev/powr
 D/home/xurr/.dotconf/wsl
 	README.md
 15
+D/home/xurr/dev/powr
+	.github
+2
+D/home/xurr/dev
+	next
+11
+D/home/xurr/dev/next
+	..
+0
+D/home/xurr/dev
+	glpowr
+10
+D/home/xurr/dev/glpowr
+	config
+7
+D/home/xurr/dev/glpowr/config
+	environments
+2
+D/home/xurr/dev/glpowr/config/environments
+	..
+0
+D/home/xurr/dev/glpowr/config
+	environments
+2
+D/home/xurr/dev/glpowr/config/environments
+	..
+0
+D/home/xurr/dev/glpowr/config
+	initializers
+3
+D/home/xurr/dev/glpowr/config/initializers
+	..
+0
+D/home/xurr/dev/glpowr/config
+	initializers
+3
+D/home/xurr/dev/glpowr
+	..
+0
+D/home/xurr/dev/powr
+	test
+4
 
 # Command line history (oldest to newest):
 :!curl https://raw.githubusercontent.com/vifm/vifm-colors/master/palenight.vifm
@@ -687,6 +687,8 @@ D/home/xurr/.dotconf/wsl
 :!mkdir -p alacritty/.config/alacritty bpytop/.config/bpytop kitty/.config/kitty nvim/.config/nvim vifm/.config/vifm 
 :mkdir win_urtw_layout
 :!wget -P colors https://raw.githubusercontent.com/vifm/vifm-colors/master/solarized-dark.vifm
+:compare
+:diff
 
 # Search history (oldest to newest):
 /rev
@@ -712,6 +714,8 @@ D/home/xurr/.dotconf/wsl
 /ws
 /doom
 /nvim
+/sec
+/resell
 
 # Prompt history (oldest to newest):
 packages
