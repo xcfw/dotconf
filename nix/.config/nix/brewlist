@@ -1,0 +1,28 @@
+asdf autoconf automake bdw-gc ca-certificates cmake coreutils fzf gdbm gettext git gmp gnupg gnutls guile heroku heroku-node lf libassuan libevent libffi libgcrypt libgpg-error libidn2 libksba libnghttp2 libtasn1 libtermkey libtool libunistring libusb libuv libyaml lua luajit-openresty luarocks luv m4 make mpdecimal msgpack ncurses neovim nettle npth nvm openssl@1.1 p11-kit pcre pcre2 pinentry pkg-config python@3.9 readline ripgrep sqlite stow tmux tree-sitter unbound unibilium unixodbc utf8proc vifm xz zlib zsh clipy discord docker eloston-chromium firefox-developer-edition font-fira-code-nerd-font font-fira-mono-nerd-font font-iosevka-nerd-font git-credential-manager-core google-cloud-sdk kitty slack
+
+
+==> Formulae
+asdf                    lf                      luajit-openresty        pkg-config
+autoconf                libassuan               luarocks                python@3.9
+automake                libevent                luv                     readline
+bdw-gc                  libffi                  m4                      ripgrep
+ca-certificates         libgcrypt               make                    sqlite
+cmake                   libgpg-error            mpdecimal               stow
+coreutils               libidn2                 msgpack                 tmux
+fzf                     libksba                 ncurses                 tree-sitter
+gdbm                    libnghttp2              neovim                  unbound
+gettext                 libtasn1                nettle                  unibilium
+git                     libtermkey              npth                    unixodbc
+gmp                     libtool                 nvm                     utf8proc
+gnupg                   libunistring            openssl@1.1             vifm
+gnutls                  libusb                  p11-kit                 xz
+guile                   libuv                   pcre                    zlib
+heroku                  libyaml                 pcre2                   zsh
+heroku-node             lua                     pinentry
+
+==> Casks
+clipy                           firefox-developer-edition       git-credential-manager-core
+discord                         font-fira-code-nerd-font        google-cloud-sdk
+docker                          font-fira-mono-nerd-font        kitty
+eloston-chromium                font-iosevka-nerd-font          slack
+

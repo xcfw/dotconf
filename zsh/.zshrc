@@ -26,8 +26,6 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  gh
-  asdf
   docker
   fzf
   gcloud
@@ -59,8 +57,9 @@ alias sz='source ~/.zshrc'
 alias l='ls -lahtr'
 alias lss='ls -lahSr'
 alias v='nvim'
-alias vz="nvim ~/.zshrc && source ~/.zshrc"
-alias vvs="v ~/.config/nvim/init.lua"
+#alias vim='nvim'
+alias vz="vim ~/.zshrc && source ~/.zshrc"
+alias vvs="vim ~/.config/nvim/init.lua"
 alias dc="docker-compose"
 alias dcb="dc build"
 alias dcup="dc up --remove-orphans"
@@ -84,7 +83,7 @@ alias cdp="cd ~/dev/powr"
 alias cdn="cd ~/dev/next/"
 alias cdt="cd ~/tools"
 alias cdv="cd ~/dev/docs"
-alias cdc="cd ~/.dotconf/wsl/"
+alias cdc="cd ~/.dotconf/"
 d(){ cd ~/dev/"$@"; }
 
 # yarn paths
@@ -98,7 +97,10 @@ USE_GKE_GCLOUD_AUTH_PLUGIN=True
 alias duu='du -h -d 1 .'
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/ranger/dev/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ranger/dev/google-cloud-sdk/path.zsh.inc'; fi
+# if [ -f '/Users/ranger/dev/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ranger/dev/google-cloud-sdk/path.zsh.inc'; fi
 
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/ranger/dev/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ranger/dev/google-cloud-sdk/completion.zsh.inc'; fi
+# # The next line enables shell command completion for gcloud.
+# if [ -f '/Users/ranger/dev/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ranger/dev/google-cloud-sdk/completion.zsh.inc'; fi
+
+# # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+# export PATH="$PATH:$HOME/.rvm/bin"

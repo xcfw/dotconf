@@ -2,7 +2,7 @@ wsl:
 	stow -t ~ alacritty/ bpytop/ git/ kitty/ nvim/ tmux/ vifm/ zsh/ firefox/ lf/
 
 mac:
-	stow -t ~ alacritty/ bpytop/ kitty/ nvim/ tmux/ vifm/ zsh/ lf/
+	stow alacritty/ bpytop/ kitty/ nvim/ tmux/ vifm/ zsh/ lf/
 
 SHELL := /bin/zsh
 install:
