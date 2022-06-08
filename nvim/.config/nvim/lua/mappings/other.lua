@@ -8,7 +8,7 @@ map("v", "<leader>e", ":EasyAlign<CR>")
 nmap(";d", ":NvimTreeToggle<CR>")
 
 -- yank file path
-map("n", "yu", [[vim.api.nvim_buf_get_name(0)]])
+map("n", "yf", [[:let @* = expand("%:p")<CR>]])
 
 -- fterm
 nmap("<C-\\>", [[:ToggleTerm direction=float<CR>]])

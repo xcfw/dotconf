@@ -106,7 +106,7 @@ local function insert_middle()
         end
         return path
       end,
-      highlight = "GalaxyMidText",
+      highlight = { colors.fg, colors.bg },
     },
   }
   gls.mid[3] = { -- ~ separator
@@ -126,7 +126,7 @@ local function insert_middle()
   gls.mid[4] = { -- file size
     FileSize = {
       provider = fileinfo.get_file_size,
-      highlight = "GalaxyMidText",
+      highlight = { colors.fg, colors.bg },
     },
   }
 
@@ -143,7 +143,7 @@ local function insert_middle()
           return ' '
         end
       end,
-      highlight = "GalaxyEditIcon",
+      highlight = { colors.fg, colors.bg },
     },
   }
 end
@@ -394,12 +394,12 @@ insert_left({
   },
 })
 -- left information panel end}
---
--- middle insformation panel {
+
+-- middle insformation panel start {
 
 insert_middle()
 
--- }
+-- middle insformation panel end}
 
 insert_right({
   Start = {
