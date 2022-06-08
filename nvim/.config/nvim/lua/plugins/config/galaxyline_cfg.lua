@@ -7,6 +7,7 @@ vim.g.galaxyline_loaded = 1
 local gl = require("galaxyline")
 local gls = gl.section
 local diagnostic = require("galaxyline.provider_diagnostic")
+local fileinfo = require('galaxyline.provider_fileinfo')
 
 -- VistaPlugin = extension.vista_nearest
 
@@ -85,6 +86,66 @@ local function insert_blank_line_at_left()
       highlight = { colors.bg, colors.bg },
     },
   })
+end
+
+local function insert_middle()
+  gls.mid[1] = { -- file icon
+    FileIcon = {
+      provider = function()
+        return ' ' .. fileinfo.get_file_icon()
+      end,
+      highlight = "GalaxyFileIcon",
+    },
+  }
+  gls.mid[2] = { -- filename
+    CurrentFile = {
+      provider = function()
+        local path = vim.fn.expand('%:p')
+        if not path or path == '' then
+          path = "[No Name]"
+        end
+        return path
+      end,
+      highlight = "GalaxyMidText",
+    },
+  }
+  gls.mid[3] = { -- ~ separator
+    Tilde = {
+      provider = function()
+        local file_size = fileinfo.get_file_size()
+        if file_size and file_size ~= '' then
+          return '  ~ '
+        else -- don't show ~ because there is no size following
+          return ' ' -- for spacing edit icon
+        end
+      end,
+      highlight = "GalaxyEditIcon",
+    },
+  }
+
+  gls.mid[4] = { -- file size
+    FileSize = {
+      provider = fileinfo.get_file_size,
+      highlight = "GalaxyMidText",
+    },
+  }
+
+  gls.mid[5] = { -- modified/special icons
+    Modified = {
+      provider = function()
+        if vim.bo.readonly then
+          return ' '
+        end
+        if not vim.bo.modifiable then
+          return ' '
+        end
+        if vim.bo.modified then
+          return ' '
+        end
+      end,
+      highlight = "GalaxyEditIcon",
+    },
+  }
 end
 
 -- insert_right insert given item into galaxyline.right
@@ -308,7 +369,7 @@ insert_left({
     provider = "FileIcon",
     condition = buffer_not_empty,
     highlight = {
-      require("galaxyline.provider_fileinfo").get_file_icon_color,
+      fileinfo.get_file_icon_color,
       colors.black,
     },
   },
@@ -318,7 +379,9 @@ insert_left({
   BufferType = {
     provider = "FileName",
     condition = has_file_type,
-    highlight = { colors.fg, colors.black },
+    highlight = {
+      colors.fg, colors.black
+    },
   },
 })
 
@@ -331,6 +394,12 @@ insert_left({
   },
 })
 -- left information panel end}
+--
+-- middle insformation panel {
+
+insert_middle()
+
+-- }
 
 insert_right({
   Start = {
