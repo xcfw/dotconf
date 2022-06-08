@@ -11,9 +11,6 @@
   programs.direnv.enable = true;
   programs.direnv.nix-direnv.enable = true;
   programs.neovim.enable = true;
-  /* xdg.configFile."nvim/lua".source = mkOutOfStoreSymlink "${nixConfigDirectory}/configs/nvim/lua";
-  xdg.configFile."nvim/colors".source = mkOutOfStoreSymlink "${nixConfigDirectory}/configs/nvim/colors"; */
-  programs.neovim.extraConfig = "lua require('init')";
 
   programs.tmux.enable = true;
 
