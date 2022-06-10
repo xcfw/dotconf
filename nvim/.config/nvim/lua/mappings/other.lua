@@ -12,9 +12,9 @@ map("n", "yf", [[:let @* = expand("%:p")<CR>]])
 
 -- fterm
 nmap("<C-\\>", [[:ToggleTerm direction=float<CR>]])
-nmap("<C-s>", [[:ToggleTerm direction=horizontal<CR>]])
+nmap("<C-n>", [[:ToggleTerm direction=horizontal<CR>]])
 map("t", "<C-\\>", [[<C-\><C-n>:ToggleTerm<CR>]])
-map("t", "<C-n>", [[<C-\><C-n>]])
+map("t", "<C-n>", [[<C-\><C-n>:ToggleTerm<CR>]])
 -- This for horizontal terminal
 map("t", "<C-k>", [[<C-\><C-n><C-w>k]])
 -- This for vertical terminal
