@@ -27,4 +27,3 @@ highlight BrokenLink	cterm=none	ctermfg=174	ctermbg=None guifg=#d787d7 guibg=Non
 highlight Device	cterm=none	ctermfg=228	ctermbg=None guifg=#ffff87 guibg=None
 highlight Fifo		cterm=none	ctermfg=109	ctermbg=None guifg=#87afaf guibg=None
 highlight Socket	cterm=none	ctermfg=110	ctermbg=None guifg=#87afd7 guibg=None
-

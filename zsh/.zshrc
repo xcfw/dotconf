@@ -59,7 +59,6 @@ alias sz='source ~/.zshrc'
 alias l='ls -lahtr --color'
 alias lss='ls -lahSr --color'
 alias v='nvim'
-#alias vim='nvim'
 alias vz="nvim ~/.zshrc && source ~/.zshrc"
 alias vvs="nvim ~/.config/nvim/init.lua"
 alias dc="docker-compose"
