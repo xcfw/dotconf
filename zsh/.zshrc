@@ -25,8 +25,10 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(
+Plugins=(
+  asdf
   docker
+  make
   fzf
   gcloud
   git
@@ -39,7 +41,7 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
-
+# source $HOME/.asdf/asdf.sh
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
@@ -54,12 +56,12 @@ fi
 alias tu='tmux -2'
 alias op=~/dev/powr
 alias sz='source ~/.zshrc'
-alias l='ls -lahtr'
-alias lss='ls -lahSr'
+alias l='ls -lahtr --color'
+alias lss='ls -lahSr --color'
 alias v='nvim'
 #alias vim='nvim'
-alias vz="vim ~/.zshrc && source ~/.zshrc"
-alias vvs="vim ~/.config/nvim/init.lua"
+alias vz="nvim ~/.zshrc && source ~/.zshrc"
+alias vvs="nvim ~/.config/nvim/init.lua"
 alias dc="docker-compose"
 alias dcb="dc build"
 alias dcup="dc up --remove-orphans"
@@ -84,7 +86,17 @@ alias cdn="cd ~/dev/next/"
 alias cdt="cd ~/tools"
 alias cdv="cd ~/dev/docs"
 alias cdc="cd ~/.dotconf/"
+alias cdn="cd ~/.config/nix"
+
+# mcd is mkdir and cd in one
+mcd(){
+    mkdir -p "$1"
+    cd "$1"
+}
+
+# projects folder shortcut
 d(){ cd ~/dev/"$@"; }
+t(){ cd ~/tools/"$@"; }
 
 # yarn paths
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
@@ -104,3 +116,4 @@ alias duu='du -h -d 1 .'
 
 # # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 # export PATH="$PATH:$HOME/.rvm/bin"
+eval "$(direnv hook zsh)"

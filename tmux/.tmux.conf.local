@@ -4,7 +4,8 @@
 #         without any warranty.
 #         Copyright 2012— Gregory Pakosz (@gpakosz).
 
-#unbind  C-i
+# unbind  C-a
+# unbind  C-b
 #bind -n C-i kill-pane
 # -- navigation ----------------------------------------------------------------
 
@@ -15,6 +16,8 @@
 # then uncomment the following line to make Meta + arrow keys mapping work
 #set -ga terminal-overrides "*:kUP3=\e[1;9A,*:kDN3=\e[1;9B,*:kRIT3=\e[1;9C,*:kLFT3=\e[1;9D"
 
+bind -n End send-key C-e
+bind -n Home send-key C-a
 
 # -- windows & pane creation ---------------------------------------------------
 

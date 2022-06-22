@@ -10,8 +10,15 @@
   # https://rycee.gitlab.io/home-manager/options.html#opt-programs.direnv.enable
   programs.direnv.enable = true;
   programs.direnv.nix-direnv.enable = true;
-  programs.neovim.enable = true;
 
+  # xdg.configFile."nvim/init.lua".source = ~/.config/nvim/init.lua;
+  # xdg.configFile."nvim/init.vim".source = ~/.config/nvim/init.vim;
+  /* xdg.configFile.nvim = {
+    source = ~/.config/nvim;
+    recursive = true;
+  }; */
+
+  # programs.neovim-nightly.enable = true;
   programs.tmux.enable = true;
 
   # Htop
@@ -27,25 +34,36 @@
     vifm
     fzf
     bat
+    tree
+    ripgrep-all
     ripgrep
     bpytop
+    luajit
+    luajitPackages.lua
+    luajitPackages.luv
+    luajitPackages.luarocks-nix
+    luajitPackages.luasql-sqlite3
     cmake
-    lua
-    luarocks
+    aspell
     sqlite
     stow
     tree-sitter
+    redli
+    mosh
+    yarn
+    gnused
+    gnugrep
+    gpgme
+    gawk
+    cmake
 
     # Dev stuff
     # (agda.withPackages (p: [ p.standard-library ]))
     google-cloud-sdk
+    /* (google-cloud-sdk.withPackages (p: [ p.gke-gcloud-auth-plugin ])) */
+
     heroku
-    # haskellPackages.cabal-install
-    # haskellPackages.hoogle
-    # haskellPackages.hpack
-    # haskellPackages.implicit-hie
-    # haskellPackages.stack
-    # idris2
+    fd
     jq
     nodePackages.typescript
     nodejs

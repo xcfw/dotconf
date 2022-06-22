@@ -3,10 +3,10 @@
 
   inputs = {
     # Package sets
-    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-21.11-darwin";
+    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-22.05-darwin";
     nixpkgs-unstable.url = github:NixOS/nixpkgs/nixpkgs-unstable;
     # nixpkgs-with-patched-kitty.url = github:azuwis/nixpkgs/kitty;
-
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     # Environment/system management
     darwin.url = "github:lnl7/nix-darwin/master";
     darwin.inputs.nixpkgs.follows = "nixpkgs-unstable";
@@ -15,12 +15,13 @@
 
     # Other sources
     comma = { url = github:Shopify/comma; flake = false; };
-    
+
   };
 
   outputs = { self, darwin, nixpkgs, home-manager, ... }@inputs:
-  let 
+  let
 
+    inherit (inputs.neovim-nightly-overlay.overlay) neovim-nigthly;
     inherit (darwin.lib) darwinSystem;
     inherit (inputs.nixpkgs-unstable.lib) attrValues makeOverridable optionalAttrs singleton;
 
@@ -37,15 +38,15 @@
             purescript;
         })
       );
-    }; 
+    };
   in
   {
     # My `nix-darwin` configs
-      
+
     darwinConfigurations = rec {
       Macas-MacBook-Air = darwinSystem {
         system = "aarch64-darwin";
-        modules = attrValues self.darwinModules ++ [ 
+        modules = attrValues self.darwinModules ++ [
           # Main `nix-darwin` config
           ./configuration.nix
           # `home-manager` module
@@ -55,7 +56,7 @@
             # `home-manager` config
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.macamarila = import ./home.nix;            
+            home-manager.users.macamarila = import ./home.nix;
           }
         ];
       };
@@ -67,8 +68,7 @@
       # Overlays to add various packages into package set
         comma = final: prev: {
           comma = import inputs.comma { inherit (prev) pkgs; };
-        };  
-
+        };
       # Overlay useful on Macs with Apple Silicon
         apple-silicon = final: prev: optionalAttrs (prev.stdenv.system == "aarch64-darwin") {
           # Add access to x86 packages system is running Apple Silicon
@@ -78,15 +78,17 @@
           };
 
           # Get Apple Silicon version of `kitty`
+	  # neovim nigtly
+          inherit (inputs.neovim-nightly-overlay.aarch64-darwin) neovim-nigthly;
           # TODO: Remove when https://github.com/NixOS/nixpkgs/pull/137512 lands
           # inherit (inputs.nixpkgs-with-patched-kitty.legacyPackages.aarch64-darwin) kitty;
-        }; 
+        };
       };
 
     # My `nix-darwin` modules that are pending upstream, or patched versions waiting on upstream
     # fixes.
     darwinModules = {
-#      programs-nix-index = 
+#      programs-nix-index =
         # Additional configuration for `nix-index` to enable `command-not-found` functionality with Fish.
 #        { config, lib, pkgs, ... }:
 #
@@ -104,7 +106,7 @@
 #            '';
 #            };
 #        };
-      security-pam = 
+      security-pam =
         # Upstream PR: https://github.com/LnL7/nix-darwin/pull/228
         { config, lib, pkgs, ... }:
 

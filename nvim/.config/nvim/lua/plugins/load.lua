@@ -31,6 +31,11 @@ local autoload = {
       })
     end,
   },
+  -- github copilot
+
+  {
+    "github/copilot.vim",
+  },
 
   -- adjust the shiftwidth and expandtab settins
   {
@@ -371,14 +376,14 @@ local editor_enhance = {
   },
 
   -- split single line and join multiple lines, useful for closing bracket
-  {
+  --[[ {
     "AndrewRadev/splitjoin.vim",
     keys = {
       { "n", "gJ" },
       { "n", "gS" },
     },
   },
-
+ ]]
   -- generate line for guiding indent
   {
     "lukas-reineke/indent-blankline.nvim",
@@ -464,7 +469,7 @@ local editor_enhance = {
 
 local colorscheme = {
   -- dark green color scheme
-  {
+  --[[ {
     "Avimitin/neovim-deus",
     cond = function()
       return require("core.colors").theme == "deus"
@@ -472,7 +477,7 @@ local colorscheme = {
     config = function()
       require("core.colors").deus_setup()
     end,
-  },
+  }, ]]
 
   -- dark purple color scheme
   {

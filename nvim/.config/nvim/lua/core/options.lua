@@ -79,7 +79,7 @@ vim.cmd("set clipboard+=unnamedplus")
 -- sensible backspacing
 vim.cmd("set backspace=indent,eol,start")
 
-vim.cmd("set shortmess+=cwm")
+-- vim.cmd("set shortmess+=cwm")
 opt.inccommand = "split"
 opt.completeopt = { "menuone", "noselect", "menu" }
 opt.ttyfast = true
@@ -92,7 +92,7 @@ opt.colorcolumn = "100"
 
 -- screen will not redraw when exec marcro, register and faster in general
 opt.lazyredraw = true
-opt.redrawtime=5000
+-- opt.redrawtime=5000
 opt.synmaxcol=180
 opt.re=1
 
@@ -135,7 +135,7 @@ end
 -- nvui specific settings
 if vim.g.nvui then
   vim.opt.guifont = [[Cascadia Code:h12,FiraCode\ Nerd\ Font\ Mono:h12]]
-  vim.cmd([[NvuiCmdFontFamily FiraCode Nerd Font Mono]])
+  vim.Cmd([[NvuiCmdFontFamily FiraCode Nerd Font Mono]])
   vim.cmd([[NvuiCmdFontSize 12]])
   vim.cmd([[NvuiAnimationsEnabled 1]])
   vim.cmd([[NvuiCmdCenterXPos 0.5]])

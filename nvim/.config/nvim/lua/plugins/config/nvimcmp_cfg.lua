@@ -107,6 +107,7 @@ cmp.setup({
   },
   sources = {
     { name = "nvim_lsp", priority = 99 },
+    { name = "tmux" },
     { name = "vsnip" },
     { name = "buffer" },
     { name = "path" },
