@@ -20,6 +20,67 @@ local autoload = {
     ft = vim.g.enable_treesitter_ft,
   },
 
+  {
+    "tpope/vim-fugitive",
+    tag = 'v3.7',
+    cmd = {
+      "G",
+      "Git",
+      "Ggrep",
+      "Gdiffsplit",
+      "GBrowse",
+    },
+  },
+
+  -- Show git information in neovim
+  {
+    "lewis6991/gitsigns.nvim",
+    requires = {
+      "nvim-lua/plenary.nvim",
+    },
+    event = "BufRead",
+    config = function()
+      require("plugins").load_cfg("gitsign_cfg")
+    end,
+  },
+
+  -- Single tabpage interface for easily cycling through diffs for all modified files for any git rev.
+  {
+    "sindrets/diffview.nvim",
+    requires = "nvim-lua/plenary.nvim",
+    config = function()
+      require("diffview").setup({
+        -- see configuration in
+        -- https://github.com/sindrets/diffview.nvim#configuration
+      })
+    end,
+    cmd = {
+      "DiffviewOpen",
+      "DiffviewFileHistory",
+    },
+  },
+
+  -- Flog is a lightweight and powerful git branch viewer that integrates with fugitive.
+  {
+    "rbong/vim-flog",
+    branch = "v2",
+    -- please don't use this plugin directly, I embed it with vim-fugitive
+    -- See lua/core/commands.lua
+    opt = true,
+  },
+}
+
+local editor_enhance = {
+  {
+    "sindrets/winshift.nvim",
+    cmd = {
+      "WinShift",
+    },
+    config = function()
+      require("winshift").setup({})
+    end,
+  },
+
   -- speed up neovim!
   {
     "nathom/filetype.nvim",
@@ -109,64 +170,6 @@ local markdown_plugins = {
 
 local git_tools = {
   -- A git tool like magit in Emacs
-  {
-    "tpope/vim-fugitive",
-    cmd = {
-      "G",
-      "Git",
-      "Ggrep",
-      "Gdiffsplit",
-      "GBrowse",
-    },
-  },
-
-  -- Show git information in neovim
-  {
-    "lewis6991/gitsigns.nvim",
-    requires = {
-      "nvim-lua/plenary.nvim",
-    },
-    event = "BufRead",
-    config = function()
-      require("plugins").load_cfg("gitsign_cfg")
-    end,
-  },
-
-  -- Single tabpage interface for easily cycling through diffs for all modified files for any git rev.
-  {
-    "sindrets/diffview.nvim",
-    requires = "nvim-lua/plenary.nvim",
-    config = function()
-      require("diffview").setup({
-        -- see configuration in
-        -- https://github.com/sindrets/diffview.nvim#configuration
-      })
-    end,
-    cmd = {
-      "DiffviewOpen",
-      "DiffviewFileHistory",
-    },
-  },
-
-  -- Flog is a lightweight and powerful git branch viewer that integrates with fugitive.
-  {
-    "rbong/vim-flog",
-    -- please don't use this plugin directly, I embed it with vim-fugitive
-    -- See lua/core/commands.lua
-    opt = true,
-  },
-}
-
-local editor_enhance = {
-  {
-    "sindrets/winshift.nvim",
-    cmd = {
-      "WinShift",
-    },
-    config = function()
-      require("winshift").setup({})
-    end,
-  },
 
   {
     "akinsho/toggleterm.nvim",
@@ -531,13 +534,13 @@ local colorscheme = {
 }
 
 local coding_enhance = {
-  {
+  --[[ {
     "nvim-telescope/telescope-frecency.nvim",
     config = function()
       require"telescope".load_extension("frecency")
     end,
-    requires = {"tami5/sqlite.lua"}
-  },
+    --requires = {"tami5/sqlite.lua"}
+  }, ]]
 
   {
     "nvim-treesitter/nvim-treesitter-textobjects",

@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }:
 
 {
-  home.stateVersion = "22.05";
+  home.stateVersion = "22.11";
 
   # https://github.com/malob/nixpkgs/blob/master/home/default.nix
 
@@ -11,14 +11,60 @@
   programs.direnv.enable = true;
   programs.direnv.nix-direnv.enable = true;
 
-  # xdg.configFile."nvim/init.lua".source = ~/.config/nvim/init.lua;
-  # xdg.configFile."nvim/init.vim".source = ~/.config/nvim/init.vim;
-  /* xdg.configFile.nvim = {
-    source = ~/.config/nvim;
-    recursive = true;
-  }; */
+  /* xdg.configFile."nvim/init.lua".source = ~/.config/nvim/init.lua; */
+  /* xdg.configFile."nvim/init.vim".source = ~/.config/nvim/init.vim; */
 
-  # programs.neovim-nightly.enable = true;
+  programs.neovim = {
+    enable = true;
+
+    # read in the vim config from filesystem
+    # this enables syntaxhighlighting when editing those
+    # config = "let g:sqlite_clib_path = '${pkgs.sqlite.out}/lib/libsqlite3.dylib'";
+     extraConfig = builtins.concatStringsSep "\n" [
+      #(lib.strings.fileContents ./base.vim)
+      #(lib.strings.fileContents ./plugins.vim)
+      #(lib.strings.fileContents ./lsp.vim)
+
+      # this allows you to add lua config files
+      ''
+        lua << EOF
+        let g:sqlite_clib_path = '${pkgs.sqlite.out}/lib/libsqlite3.dylib'
+        EOF
+      ''
+    ];
+
+    # install needed binaries here
+    extraPackages = with pkgs; [
+      # used to compile tree-sitter grammar
+      tree-sitter
+
+      # installs different langauge servers for neovim-lsp
+      # have a look on the link below to figure out the ones for your languages
+      # https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md
+      nodePackages.typescript nodePackages.typescript-language-server
+      gopls
+      nodePackages.pyright
+      rust-analyzer
+    ];
+    plugins = with pkgs.vimPlugins; [
+      # you can use plugins from the pkgs
+      sqlite-lua
+      vim-which-key
+      telescope-frecency-nvim
+
+      # or you can use our function to directly fetch plugins from git
+      /* (plugin "neovim/nvim-lspconfig") */
+      /* (plugin "hrsh7th/nvim-compe") # completion */
+
+      # this installs the plugin from 'lua' branch
+      # (pluginGit "lua" "lukas-reineke/indent-blankline.nvim")
+
+      # syntax highlighting
+      # (plugin "nvim-treesitter/nvim-treesitter")
+      # (plugin "p00f/nvim-ts-rainbow") # bracket highlighting
+    ];
+  };
+
   programs.tmux.enable = true;
 
   # Htop
@@ -43,6 +89,7 @@
     luajitPackages.luv
     luajitPackages.luarocks-nix
     luajitPackages.luasql-sqlite3
+    luajitPackages.plenary-nvim
     cmake
     aspell
     sqlite
@@ -56,6 +103,10 @@
     gpgme
     gawk
     cmake
+    python2
+    python3
+    mkcert
+    nss
 
     # Dev stuff
     # (agda.withPackages (p: [ p.standard-library ]))
@@ -74,6 +125,7 @@
     # comma # run software from without installing it
     niv # easy dependency management for nix projects
     nodePackages.node2nix
+    cargo
 
   ] ++ lib.optionals stdenv.isDarwin [
     cocoapods
