@@ -13,7 +13,6 @@
 
   /* xdg.configFile."nvim/init.lua".source = ~/.config/nvim/init.lua; */
   /* xdg.configFile."nvim/init.vim".source = ~/.config/nvim/init.vim; */
-
   programs.neovim = {
     enable = true;
 
@@ -98,6 +97,7 @@
     redli
     mosh
     yarn
+    fasd
     gnused
     gnugrep
     gpgme
@@ -119,7 +119,10 @@
     nodePackages.typescript
     nodejs
     purescript
-
+    shared-mime-info
+    postgresql.lib
+    pgcli
+    imagemagick6
     # Useful nix related tools
     cachix # adding/managing alternative binary caches hosted by Cachix
     # comma # run software from without installing it

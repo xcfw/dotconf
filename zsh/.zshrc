@@ -17,7 +17,6 @@ fi
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 #nanotech,
 ZSH_THEME="powerlevel10k/powerlevel10k"
-# ZSH_THEME="nanotech"
 
 
 # Which plugins would you like to load?
@@ -25,10 +24,10 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-Plugins=(
+plugins=(
   asdf
+  fasd
   docker
-  make
   fzf
   gcloud
   git
@@ -94,8 +93,9 @@ mcd(){
 }
 
 # projects folder shortcut
-d(){ cd ~/dev/"$@"; }
-t(){ cd ~/tools/"$@"; }
+#d(){ cd ~/dev/"$@"; }
+#t(){ cd ~/tools/"$@"; }
+vn(){ nvim ~/.config/nix/"$@"; }
 
 # yarn paths
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
@@ -104,7 +104,7 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 #new gke auth
-USE_GKE_GCLOUD_AUTH_PLUGIN=True
+# USE_GKE_GCLOUD_AUTH_PLUGIN=True
 alias duu='du -h -d 1 .'
 
 # The next line updates PATH for the Google Cloud SDK.
