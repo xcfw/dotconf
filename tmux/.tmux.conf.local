@@ -348,7 +348,7 @@ set -g mode-keys vi
 # set -gu prefix2
 # unbind C-a
 unbind C-b
-unbind C-a
+# unbind C-a
 set -g prefix F5
 bind F5 send-prefix
 
