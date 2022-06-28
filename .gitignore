@@ -1,6 +1,5 @@
 # ignore packer files
 packer_compiled.lua
 nix/.config/nix/result
-vifm/.config/vifm/vifminfo
-vifm/.config/vifm/vifminfo.json
-bpytop/.config/bpytop/error.log
+vifm/.config/vifm/vifminfo*
+bpytop/.config/bpytop/error.log*

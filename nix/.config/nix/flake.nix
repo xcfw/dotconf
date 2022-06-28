@@ -156,7 +156,7 @@
                   auth       sufficient     pam_tid.so
               (Note that macOS resets this file when doing a system update. As such, sudo
               authentication with Touch ID won't work after a system update until the nix-darwin
-              configuration is reapplied.)
+              configuration is reapplied. )
             '';
           };
 

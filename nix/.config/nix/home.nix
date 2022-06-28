@@ -40,7 +40,8 @@
       # installs different langauge servers for neovim-lsp
       # have a look on the link below to figure out the ones for your languages
       # https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md
-      nodePackages.typescript nodePackages.typescript-language-server
+      nodePackages.typescript
+      nodePackages.typescript-language-server
       gopls
       nodePackages.pyright
       rust-analyzer
@@ -100,13 +101,13 @@
     fasd
     gnused
     gnugrep
-    gpgme
-    gawk
-    cmake
-    python2
+    /* gpgme */
+    /* gawk */
+    /* cmake */
+    /* python2
     python3
     mkcert
-    nss
+    nss */
 
     # Dev stuff
     # (agda.withPackages (p: [ p.standard-library ]))
