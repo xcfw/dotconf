@@ -106,9 +106,9 @@
     gnugrep
     /* gpgme */
     gawk
-    /* python2
+    python2
     python3
-    mkcert */
+    mkcert
     nss
 
     # Dev stuff
