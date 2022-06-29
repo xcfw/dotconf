@@ -103,10 +103,10 @@ local editor_enhance = {
     "tpope/vim-sleuth",
   },
 
-  -- tmux navigation
+  --[[ -- tmux navigation
   {
     "christoomey/vim-tmux-navigator",
-  },
+  }, ]]
 
   -- Fix the CursorHold performance bug
   {

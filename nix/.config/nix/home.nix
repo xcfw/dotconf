@@ -50,6 +50,9 @@
       sqlite-lua
       vim-which-key
       telescope-frecency-nvim
+      vim-tmux-navigator
+      vim-tmux-focus-events
+      vim-tmux-clipboard
 
       # or you can use our function to directly fetch plugins from git
       /* (plugin "neovim/nvim-lspconfig") */
@@ -65,6 +68,7 @@
   };
 
   programs.tmux.enable = true;
+  programs.alacritty.enable = true;
 
   # Htop
   # https://rycee.gitlab.io/home-manager/options.html#opt-programs.htop.enable
@@ -100,16 +104,15 @@
     fasd
     gnused
     gnugrep
-    gpgme
+    /* gpgme */
     gawk
-    cmake
-    python2
+    /* python2
     python3
-    mkcert
+    mkcert */
     nss
 
     # Dev stuff
-    # (agda.withPackages (p: [ p.standard-library ]))
+    /* (agda.withPackages (p: [ p.standard-library ])) */
     google-cloud-sdk
     /* (google-cloud-sdk.withPackages (p: [ p.gke-gcloud-auth-plugin ])) */
 

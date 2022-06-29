@@ -5,7 +5,7 @@
     # Package sets
     nci.url = "github:yusdacra/nix-cargo-integration";
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-22.05-darwin";
-    nixpkgs-unstable.url = github:NixOS/nixpkgs/nixpkgs-unstable;
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     # nixpkgs-with-patched-kitty.url = github:azuwis/nixpkgs/kitty;
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     # Environment/system management
