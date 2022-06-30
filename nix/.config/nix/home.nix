@@ -40,9 +40,9 @@
       # installs different langauge servers for neovim-lsp
       # have a look on the link below to figure out the ones for your languages
       # https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md
-      nodePackages.typescript nodePackages.typescript-language-server
+      /* nodePackages.typescript nodePackages.typescript-language-server */
       gopls
-      nodePackages.pyright
+      /* nodePackages.pyright */
       rust-analyzer
     ];
     plugins = with pkgs.vimPlugins; [
@@ -102,8 +102,8 @@
     mosh
     yarn
     fasd
-    gnused
-    gnugrep
+    /* gnused
+    gnugrep */
     /* gpgme */
     gawk
     python2
@@ -119,8 +119,8 @@
     heroku
     fd
     jq
-    nodePackages.typescript
-    nodejs
+    /* nodePackages.typescript
+    nodejs */
     purescript
     shared-mime-info
     postgresql.lib
@@ -130,7 +130,7 @@
     cachix # adding/managing alternative binary caches hosted by Cachix
     # comma # run software from without installing it
     niv # easy dependency management for nix projects
-    nodePackages.node2nix
+    /* nodePackages.node2nix */
     cargo
 
   ] ++ lib.optionals stdenv.isDarwin [
