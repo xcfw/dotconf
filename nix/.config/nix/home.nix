@@ -103,8 +103,8 @@
     yarn
     fasd
     /* gnused
-    gnugrep */
-    /* gpgme */
+    gnugrep
+    gpgme */
     gawk
     python2
     python3
@@ -116,6 +116,7 @@
     google-cloud-sdk
     /* (google-cloud-sdk.withPackages (p: [ p.gke-gcloud-auth-plugin ])) */
 
+    #projects deps
     heroku
     fd
     jq
@@ -126,7 +127,8 @@
     postgresql.lib
     pgcli
     imagemagick6
-    # Useful nix related tools
+
+# Useful nix related tools
     cachix # adding/managing alternative binary caches hosted by Cachix
     # comma # run software from without installing it
     niv # easy dependency management for nix projects
@@ -137,20 +139,5 @@
     cocoapods
     m-cli # useful macOS CLI commands
   ];
-
-  # Misc configuration files --------------------------------------------------------------------{{{
-
-  # https://docs.haskellstack.org/en/stable/yaml_configuration/#non-project-specific-config
-#  home.file.".stack/config.yaml".text = lib.generators.toYAML {} {
-#    templates = {
-#      scm-init = "git";
-#      params = {
-#        author-name = "Your Name"; # config.programs.git.userName;
-#        author-email = "youremail@example.com"; # config.programs.git.userEmail;
-#        github-username = "yourusername";
-#      };
-#    };
-#    nix.enable = true;
-#  };
 
 }
