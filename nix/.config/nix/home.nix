@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }:
 
 {
-  home.stateVersion = "22.11";
+  home.stateVersion = "22.05";
 
   # https://github.com/malob/nixpkgs/blob/master/home/default.nix
 
@@ -110,6 +110,7 @@
     python3
     mkcert
     nss
+    asdf-vm
 
     # Dev stuff
     /* (agda.withPackages (p: [ p.standard-library ])) */
