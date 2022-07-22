@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }:
 
 {
-  home.stateVersion = "22.05";
+  home.stateVersion = "22.11";
 
   # https://github.com/malob/nixpkgs/blob/master/home/default.nix
 
@@ -36,6 +36,15 @@
     extraPackages = with pkgs; [
       # used to compile tree-sitter grammar
       tree-sitter
+      luajit
+      luajitPackages.lua
+      luajitPackages.luv
+      luajitPackages.luarocks-nix
+      luajitPackages.luasql-sqlite3
+      luajitPackages.plenary-nvim
+      sqlite
+      tree-sitter
+      aspell
 
       # installs different langauge servers for neovim-lsp
       # have a look on the link below to figure out the ones for your languages
@@ -87,30 +96,23 @@
     ripgrep-all
     ripgrep
     bpytop
-    luajit
-    luajitPackages.lua
-    luajitPackages.luv
-    luajitPackages.luarocks-nix
-    luajitPackages.luasql-sqlite3
-    luajitPackages.plenary-nvim
     cmake
-    aspell
-    sqlite
     stow
-    tree-sitter
     redli
     mosh
     yarn
     fasd
-    /* gnused
+    gnused
     gnugrep
-    gpgme */
+    gpgme
     gawk
     python2
     python3
     mkcert
     nss
     asdf-vm
+    inetutils
+    shared-mime-info
 
     # Dev stuff
     /* (agda.withPackages (p: [ p.standard-library ])) */
@@ -121,8 +123,8 @@
     heroku
     fd
     jq
-    /* nodePackages.typescript
-    nodejs */
+    nodePackages.typescript
+    nodejs
     purescript
     shared-mime-info
     postgresql.lib

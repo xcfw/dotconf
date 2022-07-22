@@ -25,7 +25,6 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  asdf
   fasd
   docker
   fzf
@@ -116,3 +115,4 @@ alias duu='du -h -d 1 .'
 # # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 # export PATH="$PATH:$HOME/.rvm/bin"
 eval "$(direnv hook zsh)"
+export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
