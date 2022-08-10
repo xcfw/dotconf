@@ -23,6 +23,7 @@ local autoload = {
   {
     "tpope/vim-fugitive",
     tag = 'v3.7',
+    requires = {"tpope/vim-rhubarb"},
     cmd = {
       "G",
       "Git",
@@ -534,13 +535,13 @@ local colorscheme = {
 }
 
 local coding_enhance = {
-  --[[ {
+  {
     "nvim-telescope/telescope-frecency.nvim",
     config = function()
       require"telescope".load_extension("frecency")
     end,
-    --requires = {"tami5/sqlite.lua"}
-  }, ]]
+    requires = {"tami5/sqlite.lua"}
+  },
 
   {
     "nvim-treesitter/nvim-treesitter-textobjects",

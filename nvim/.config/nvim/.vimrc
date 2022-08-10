@@ -56,7 +56,6 @@ xnoremap > >gv
 nnoremap < <<
 xnoremap < <gv
 
-nnoremap ; :
 nnoremap ;w :w<CR>
 
 nnoremap <C-t>n :tabnew<CR>

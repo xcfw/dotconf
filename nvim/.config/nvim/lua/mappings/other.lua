@@ -41,16 +41,19 @@ nmap("<leader><leader>", function()
 end)
 
 -- Markdown preview
-nmap("<leader>m", [[ZQ]])
+nmap("<leader>m", [[<CMD>MarkdownPreviewToggle<CR>]])
 
 -- fugitive
 -- keep the same prefix as the git sign
 -- See git-sign keymap in lua/plugins/config/gitsign_cfg.lua
 nmap("<leader>cc", ":Git commit -sS<CR>")
 nmap("<leader>gp", ":Git pu", { silent = false })
+nmap("<leader>gP", ":Git push origin HEAD", { silent = false })
 nmap(";gg", [[<CMD>Git<CR>]])
 nmap(";gc", [[<CMD>GlogS<CR>]])
-nmap(";gb", [[<CMD>Git blame --no-line-porcelain<CR>]])
+nmap(";b", [[<CMD>GBrowse<CR>]])
+nmap(";gb", [[<CMD>Git branch<CR>]])
+nmap(";gB", [[<CMD>Git blame --no-line-porcelain<CR>]])
 
 -- dispatch
 nmap(";x", ":Dispatch ", { noremap = true, silent = false })

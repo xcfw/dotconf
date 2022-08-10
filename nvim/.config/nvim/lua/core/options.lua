@@ -15,7 +15,7 @@ opt.joinspaces = false
 opt.laststatus = 2
 
 -- highlight the current line
-opt.cursorline = true
+-- opt.cursorline = true
 
 -- TAB SETTING
 -- Use 2 spaces forcely. But don't worry, vim-sleuth will handle the indent

@@ -27,6 +27,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(
   asdf
   fasd
+  heroku
   docker
   fzf
   gcloud
@@ -115,4 +116,4 @@ alias duu='du -h -d 1 .'
 
 # # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 # export PATH="$PATH:$HOME/.rvm/bin"
-eval "$(direnv hook zsh)"
+# eval "$(direnv hook zsh)"
