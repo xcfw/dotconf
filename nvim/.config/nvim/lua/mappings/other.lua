@@ -51,7 +51,8 @@ nmap("<leader>gp", ":Git pu", { silent = false })
 nmap(";gp", ":Git push --set-upstream origin $(git_current_branch", { silent = false })
 nmap(";gg", [[<CMD>Git<CR>]])
 nmap(";gc", [[<CMD>GlogS<CR>]])
-nmap(";gb", [[<CMD>Git blame --no-line-porcelain<CR>]])
+nmap(";gB", [[<CMD>Git blame --no-line-porcelain<CR>]])
+nmap(";gb", [[<CMD>Git branch<CR>]])
 
 -- dispatch
 nmap(";x", ":Dispatch ", { noremap = true, silent = false })

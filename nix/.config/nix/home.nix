@@ -42,6 +42,8 @@
       luajitPackages.luarocks-nix
       luajitPackages.luasql-sqlite3
       luajitPackages.plenary-nvim
+      luarocks
+      luarocks-nix
       sqlite
       tree-sitter
       aspell

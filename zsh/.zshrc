@@ -74,7 +74,7 @@ alias tt="bpytop"
 
 # wslpaths
 alias wslshutdown="wsl.exe --terminate $WSL_DISTRO_NAME"
-alias cdd="cd /mnt/c/Users/chill/Downloads"
+alias cdd="cd ~/Downloads"
 
 # universal paths
 alias vdd="v ~/dev/docs/docs/new.md"
