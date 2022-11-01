@@ -3,3 +3,4 @@ packer_compiled.lua
 nix/.config/nix/result
 vifm/.config/vifm/vifminfo*
 bpytop/.config/bpytop/error.log*
+node_modules

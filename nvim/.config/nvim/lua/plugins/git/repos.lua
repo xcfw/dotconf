@@ -22,6 +22,12 @@ local repos = {
     -- opt = true,
   },
 
+  -- To enable GBrowse
+  {
+    "tpope/vim-rhubarb",
+    -- browser_path = '/mnt/c/Program Files/Firefox Developer Edition/firefox.exe',
+  },
+
   -- Show git information in neovim
   {
     "lewis6991/gitsigns.nvim",

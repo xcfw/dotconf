@@ -10,6 +10,7 @@ nmap(";gf", [[<CMD>Git branch<CR>]])
 nmap(";gb", [[<CMD>GBrowse<CR>]])
 nmap(";gB", [[<CMD>Git blame<CR>]])
 nmap(";gc", [[<CMD>Flogsplit<CR>]])
+nmap("<leader>gp", ":Git pu", { silent = false })
 
 -- lazygit
 nmap("<LEADER>l", [[<CMD>LazyGit<CR>]])

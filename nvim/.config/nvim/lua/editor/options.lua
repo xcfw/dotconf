@@ -1,5 +1,18 @@
 local opt = vim.opt
 
+-- disable netrw for rhubarb and gbrowse Browse to work
+vim.g.nvim_tree_disable_netrw = 0
+
+-- disable netrw at the very start of your init.lua (strongly advised)
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+-- set Browse command
+vim.cmd([[ command! -nargs=1 Browse silent execute '!open' shellescape(<q-args>,1) ]])
+
+-- set termguicolors to enable highlight groups
+vim.opt.termguicolors = true
+
 -- Enables 24-bit RGB color in the TUI, and set background to dark
 opt.termguicolors = true
 opt.background = "dark"

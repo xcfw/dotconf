@@ -1,5 +1,5 @@
 [user]
-	email = dr@gorsvet.kz
+	email = ilmurat@powr.io
 	name = yili
 	nickname = xcfw
 [core]
@@ -10,11 +10,9 @@
 	helper = /mnt/c/Program\\ Files/Git/mingw64/bin/git-credential-manager-core.exe
 [credential "https://github.com"]
 	email = dr@gorsvet.kz
+	nickname = xcfw
 	helper = /mnt/c/Program\\ Files/Git/mingw64/bin/git-credential-manager-core.exe
 [alias]
 	wcl = "!sh $HOME/tools/git-clone-bare-worktree.sh"
-[credential]
-	; helper =
-	; helper = /usr/local/share/gcm-core/git-credential-manager-core
 [credential "https://dev.azure.com"]
 	useHttpPath = true

@@ -25,6 +25,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+  aws
   asdf
   fasd
   heroku
@@ -34,6 +35,7 @@ plugins=(
   git
   kubectl
   npm
+  terraform
   tmux
   yarn
   zsh-fzf-history-search
@@ -73,6 +75,9 @@ alias cl="clear"
 alias fgif="ffmpeg -y -filter_complex 'fps=12,scale=512:-1:flags=lanczos,split[s0][s1];[s0]palettegen=max_colors=32[p];[s1][p]paletteuse=dither=bayer' -i"
 alias c="batcat"
 alias tt="bpytop"
+alias km="kubectl -n main"
+alias ks="kubectl -n staging"
+alias t="terraform"
 
 # wslpaths
 alias wslshutdown="wsl.exe --terminate $WSL_DISTRO_NAME"
@@ -86,6 +91,7 @@ alias cdt="cd ~/tools"
 alias cdv="cd ~/dev/docs"
 alias cdc="cd ~/.dotconf/"
 alias cdn="cd ~/.config/nix"
+alias clp="clip.exe"
 
 # mcd is mkdir and cd in one
 mcd(){
@@ -100,6 +106,9 @@ vn(){ nvim ~/.config/nix/"$@"; }
 
 # yarn paths
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# GKE
+export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

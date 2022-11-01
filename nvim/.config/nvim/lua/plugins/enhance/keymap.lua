@@ -2,9 +2,14 @@ local map = require("editor.utils").map
 local nmap = require("editor.utils").nmap
 
 --
+-- Markdown preview
+--
+nmap("<leader>m", ":MarkdownPreview<CR>")
+
+--
 -- EasyAlign
 --
-map("v", "<leader>e", ":EasyAlign<CR>")
+map("v", ";e", ":EasyAlign<CR>")
 
 --
 -- nvim-tree
@@ -18,6 +23,9 @@ nmap("<space>t", function()
   end
 end)
 nmap(";d", ":NvimTreeToggle<CR>")
+
+-- yank file path
+map("n", "yf", [[:let @* = expand("%:p")<CR>]])
 
 --
 -- fterm
@@ -40,7 +48,7 @@ map("t", "<C-k>", [[<C-\><C-n><C-w>k]])
 --
 
 nmap(";f", function()
-  require("telescope.builtin").find_files(require("telescope.themes").get_ivy())
+  require("telescope.builtin").git_files(require("telescope.themes").get_ivy())
 end)
 
 nmap(";l", function()

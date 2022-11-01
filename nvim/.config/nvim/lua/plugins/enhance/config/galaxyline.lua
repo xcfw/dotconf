@@ -6,6 +6,7 @@ return function()
   vim.g.galaxyline_loaded = 1
 
   local gl = require("galaxyline")
+  local fileinfo = require('galaxyline.provider_fileinfo')  
   local gls = gl.section
 
   -- VistaPlugin = extension.vista_nearest
@@ -96,6 +97,95 @@ return function()
         highlight = { colors.bg, colors.bg },
       },
     })
+  end
+  
+  local function insert_blank_line_at_right()
+    insert_right({
+      Space = {
+        provider = function()
+          return " "
+        end,
+        highlight = { colors.bg, colors.bg },
+      },
+    })
+  end
+
+  -- insert full_filepath in the middle
+  local function insert_middle()
+    gls.mid[1] = {
+      Start = {
+        provider = function()
+          return " "
+        end,
+        highlight = { colors.bg },
+      },
+    }
+    gls.mid[2] = { -- file icon
+      FileIcon = {
+        provider = function()
+          return ' ' .. fileinfo.get_file_icon()
+        end,
+        highlight = { "GalaxyFileIcon", colors.bg },
+      },
+    }
+    gls.mid[3] = { -- filename
+      CurrentFile = {
+        provider = function()
+          local path = vim.fn.expand('%:.')
+          if not path or path == '' then
+            path = "[No Name]"
+          end
+          return path
+        end,
+        highlight = { colors.fg, colors.bg },
+      },
+    }
+    gls.mid[4] = { -- ~ separator
+      Tilde = {
+        provider = function()
+          local file_size = fileinfo.get_file_size()
+          if file_size and file_size ~= '' then
+            return '  ~ '
+          else -- don't show ~ because there is no size following
+            return ' ' -- for spacing edit icon
+          end
+        end,
+        highlight = { "GalaxyEditIcon", colors.bg },
+      },
+    }
+
+    gls.mid[5] = { -- file size
+      FileSize = {
+        provider = fileinfo.get_file_size,
+        highlight = { colors.fg, colors.bg },
+      },
+    }
+
+    gls.mid[6] = { -- modified/special icons
+      Modified = {
+        provider = function()
+          if vim.bo.readonly then
+            return ' '
+          end
+          if not vim.bo.modifiable then
+            return ' '
+          end
+          if vim.bo.modified then
+            return ' '
+          end
+        end,
+        highlight = { colors.fg, colors.bg },
+      },
+    }
+    
+    gls.mid[7] = {
+      EndingSepara = {
+        provider = function()
+          return " "
+        end,
+        highlight = { colors.bg },
+      },
+    }
   end
 
   -- insert_right insert given item into galaxyline.right
@@ -315,24 +405,24 @@ return function()
     },
   })
 
-  insert_left({
-    FileIcon = {
-      provider = "FileIcon",
-      condition = buffer_not_empty,
-      highlight = {
-        require("galaxyline.provider_fileinfo").get_file_icon_color,
-        colors.black,
-      },
-    },
-  })
+  -- insert_left({
+  --   FileIcon = {
+  --     provider = "FileIcon",
+  --     condition = buffer_not_empty,
+  --     highlight = {
+  --       require("galaxyline.provider_fileinfo").get_file_icon_color,
+  --       colors.black,
+  --     },
+  --   },
+  -- })
 
-  insert_left({
-    BufferType = {
-      provider = "FileName",
-      condition = has_file_type,
-      highlight = { colors.fg, colors.black },
-    },
-  })
+  -- insert_left({
+  --   BufferType = {
+  --     provider = "FileName",
+  --     condition = has_file_type,
+  --     highlight = { colors.fg, colors.black },
+  --   },
+  -- })
 
   insert_left({
     DarkSepara = {
@@ -343,6 +433,12 @@ return function()
     },
   })
   -- left information panel end}
+
+  -- middle insformation panel start {
+
+  insert_middle()
+
+  -- middle insformation panel end}
 
   insert_right({
     Start = {
