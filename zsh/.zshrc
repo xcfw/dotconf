@@ -27,6 +27,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(
   aws
   asdf
+  gcloud
   fasd
   heroku
   docker
@@ -56,13 +57,12 @@ fi
 
 # universal aliases
 alias tu='tmux -2'
-alias op=~/dev/powr
 alias sz='source ~/.zshrc'
 alias l='ls -lahtr --color'
 alias lss='ls -lahSr --color'
 alias v='nvim'
 alias vz="nvim ~/.zshrc && source ~/.zshrc"
-alias vvs="nvim ~/.config/nvim/init.lua"
+alias vvs="cd ~/.config/nvim/ && nvim init.lua"
 alias dc="docker-compose"
 alias dcb="dc build"
 alias dcup="dc up --remove-orphans"
@@ -75,13 +75,18 @@ alias cl="clear"
 alias fgif="ffmpeg -y -filter_complex 'fps=12,scale=512:-1:flags=lanczos,split[s0][s1];[s0]palettegen=max_colors=32[p];[s1][p]paletteuse=dither=bayer' -i"
 alias c="batcat"
 alias tt="bpytop"
+
+#devops aliases
 alias km="kubectl -n main"
 alias ks="kubectl -n staging"
 alias t="terraform"
+alias kgn="kubectl get nodes -o wide |  awk {'print \$1\" \" \$2 \" \" \$6 \" \" \$7'} | column -t"
 
 # wslpaths
 alias wslshutdown="wsl.exe --terminate $WSL_DISTRO_NAME"
 alias cdd="cd /mnt/c/Users/chill/Downloads"
+alias z='fasd_cd -d'     # cd, same functionality as j in autojump
+alias zz='fasd_cd -d -i' # cd with interactive selection
 
 # universal paths
 alias vdd="v ~/dev/docs/docs/new.md"

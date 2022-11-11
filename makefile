@@ -1,5 +1,5 @@
 wsl:
-	stow -t ~ alacritty/ bpytop/ git/ kitty/ nvim/ tmux/ vifm/ zsh/ firefox/ lf/
+	stow -t ~ bpytop/ git/ nvim/ tmux/ vifm/ zsh/ lf/
 
 mac:
 	stow bpytop/ kitty/ nvim/ vifm/ zsh/ lf/ nix/
