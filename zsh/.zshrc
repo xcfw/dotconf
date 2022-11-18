@@ -50,7 +50,7 @@ source $ZSH/oh-my-zsh.sh
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
-  export EDITOR='vim'
+  export EDITOR='nvim'
 fi
 
 # source <(kubectl completion zsh)
@@ -71,6 +71,12 @@ alias ga="git add"
 alias gc="git commit"
 alias gp="git push"
 alias gl="git pull"
+alias gms="git merge --squash"
+
+gmso(){
+  git merge --squash origin/"$1"
+}
+
 alias cl="clear"
 alias fgif="ffmpeg -y -filter_complex 'fps=12,scale=512:-1:flags=lanczos,split[s0][s1];[s0]palettegen=max_colors=32[p];[s1][p]paletteuse=dither=bayer' -i"
 alias c="batcat"
@@ -110,7 +116,7 @@ mcd(){
 vn(){ nvim ~/.config/nix/"$@"; }
 
 # yarn paths
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+# export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # GKE
 export USE_GKE_GCLOUD_AUTH_PLUGIN=True

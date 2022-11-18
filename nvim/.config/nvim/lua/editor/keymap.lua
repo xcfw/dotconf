@@ -67,6 +67,12 @@ nmap("<A-j>", "<C-w>j", d("Jump to window below"))
 nmap("<C-l>", "<C-w>l", d("Jump to the left window"))
 nmap("<C-h>", "<C-w>h", d("Jump to the righ window"))
 
+nmap('d', '"_d', d('map d to unnamed buffers ass'))
+nmap('dd', '"_dd', d('map dd to unnamed buffers ass'))
+nmap('cc', '"_cc', d('map cc to unnamed buffers ass'))
+nmap('C', '"_C', d('map C to unnamed buffers ass'))
+nmap('c', '"_c', d('map c to unnamed buffers ass'))
+
 -- open Telescope
 nmap("<leader><leader>", ":Telescope<CR>", d("Open Telescope"))
 -- % is so hard to reach...

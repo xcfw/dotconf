@@ -1,7 +1,7 @@
 local opt = vim.opt
 
 -- disable netrw for rhubarb and gbrowse Browse to work
-vim.g.nvim_tree_disable_netrw = 0
+-- vim.g.nvim_tree_disable_netrw = 0
 
 -- disable netrw at the very start of your init.lua (strongly advised)
 vim.g.loaded_netrw = 1
