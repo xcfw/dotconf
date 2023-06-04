@@ -25,12 +25,14 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+  aws
   fasd
   docker
   fzf
   gcloud
   git
   kubectl
+  terraform
   npm
   tmux
   yarn
@@ -40,6 +42,9 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 # source $HOME/.asdf/asdf.sh
+source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
+source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
@@ -71,6 +76,10 @@ alias cl="clear"
 alias fgif="ffmpeg -y -filter_complex 'fps=12,scale=512:-1:flags=lanczos,split[s0][s1];[s0]palettegen=max_colors=32[p];[s1][p]paletteuse=dither=bayer' -i"
 alias c="batcat"
 alias tt="bpytop"
+alias km="kubectl -n main"
+alias ks="kubectl -n staging"
+alias tf="terraform"
+# alias aws="asdf exec aws"
 
 # wslpaths
 alias wslshutdown="wsl.exe --terminate $WSL_DISTRO_NAME"
@@ -103,7 +112,8 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 #new gke auth
-# USE_GKE_GCLOUD_AUTH_PLUGIN=True
+export USE_GKE_GCLOUD_AUTH_PLUGIN=True
+source "$HOMEBREW_PREFIX/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
 alias duu='du -h -d 1 .'
 
 # The next line updates PATH for the Google Cloud SDK.

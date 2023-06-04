@@ -14,7 +14,7 @@
   /* xdg.configFile."nvim/init.lua".source = ~/.config/nvim/init.lua; */
   /* xdg.configFile."nvim/init.vim".source = ~/.config/nvim/init.vim; */
   programs.neovim = {
-    enable = true;
+    enable = false;
 
     # read in the vim config from filesystem
     # this enables syntaxhighlighting when editing those
@@ -112,13 +112,13 @@
     python3
     mkcert
     nss
-    asdf-vm
+    # asdf-vm
     inetutils
     shared-mime-info
 
     # Dev stuff
     /* (agda.withPackages (p: [ p.standard-library ])) */
-    google-cloud-sdk
+    # google-cloud-sdk
     /* (google-cloud-sdk.withPackages (p: [ p.gke-gcloud-auth-plugin ])) */
 
     #projects deps

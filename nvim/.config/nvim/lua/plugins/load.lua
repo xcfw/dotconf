@@ -94,10 +94,6 @@ local editor_enhance = {
   },
   -- github copilot
 
-  {
-    "github/copilot.vim",
-  },
-
   -- adjust the shiftwidth and expandtab settins
   {
     "tpope/vim-sleuth",
