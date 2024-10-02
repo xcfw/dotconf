@@ -1,0 +1,41 @@
+return {
+  {
+    "neogitorg/neogit",
+    event = "VeryLazy",
+    dependencies = {
+      "sindrets/diffview.nvim", -- Add this line to include diffview
+      "f-person/git-blame.nvim",
+      -- load the plugin at startup
+      event = "VeryLazy",
+      -- Because of the keys part, you will be lazy loading this plugin.
+      -- The plugin wil only load once one of the keys is used.
+      -- If you want to load the plugin at startup, add something like event = "VeryLazy",
+      -- or lazy = false. One of both options will work.
+      opts = {
+        -- your configuration comes here
+        -- for example
+        enabled = true, -- if you want to enable the plugin
+        message_template = " <summary> •<date>•<author>• <<sha>>", -- template for the blame message, check the Message template section for more options
+        date_format = "%d%b%y %H:%M", -- template for the date, check Date format section for more options
+        virtual_text_column = 1, -- virtual text start column, check Start virtual text at column section for more options
+      },
+    },
+    config = function()
+      require("neogit").setup({
+        auto_refresh = true,
+        disable_builtin_notifications = false,
+        use_magit_keybindings = false,
+        -- Change the default way of opening neogit
+        kind = "tab",
+        -- Change the default way of opening the commit popup
+        commit_popup = {
+          kind = "split",
+        },
+        -- Change the default way of opening popups
+        popup = {
+          kind = "split",
+        },
+      })
+    end,
+  },
+}
